@@ -8,7 +8,7 @@ export 'my/language/index.dart';
 export 'my/my_index/index.dart';
 export 'my/profile_edit/index.dart';
 export 'my/theme/index.dart';
-export 'sports/category	/index.dart';
+export 'sports/category/index.dart';
 export 'sports/counter_index/index.dart';
 export 'sports/item_search/index.dart';
 export 'styles/bottom_sheet/index.dart';
