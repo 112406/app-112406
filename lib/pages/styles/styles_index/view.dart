@@ -1,16 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:project_fitness/common/index.dart';
 
 import 'index.dart';
 
 class StylesIndexPage extends GetView<StylesIndexController> {
   const StylesIndexPage({Key? key}) : super(key: key);
 
-  // 主视图
+  // 主視圖
   Widget _buildView() {
-    return const Center(
-      child: Text("StylesIndexPage"),
-    );
+    return Column(children: [
+      ListTile(
+        onTap: controller.onThemeSelected,
+        title: Text("主題 : ${ConfigService.to.isDarkModel ? "Dark" : "Light"}"),
+      ),
+      ListTile(
+        onTap: controller.onLanguageSelected,
+        title: Text(
+          "語言 : ${ConfigService.to.locale.toLanguageTag()}",
+        ),
+      ),
+    ]);
   }
 
   @override
