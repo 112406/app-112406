@@ -20,6 +20,11 @@ class StylesIndexPage extends GetView<StylesIndexController> {
           "語言 : ${ConfigService.to.locale.toLanguageTag()}",
         ),
       ),
+      // 文本
+      ListTile(
+        onTap: () => Get.toNamed(RouteNames.stylesText),
+        title: const Text("Text 文本"),
+      ),
     ]);
   }
 

@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       // 主題
       theme: ConfigService.to.isDarkModel ? AppTheme.dark : AppTheme.light,
 
-// 系統語言
+      // 系統語言
       translations: Translation(), // 辭典
       localizationsDelegates: Translation.localizationsDelegates, // 代理
       supportedLocales: Translation.supportedLocales, // 支援的語系
