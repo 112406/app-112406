@@ -30,6 +30,16 @@ class StylesIndexPage extends GetView<StylesIndexController> {
         onTap: () => Get.toNamed(RouteNames.stylesIcon),
         title: const TextWidget.body1("Icon 圖標"),
       ),
+      // Image 圖片
+      ListTile(
+        onTap: () => Get.toNamed(RouteNames.stylesImage),
+        title: const TextWidget.body1("Image 圖片"),
+      ),
+      // Button 按鈕
+      ListTile(
+        onTap: () => Get.toNamed(RouteNames.stylesButtons),
+        title: const TextWidget.body1("Button 按鈕"),
+      ),
     ]);
   }
 
