@@ -2,22 +2,22 @@ import 'package:flutter/material.dart';
 import '../index.dart';
 
 enum ButtonWidgetType {
-  none, // 无
-  primary, // 主按钮
-  secondary, // 次按钮
-  text, // 文字按钮
-  icon, // 图标按钮
+  none, // 無
+  primary, // 主按鈕
+  secondary, // 次按鈕
+  text, // 文字按鈕
+  icon, // 圖標按鈕
   textFilled, // 文字/填充
-  textRoundFilled, // 文字/填充/圆形
-  iconTextUpDown, // 图标/文字/上下
-  iconTextOutlined, // 图标/文字/边框
-  iconTextUpDownOutlined, // 图标/文字/上下/边框
-  textIcon, // 文字/图标
+  textRoundFilled, // 文字/填充/圓形
+  iconTextUpDown, // 圖標/文字/上下
+  iconTextOutlined, // 圖標/文字/邊框
+  iconTextUpDownOutlined, // 圖標/文字/上下/邊框
+  textIcon, // 文字/圖標
 }
 
-/// 按钮
+/// 按鈕
 class ButtonWidget extends StatelessWidget {
-  /// 按钮类型
+  /// 按鈕類型
   final ButtonWidgetType type;
 
   /// tap 事件
@@ -29,19 +29,19 @@ class ButtonWidget extends StatelessWidget {
   /// 子组件
   final Widget? child;
 
-  /// 图标
+  /// 圖標
   final Widget? icon;
 
-  /// 圆角
+  /// 圓角
   final double? borderRadius;
 
   /// 背景色
   final Color? backgroundColor;
 
-  /// 边框色
+  /// 邊框色
   final Color? borderColor;
 
-  /// 宽度
+  /// 寬度
   final double? width;
 
   /// 高度
@@ -114,7 +114,7 @@ class ButtonWidget extends StatelessWidget {
         ),
         super(key: key);
 
-  /// 图标
+  /// 圖標
   const ButtonWidget.icon(
     this.icon, {
     Key? key,
@@ -153,7 +153,7 @@ class ButtonWidget extends StatelessWidget {
         ),
         super(key: key);
 
-  /// 文字/填充/圆形 按钮
+  /// 文字/填充/圖標 按钮
   ButtonWidget.textRoundFilled(
     this.text, {
     Key? key,
@@ -177,7 +177,7 @@ class ButtonWidget extends StatelessWidget {
         ),
         super(key: key);
 
-  /// 图标文字 上下
+  /// 圖標文字 上下
   ButtonWidget.iconTextUpDown(
     this.icon,
     this.text, {
@@ -205,7 +205,7 @@ class ButtonWidget extends StatelessWidget {
         ),
         super(key: key);
 
-  /// 图标 / 文字 / 边框
+  /// 圖標 / 文字 / 邊框
   ButtonWidget.iconTextOutlined(
     this.icon,
     this.text, {
@@ -233,7 +233,7 @@ class ButtonWidget extends StatelessWidget {
         ),
         super(key: key);
 
-  /// 图标 / 文字 / 上下 / 边框
+  /// 圖標 / 文字 / 上下 / 邊框
   ButtonWidget.iconTextUpDownOutlined(
     this.icon,
     this.text, {
@@ -261,7 +261,7 @@ class ButtonWidget extends StatelessWidget {
         ),
         super(key: key);
 
-  /// 文字 / 图标
+  /// 文字 / 圖標
   ButtonWidget.textIcon(
     this.text,
     this.icon, {
@@ -299,7 +299,7 @@ class ButtonWidget extends StatelessWidget {
     }
   }
 
-  // 边框
+  // 邊框
   MaterialStateProperty<BorderSide?>? get _side {
     switch (type) {
       case ButtonWidgetType.secondary:
@@ -318,7 +318,7 @@ class ButtonWidget extends StatelessWidget {
     }
   }
 
-  // 阴影颜色
+  // 陰影顏色
   MaterialStateProperty<Color?>? get _overlayColor {
     switch (type) {
       case ButtonWidgetType.primary:

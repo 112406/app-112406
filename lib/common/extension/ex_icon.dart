@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-/// 扩展 Icon
+/// 擴展 Icon
 extension ExIcon<T extends Icon> on T {
   T copyWith({
     double? size,
@@ -19,6 +19,6 @@ extension ExIcon<T extends Icon> on T {
   /// 尺寸
   T iconSize(double size) => copyWith(size: size);
 
-  /// 颜色
+  /// 顏色
   T iconColor(Color color) => copyWith(color: color);
 }

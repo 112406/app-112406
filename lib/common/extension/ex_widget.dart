@@ -4,12 +4,12 @@ import 'package:flutter/semantics.dart';
 
 import '../index.dart';
 
-/// 手势 tap
+/// 手勢 tap
 typedef GestureOnTapChangeCallback = void Function<T>(T val);
 
-/// 扩展 Widget
+/// 擴展 Widget
 extension ExWidget on Widget {
-  /// 对齐
+  /// 對齊
   Widget align(
     AlignmentGeometry alignment, {
     Key? key,
@@ -20,19 +20,19 @@ extension ExWidget on Widget {
         child: this,
       );
 
-  /// 对齐 中间
+  /// 對齊 中間
   Widget alignCenter() => align(Alignment.center);
 
-  /// 对齐 左边
+  /// 對齊 左邊
   Widget alignLeft() => align(Alignment.centerLeft);
 
-  /// 对齐 右边
+  /// 對齊 右邊
   Widget alignRight() => align(Alignment.centerRight);
 
-  /// 对齐 顶部
+  /// 對齊 頂部
   Widget alignTop() => align(Alignment.topCenter);
 
-  /// 对齐 底部
+  /// 對齊 底部
   Widget alignBottom() => align(Alignment.bottomCenter);
 
   // 比例布局
@@ -46,7 +46,7 @@ extension ExWidget on Widget {
         child: this,
       );
 
-  /// 背景颜色
+  /// 背景顏色
   Widget backgroundColor(
     Color color, {
     Key? key,
@@ -57,7 +57,7 @@ extension ExWidget on Widget {
         child: this,
       );
 
-  /// 背景图片
+  /// 背景圖片
   Widget backgroundImage(
     DecorationImage image, {
     Key? key,
@@ -68,7 +68,7 @@ extension ExWidget on Widget {
         child: this,
       );
 
-  /// 边框
+  /// 邊框
   Widget border({
     Key? key,
     double? all,
@@ -102,7 +102,7 @@ extension ExWidget on Widget {
     );
   }
 
-  /// 圆角
+  /// 圓角
   Widget borderRadius({
     Key? key,
     double? all,
@@ -126,7 +126,7 @@ extension ExWidget on Widget {
     );
   }
 
-  /// 阴影
+  /// 陰影
   Widget boxShadow({
     Key? key,
     Color color = const Color(0xFF000000),
@@ -191,9 +191,9 @@ extension ExWidget on Widget {
               // x偏移量 | y偏移量
               offset: const Offset(0, 3),
               color: shadowColor ?? AppColors.outline.withOpacity(0.15),
-              // 阴影模糊半径
+              // 陰影模糊半徑
               blurRadius: blurRadius ?? 8,
-              // 阴影扩散半径
+              // 陰影擴散半徑
               spreadRadius: 0,
               blurStyle: BlurStyle.normal,
             ),
@@ -234,7 +234,7 @@ extension ExWidget on Widget {
         child: this,
       );
 
-  /// 裁剪圆角
+  /// 裁剪圓角
   Widget clipRRect({
     Key? key,
     double? all,
@@ -258,7 +258,7 @@ extension ExWidget on Widget {
         child: this,
       );
 
-  /// 约束
+  /// 約束
   Widget constrained({
     Key? key,
     double? width,
@@ -284,7 +284,7 @@ extension ExWidget on Widget {
     );
   }
 
-  // 取消父级约束
+  // 取消父級約束
   Widget unconstrained({
     Key? key,
     TextDirection? textDirection,
@@ -301,7 +301,7 @@ extension ExWidget on Widget {
         child: this,
       );
 
-  /// 盒子装饰器
+  /// 盒子裝飾器
   Widget decorated({
     Key? key,
     Color? color,
@@ -348,7 +348,7 @@ extension ExWidget on Widget {
         child: this,
       );
 
-  /// expanded 撑满
+  /// expanded 撐滿
   Widget expanded({
     Key? key,
     int flex = 1,
@@ -373,7 +373,7 @@ extension ExWidget on Widget {
         child: this,
       );
 
-  /// 弹性布局 flexible
+  /// 彈性布局 flexible
   Widget flexible({
     Key? key,
     int flex = 1,
@@ -400,7 +400,7 @@ extension ExWidget on Widget {
         child: this,
       );
 
-  /// 手势
+  /// 手勢
   Widget gestures({
     Key? key,
     GestureOnTapChangeCallback? onTapChange,
@@ -492,7 +492,7 @@ extension ExWidget on Widget {
         child: this,
       );
 
-  /// 手势
+  /// 手勢
   Widget onTap(
     GestureTapCallback? onTap, {
     Key? key,
@@ -509,7 +509,7 @@ extension ExWidget on Widget {
         child: this,
       );
 
-  /// 长按手势
+  /// 長按手勢
   Widget onLongPress(
     GestureTapCallback? onLongPress, {
     Key? key,
@@ -526,7 +526,7 @@ extension ExWidget on Widget {
         child: this,
       );
 
-  /// 约束 高度
+  /// 約束 高度
   Widget height(
     double height, {
     Key? key,
@@ -537,7 +537,7 @@ extension ExWidget on Widget {
         child: this,
       );
 
-  /// 限制盒子 最大宽高
+  /// 限制盒子 最大寬高
   Widget limitedBox({
     Key? key,
     double maxWidth = double.infinity,
@@ -593,7 +593,7 @@ extension ExWidget on Widget {
         child: this,
       );
 
-  /// 内间距
+  /// 內間距
   Widget padding({
     Key? key,
     EdgeInsetsGeometry? value,
@@ -617,28 +617,28 @@ extension ExWidget on Widget {
         child: this,
       );
 
-  // /// 内间距 全
+  // /// 內間距 全
   // Widget paddingAll(double val) => padding(all: val);
 
-  /// 内间距 下
+  /// 內間距 下
   Widget paddingBottom(double val) => padding(bottom: val);
 
-  /// 内间距 横向
+  /// 內間距 横向
   Widget paddingHorizontal(double val) => padding(horizontal: val);
 
-  /// 内间距 左
+  /// 內間距 左
   Widget paddingLeft(double val) => padding(left: val);
 
-  /// 内间距 右
+  /// 內間距 右
   Widget paddingRight(double val) => padding(right: val);
 
-  /// 内间距 上
+  /// 內間距 上
   Widget paddingTop(double val) => padding(top: val);
 
-  /// 内间距 纵向
+  /// 內間距 縱向
   Widget paddingVertical(double val) => padding(vertical: val);
 
-  /// 内间距
+  /// 內間距
   Widget sliverPadding({
     Key? key,
     EdgeInsetsGeometry? value,
@@ -662,19 +662,19 @@ extension ExWidget on Widget {
         sliver: this,
       );
 
-  /// 内间距 下
+  /// 內間距 下
   Widget sliverPaddingBottom(double val) => sliverPadding(bottom: val);
 
-  /// 内间距 横向
+  /// 內間距 横向
   Widget sliverPaddingHorizontal(double val) => sliverPadding(horizontal: val);
 
-  /// 内间距 左
+  /// 內間距 左
   Widget sliverPaddingLeft(double val) => sliverPadding(left: val);
 
-  /// 内间距 右
+  /// 內間距 右
   Widget sliverPaddingRight(double val) => sliverPadding(right: val);
 
-  /// 内间距 上
+  /// 內間距 上
   Widget sliverPaddingTop(double val) => sliverPadding(top: val);
 
   /// 内间距 纵向
@@ -701,7 +701,7 @@ extension ExWidget on Widget {
         child: this,
       );
 
-  // 墨水纹
+  // 墨水紋
   Widget inkWell({
     Key? key,
     Function()? onTap,
@@ -722,7 +722,7 @@ extension ExWidget on Widget {
         ),
       );
 
-  /// 涟漪
+  /// 漣漪
   Widget ripple({
     Key? key,
     Color? focusColor,
@@ -771,7 +771,7 @@ extension ExWidget on Widget {
               builder: (context) => this,
             );
 
-  // 刘海屏 特殊屏幕 留白
+  // 瀏海 特殊屏幕 留白
   Widget safeArea({
     Key? key,
     bool top = true,
@@ -788,7 +788,7 @@ extension ExWidget on Widget {
         child: this,
       );
 
-  /// 比例缩放
+  /// 比例縮放
   Widget scale({
     Key? key,
     double? all,
@@ -807,7 +807,7 @@ extension ExWidget on Widget {
         child: this,
       );
 
-  /// 滚动视图
+  /// 滾動視圖
   Widget scrollable({
     Key? key,
     Axis scrollDirection = Axis.vertical,
@@ -830,7 +830,7 @@ extension ExWidget on Widget {
         child: this,
       );
 
-  /// 语义调试
+  /// 語義調試
   /// MaterialApp.showSemanticsDebugger: true,
   Widget semanticsLabel(
     String label, {
@@ -842,7 +842,7 @@ extension ExWidget on Widget {
         child: this,
       );
 
-  /// 约束 宽高
+  /// 約束 寬高
   Widget tight({
     double? width,
     double? height,
@@ -854,7 +854,7 @@ extension ExWidget on Widget {
         child: this,
       );
 
-  /// 约束 宽高 size
+  /// 約束 寬高 size
   Widget tightSize(
     double size, {
     Key? key,
@@ -882,7 +882,7 @@ extension ExWidget on Widget {
         child: this,
       );
 
-  /// translate 变化位置
+  /// translate 變化位置
   Widget translate({
     Key? key,
     required Offset offset,
@@ -895,7 +895,7 @@ extension ExWidget on Widget {
         child: this,
       );
 
-  /// 约束 宽度
+  /// 約束 寬度
   Widget width(
     double width, {
     Key? key,

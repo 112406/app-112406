@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-/// 扩展颜色
+/// 擴展顏色
 extension ExColor on Color {
-  /// 生成 MaterialColor 色阶表
+  /// 生成 MaterialColor 色階表
   MaterialColor get materialColor {
     List<double> strengths = <double>[.05];
     Map<int, Color> swatch = <int, Color>{};

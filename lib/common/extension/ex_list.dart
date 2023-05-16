@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-/// 扩展 List<String>
+/// 擴展 List<String>
 extension ExStringListWidget<E> on List<String> {
   /// 是否有值
   bool hasValue(String val) {
@@ -13,9 +13,9 @@ extension ExStringListWidget<E> on List<String> {
   }
 }
 
-/// 扩展 List<Widget>
+/// 擴展 List<Widget>
 extension ExListWidget<E> on List<Widget> {
-  /// 转 Wrap
+  /// 轉 Wrap
   Widget toWrap({
     Key? key,
     double spacing = 0,
@@ -33,7 +33,7 @@ extension ExListWidget<E> on List<Widget> {
         children: this,
       );
 
-  /// 转 Column
+  /// 轉 Column
   Widget toColumn({
     Key? key,
     MainAxisAlignment mainAxisAlignment = MainAxisAlignment.start,
@@ -57,7 +57,7 @@ extension ExListWidget<E> on List<Widget> {
             : this,
       );
 
-  /// 转 Row
+  /// 轉 Row
   Widget toRow({
     Key? key,
     MainAxisAlignment mainAxisAlignment = MainAxisAlignment.start,
@@ -81,7 +81,7 @@ extension ExListWidget<E> on List<Widget> {
             : this,
       );
 
-  /// 转 Stack
+  /// 轉 Stack
   Widget toStack({
     Key? key,
     AlignmentGeometry alignment = AlignmentDirectional.topStart,
@@ -98,7 +98,7 @@ extension ExListWidget<E> on List<Widget> {
         children: this,
       );
 
-  /// 转 ListView
+  /// 轉 ListView
   Widget toListView({
     Key? key,
     Axis scrollDirection = Axis.vertical,

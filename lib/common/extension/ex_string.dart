@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-/// 扩展 String
+/// 擴展 String
 extension ExString on String {
   /// 生成 Color
   Color get toColor {
@@ -31,7 +31,7 @@ extension ExString on String {
     return MaterialColor(color.value, swatch);
   }
 
-  /// 清除 html 标签
+  /// 清除 html 標籤
   String get clearHtml {
     return replaceAll(RegExp(r'<[^>]*>'), '');
   }

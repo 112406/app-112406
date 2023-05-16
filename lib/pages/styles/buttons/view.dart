@@ -44,13 +44,14 @@ class ButtonsPage extends GetView<ButtonsController> {
       ).paddingBottom(AppSpace.listRow),
 
       // 圖標按鈕
-      // ButtonWidget.icon(
-      //   IconWidget.svg(
-      //     AssetsSvgs.cHomeSvg,
-      //     size: 30,
-      //   ),
-      //   onTap: () {},
-      // ).tightSize(30).paddingBottom(AppSpace.listRow),
+      ButtonWidget.icon(
+        IconWidget.svg(
+          // AssetsSvgs.cHomeSvg,
+          AssetsImages.cancelPng,
+          size: 30,
+        ),
+        onTap: () {},
+      ).tightSize(30).paddingBottom(AppSpace.listRow),
 
       // 文字/填充 按鈕
       ButtonWidget.textFilled(
@@ -60,7 +61,7 @@ class ButtonsPage extends GetView<ButtonsController> {
         onTap: () {},
       ).paddingBottom(AppSpace.listRow),
 
-      // 文字/填充/圆形 按鈕
+      // 文字/填充/圓形 按鈕
       ButtonWidget.textRoundFilled(
         "5",
         bgColor: Get.theme.colorScheme.surfaceVariant.withOpacity(0.4),
