@@ -40,6 +40,11 @@ class StylesIndexPage extends GetView<StylesIndexController> {
         onTap: () => Get.toNamed(RouteNames.stylesButtons),
         title: const TextWidget.body1("Button 按鈕"),
       ),
+      // Input 輸入框
+      ListTile(
+        onTap: () => Get.toNamed(RouteNames.stylesInputs),
+        title: const TextWidget.body1("Input 輸入框"),
+      ),
     ]);
   }
 

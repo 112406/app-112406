@@ -19,10 +19,10 @@ class IconPage extends GetView<IconController> {
           leading: IconWidget.image(AssetsImages.accessTimePng),
           title: const TextWidget.body1("IconWidget.accessTimePng"),
         ),
-        // ListTile(
-        //   leading: IconWidget.svg(AssetsSvgs.cHomeSvg),
-        //   title: const TextWidget.body1("IconWidget.svg"),
-        // ),
+        ListTile(
+          leading: IconWidget.svg(AssetsSvgs.cancelSvg),
+          title: const TextWidget.body1("IconWidget.cancelSvg"),
+        ),
         ListTile(
           leading: IconWidget.url(
               "https://ducafecat.oss-cn-beijing.aliyuncs.com/flutter_woo_commerce_getx_ducafecat/categories/c-man.png"),
