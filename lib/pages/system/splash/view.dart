@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:project_fitness/common/index.dart';
 
 import 'index.dart';
 
@@ -8,8 +9,9 @@ class SplashPage extends GetView<SplashController> {
 
   // 主視圖
   Widget _buildView() {
-    return const Center(
-      child: Text("splash"),
+    return ImageWidget.asset(
+      AssetsImages.splash1Jpg,
+      fit: BoxFit.fill, // 填充整个界面
     );
   }
 

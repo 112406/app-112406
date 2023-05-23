@@ -9,6 +9,11 @@ class RoutePages {
   static List<String> history = [];
 
   static List<GetPage> list = [
+    // app 首頁
+    GetPage(
+      name: RouteNames.main,
+      page: () => const MainPage(),
+    ),
     GetPage(
       name: RouteNames.historyHistoryDetails,
       page: () => const HistoryDetailsPage(),

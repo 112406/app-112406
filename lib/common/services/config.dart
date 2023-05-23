@@ -17,6 +17,9 @@ class ConfigService extends GetxService {
   final RxBool _isDarkModel = Get.isDarkMode.obs;
   bool get isDarkModel => _isDarkModel.value;
 
+  // 是否首次打開
+  bool get isAlreadyOpen => Storage().getBool(Constants.storageAlreadyOpen);
+
   // 切换 theme
   Future<void> switchThemeModel() async {
     _isDarkModel.value = !_isDarkModel.value;
@@ -65,6 +68,11 @@ class ConfigService extends GetxService {
     locale = value;
     Get.updateLocale(value);
     Storage().setString(Constants.storageLanguageCode, value.languageCode);
+  }
+
+  // 標記已打開app
+  void setAlreadyOpen() {
+    Storage().setBool(Constants.storageAlreadyOpen, true);
   }
 
   @override
