@@ -45,7 +45,8 @@ class ButtonsPage extends GetView<ButtonsController> {
 
       // 圖標按鈕
       ButtonWidget.icon(
-        IconWidget.image(
+        IconWidget.svg(
+          // AssetsSvgs.cHomeSvg,
           AssetsImages.cancelPng,
           size: 30,
         ),
@@ -72,7 +73,7 @@ class ButtonsPage extends GetView<ButtonsController> {
       // // iconTextUpDown, // 圖標/文字/上下
       // ButtonWidget.iconTextUpDown(
       //   IconWidget.svg(
-      //     AssetsSvgs.cancelSvg,
+      //     AssetsSvgs.cHomeSvg,
       //     size: 30,
       //   ),
       //   "Home",
@@ -82,7 +83,7 @@ class ButtonsPage extends GetView<ButtonsController> {
       // // iconTextOutlined, // 圖標/文字/邊框
       // ButtonWidget.iconTextOutlined(
       //   IconWidget.svg(
-      //     AssetsSvgs.cancelSvg,
+      //     AssetsSvgs.cHomeSvg,
       //     size: 30,
       //   ),
       //   "Home",
@@ -97,7 +98,7 @@ class ButtonsPage extends GetView<ButtonsController> {
       // // iconTextUpDownOutlined, // 圖標/文字/上下/邊框
       // ButtonWidget.iconTextUpDownOutlined(
       //   IconWidget.svg(
-      //     AssetsSvgs.cancelSvg,
+      //     AssetsSvgs.cHomeSvg,
       //     size: 30,
       //   ),
       //   "Home",
@@ -113,7 +114,7 @@ class ButtonsPage extends GetView<ButtonsController> {
       // ButtonWidget.textIcon(
       //   "Home",
       //   IconWidget.svg(
-      //     AssetsSvgs.cancelSvg,
+      //     AssetsSvgs.cHomeSvg,
       //     size: 30,
       //   ),
       //   onTap: () {},

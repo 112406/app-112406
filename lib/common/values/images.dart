@@ -1,4 +1,10 @@
 class AssetsImages {
+  static const welcomePng = 'assets/images/welcome.png';
+  static const welcome_1Png = 'assets/images/welcome_1.png';
+  static const welcome_2Png = 'assets/images/welcome_2.png';
+  static const welcome_3Png = 'assets/images/welcome_3.png';
+  static const splashJpg = 'assets/images/splash.jpg';
+  static const splash1Jpg = 'assets/images/splash1.jpg';
   static const accessTimePng = 'assets/images/access-time.png';
   static const finishPng = 'assets/images/finish.png';
   static const deIncreasePng = 'assets/images/de-increase.png';

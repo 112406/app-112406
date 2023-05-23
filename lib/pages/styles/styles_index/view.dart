@@ -45,6 +45,11 @@ class StylesIndexPage extends GetView<StylesIndexController> {
         onTap: () => Get.toNamed(RouteNames.stylesInputs),
         title: const TextWidget.body1("Input 輸入框"),
       ),
+      // form 表單
+      ListTile(
+        onTap: () => Get.toNamed(RouteNames.stylesTextForm),
+        title: const TextWidget.body1("form 表單"),
+      ),
     ]);
   }
 
