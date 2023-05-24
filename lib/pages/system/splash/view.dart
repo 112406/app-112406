@@ -9,7 +9,7 @@ class SplashPage extends GetView<SplashController> {
 
   // 主視圖
   Widget _buildView() {
-    return ImageWidget.asset(
+    return const ImageWidget.asset(
       AssetsImages.splash1Jpg,
       fit: BoxFit.fill, // 填充整个界面
     );
