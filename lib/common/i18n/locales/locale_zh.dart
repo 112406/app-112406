@@ -30,4 +30,28 @@ Map<String, String> localeZh = {
   LocaleKeys.welcomeSkip: '跳過',
   LocaleKeys.welcomeNext: '下一頁',
   LocaleKeys.welcomeStart: '立刻開始',
+
+  // 登錄、註冊 - 通用
+  LocaleKeys.loginForgotPassword: '忘記密碼?',
+  LocaleKeys.loginSignIn: '登 入',
+  LocaleKeys.loginSignUp: '註 冊',
+  LocaleKeys.loginOrText: '- 或者 -',
+
+  // 註冊 - register user
+  LocaleKeys.registerTitle: '歡迎',
+  LocaleKeys.registerDesc: '註冊新賬號',
+  LocaleKeys.registerFormName: '登錄賬號',
+  LocaleKeys.registerFormEmail: '電子郵件',
+  LocaleKeys.registerFormPhoneNumber: '電話號碼',
+  LocaleKeys.registerFormPassword: '密碼',
+  LocaleKeys.registerFormFirstName: '姓',
+  LocaleKeys.registerFormLastName: '名',
+  LocaleKeys.registerHaveAccount: '已經有帳號?',
+
+  // 驗證提示
+  LocaleKeys.validatorRequired: '字段不能為空',
+  LocaleKeys.validatorEmail: '請輸入 email 格式',
+  LocaleKeys.validatorMin: '長度不能小於 @size',
+  LocaleKeys.validatorMax: '長度不能大於 @size',
+  LocaleKeys.validatorPassword: '密碼長度必須 大於 @min 小於 @max',
 };

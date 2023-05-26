@@ -52,23 +52,10 @@ dependencies:
   flutter_screenutil: 5.7.0
   flutter_native_splash: 2.2.16
   carousel_slider: 4.2.1
-  validatorless: 1.2.3
-  pinput: 2.2.31
-  flutter_easyloading: 3.0.5
-  encrypt: 5.0.1
-  pull_to_refresh: 2.0.0
-  photo_view: 0.14.0
-  dropdown_button2: 1.7.2
-  another_xlider: 1.1.2
-  # picker 選擇器
-  flutter_picker: 2.1.0
-  # 底部彈出
-  modal_bottom_sheet: 3.0.0-pre
-  # permission 權限
-  permission_handler: 10.2.0
-  # 媒體選擇
-  wechat_assets_picker: 8.4.0
-  wechat_camera_picker: 3.7.0
+  validatorless: ^1.2.3
+  flutter_easyloading: ^3.0.5
+
+
 
 dev_dependencies:
   flutter_test:

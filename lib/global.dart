@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get/get.dart';
+import 'package:project_fitness/common/utils/loading.dart';
 
 import 'common/index.dart';
 
@@ -11,6 +12,7 @@ class Global {
 
     // 工具類
     await Storage().init();
+    Loading();
 
     // 初始化服務
     await Future.wait([

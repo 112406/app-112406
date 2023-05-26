@@ -27,10 +27,19 @@ class SplashController extends GetxController {
   }
 
   _jumpToPage() {
+    Get.offAllNamed(RouteNames.main);
+
+    // Get.toNamed(RouteNames.stylesStylesIndex);
+
+    // if (ConfigService.to.isFirstOpen == false) {
+    //   Get.offAllNamed(RouteNames.systemWelcome);
+    // } else {
+    //   Get.offAllNamed(RouteNames.main);
+    // }
     // 歡迎頁
-    Future.delayed(const Duration(seconds: 1), () {
-      Get.offAllNamed(RouteNames.systemWelcome);
-    });
+    // Future.delayed(const Duration(seconds: 1), () {
+    //   Get.offAllNamed(RouteNames.systemWelcome);
+    // });
   }
 
   // @override
