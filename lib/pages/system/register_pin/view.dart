@@ -6,7 +6,7 @@ import 'index.dart';
 class RegisterPinPage extends GetView<RegisterPinController> {
   const RegisterPinPage({Key? key}) : super(key: key);
 
-  // 主视图
+  // 主視圖
   Widget _buildView() {
     return const Center(
       child: Text("RegisterPinPage"),

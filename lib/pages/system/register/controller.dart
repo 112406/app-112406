@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../common/index.dart';
+
 class RegisterController extends GetxController {
   RegisterController();
   GlobalKey formKey = GlobalKey<FormState>();
@@ -23,6 +25,21 @@ class RegisterController extends GetxController {
   // 註冊
   void onSignUp() {
     if ((formKey.currentState as FormState).validate()) {
+      // aes 加密密碼
+      // var password = EncryptUtil().aesEncode(passwordController.text);
+      var password = passwordController.text;
+
+      //驗證通過
+      Get.offNamed(
+        RouteNames.systemRegisterPin,
+        arguments: UserRegisterReq(
+          username: userNameController.text,
+          password: password,
+          // email: emailController.text,
+          // firstName: firstNameController.text,
+          // lastName: lastNameController.text,
+        ),
+      );
       // 驗證通過提交數據
     }
   }

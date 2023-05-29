@@ -17,7 +17,7 @@ Map<String, String> localeZh = {
   //樣式
   LocaleKeys.stylesTitle: '樣式 && 功能 && 調試',
 
-  // welcome 欢迎
+  // welcome 歡迎
   LocaleKeys.welcomeOneTitle: '選擇您喜歡的產品',
   LocaleKeys.welcomeOneDesc:
       'Contrary to popular belief, Lorem Ipsum is not simply random text',
@@ -39,8 +39,8 @@ Map<String, String> localeZh = {
 
   // 註冊 - register user
   LocaleKeys.registerTitle: '歡迎',
-  LocaleKeys.registerDesc: '註冊新賬號',
-  LocaleKeys.registerFormName: '登錄賬號',
+  LocaleKeys.registerDesc: '註冊新帳號',
+  LocaleKeys.registerFormName: '登錄帳號',
   LocaleKeys.registerFormEmail: '電子郵件',
   LocaleKeys.registerFormPhoneNumber: '電話號碼',
   LocaleKeys.registerFormPassword: '密碼',
