@@ -54,4 +54,10 @@ Map<String, String> localeZh = {
   LocaleKeys.validatorMin: '長度不能小於 @size',
   LocaleKeys.validatorMax: '長度不能大於 @size',
   LocaleKeys.validatorPassword: '密碼長度必須 大於 @min 小於 @max',
+
+  // 登錄 - back login
+  LocaleKeys.loginBackTitle: '歡迎登入!',
+  LocaleKeys.loginBackDesc: '登入後繼續',
+  LocaleKeys.loginBackFieldEmail: '帳號',
+  LocaleKeys.loginBackFieldPassword: '登入密碼',
 };

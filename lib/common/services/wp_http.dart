@@ -102,9 +102,9 @@ class RequestInterceptors extends Interceptor {
     // super.onRequest(options, handler);
 
     // http header 頭加入 Authorization
-    // if (UserService.to.hasToken) {
-    //   options.headers['Authorization'] = 'Bearer ${UserService.to.token}';
-    // }
+    if (UserService.to.hasToken) {
+      options.headers['Authorization'] = 'Bearer ${UserService.to.token}';
+    }
 
     return handler.next(options);
     //如果你想完成請求並返回一些自定義數據，你可以resolve一個Response對象 `handler.resolve(response)`。
@@ -132,10 +132,10 @@ class RequestInterceptors extends Interceptor {
   }
 
   // 退出並重新登錄
-  // Future<void> _errorNoAuthLogout() async {
-  //   await UserService.to.logout();
-  //   Get.toNamed(RouteNames.systemLogin);
-  // }
+  Future<void> _errorNoAuthLogout() async {
+    // await UserService.to.logout();
+    Get.toNamed(RouteNames.systemLogin);
+  }
 
   @override
   Future<void> onError(DioError err, ErrorInterceptorHandler handler) async {
@@ -143,40 +143,38 @@ class RequestInterceptors extends Interceptor {
     switch (err.type) {
       case DioErrorType.badResponse: // 服務端自定義錯誤體處理
         {
-          // final response = err.response;
-          // final errorMessage = ErrorMessageModel.fromJson(response?.data);
-          //   switch (errorMessage.statusCode) {
-          //     // 401 未登錄
-          //     case 401:
-          //       // 註銷 並跳轉到登錄頁面
-          //       _errorNoAuthLogout();
-          //       break;
-          //     case 404:
-          //       break;
-          //     case 500:
-          //       break;
-          //     case 502:
-          //       break;
-          //     default:
-          //       break;
-          //   }
-          //   Loading.error(errorMessage.message);
-          // }
-          //     break;
-          //   case DioErrorType.unknown:
-          //     break;
-          //   case DioErrorType.cancel:
-          //     break;
-          //   case DioErrorType.connectionTimeout:
-          //     break;
-          //   default:
-          //     break;
-          // }
-          // DioError errNext = err.copyWith(
-          //   error: exception,
-          // );
-          // handler.next(errNext);
+          final response = err.response;
+          final errorMessage = ErrorMessageModel.fromJson(response?.data);
+          switch (errorMessage.statusCode) {
+            // 401 未登錄
+            case 401:
+              // 註銷 並跳轉到登錄頁面
+              _errorNoAuthLogout();
+              break;
+            case 404:
+              break;
+            case 500:
+              break;
+            case 502:
+              break;
+            default:
+              break;
+          }
+          Loading.error(errorMessage.message);
         }
+        break;
+      case DioErrorType.unknown:
+        break;
+      case DioErrorType.cancel:
+        break;
+      case DioErrorType.connectionTimeout:
+        break;
+      default:
+        break;
     }
+    DioError errNext = err.copyWith(
+      error: exception,
+    );
+    handler.next(errNext);
   }
 }

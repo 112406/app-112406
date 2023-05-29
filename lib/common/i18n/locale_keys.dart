@@ -49,4 +49,10 @@ class LocaleKeys {
   static const validatorMin = 'validator_min';
   static const validatorMax = 'validator_max';
   static const validatorPassword = 'validator_password';
+
+  // 登錄 - back login
+  static const loginBackTitle = 'login_back_title';
+  static const loginBackDesc = 'login_back_desc';
+  static const loginBackFieldEmail = 'login_back_field_email';
+  static const loginBackFieldPassword = 'login_back_field_password';
 }

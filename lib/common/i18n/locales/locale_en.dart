@@ -55,4 +55,10 @@ Map<String, String> localeEn = {
   LocaleKeys.validatorMax: 'Length cannot be greater than @size',
   LocaleKeys.validatorPassword:
       'password must have between @min and @max digits',
+
+  // 登錄 - back login
+  LocaleKeys.loginBackTitle: 'Welcome login!',
+  LocaleKeys.loginBackDesc: 'Sign in to continue',
+  LocaleKeys.loginBackFieldEmail: 'Name',
+  LocaleKeys.loginBackFieldPassword: 'Password',
 };

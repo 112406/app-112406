@@ -12,4 +12,6 @@ class AssetsSvgs {
   static const workmode5Svg = 'assets/svgs/workmode5.svg';
   static const workmode6Svg = 'assets/svgs/workmode6.svg';
   static const workmode7Svg = 'assets/svgs/workmode7.svg';
+  static const facebookSvg = 'assets/svgs/facebook.svg';
+  static const googleSvg = 'assets/svgs/google.svg';
 }

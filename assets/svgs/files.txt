@@ -1,4 +1,6 @@
 static const cancelSvg = 'assets/svgs/cancel.svg';
+static const facebookSvg = 'assets/svgs/facebook.svg';
+static const googleSvg = 'assets/svgs/google.svg';
 static const historyBtnSvg = 'assets/svgs/history_btn.svg';
 static const logoSvg = 'assets/svgs/logo.svg';
 static const settingBtnSvg = 'assets/svgs/setting_btn.svg';

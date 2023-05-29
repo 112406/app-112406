@@ -19,5 +19,6 @@ class Global {
       Get.putAsync<ConfigService>(() async => await ConfigService().init()),
     ]).whenComplete(() {});
     Get.put<WPHttpService>(WPHttpService());
+    Get.put<UserService>(UserService());
   }
 }
