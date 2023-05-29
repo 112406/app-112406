@@ -1,4 +1,7 @@
 class AssetsImages {
+  static const levelPng = 'assets/images/level.png';
+  static const achievementPng = 'assets/images/achievement.png';
+  static const socialPng = 'assets/images/social.png';
   static const accessTimePng = 'assets/images/access-time.png';
   static const cancelPng = 'assets/images/cancel.png';
   static const deIncreasePng = 'assets/images/de-increase.png';

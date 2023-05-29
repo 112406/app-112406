@@ -60,4 +60,11 @@ Map<String, String> localeZh = {
   LocaleKeys.loginBackDesc: '登入後繼續',
   LocaleKeys.loginBackFieldEmail: '帳號',
   LocaleKeys.loginBackFieldPassword: '登入密碼',
+
+  // 首頁
+  LocaleKeys.pageBtnhistory: '記錄',
+  LocaleKeys.pageBtnArchievement: '成就',
+  LocaleKeys.pageBtnSocial: '社群',
+  LocaleKeys.pageBtnSetting: '設定',
+  LocaleKeys.pageBtnWorkout: '運動',
 };

@@ -61,4 +61,11 @@ Map<String, String> localeEn = {
   LocaleKeys.loginBackDesc: 'Sign in to continue',
   LocaleKeys.loginBackFieldEmail: 'Name',
   LocaleKeys.loginBackFieldPassword: 'Password',
+
+  // 首頁
+  LocaleKeys.pageBtnhistory: 'Record',
+  LocaleKeys.pageBtnArchievement: 'Archieve',
+  LocaleKeys.pageBtnSetting: 'Setting',
+  LocaleKeys.pageBtnSocial: 'Social',
+  LocaleKeys.pageBtnWorkout: 'Workout',
 };

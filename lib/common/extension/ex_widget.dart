@@ -677,7 +677,7 @@ extension ExWidget on Widget {
   /// 內間距 上
   Widget sliverPaddingTop(double val) => sliverPadding(top: val);
 
-  /// 内间距 纵向
+  /// 内间距 縱向
   Widget sliverPaddingVertical(double val) => sliverPadding(vertical: val);
 
   /// stack布局 位置
