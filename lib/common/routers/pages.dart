@@ -15,6 +15,10 @@ class RoutePages {
       page: () => const MainPage(),
     ),
     GetPage(
+      name: RouteNames.sportsSportsIndex,
+      page: () => const SportsIndexPage(),
+    ),
+    GetPage(
       name: RouteNames.historyHistoryDetails,
       page: () => const HistoryDetailsPage(),
     ),

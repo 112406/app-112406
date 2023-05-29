@@ -1,6 +1,7 @@
 class RouteNames {
   static const main = '/';
 
+  static const sportsSportsIndex = '/sports_sports_index';
   static const historyHistoryDetails = '/history_history_details';
   static const historyHistoryList = '/history_history_list';
   static const historyHome = '/history_home';
