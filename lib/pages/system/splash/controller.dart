@@ -17,17 +17,23 @@ class SplashController extends GetxController {
     // 刪除設備啟動圖
     FlutterNativeSplash.remove();
     // 樣式配置
-    if (ConfigService.to.isAlreadyOpen) {
-      Get.offAllNamed(RouteNames.systemWelcome);
-    } else {
-      Get.offAllNamed(RouteNames.main);
-    }
+    // if (ConfigService.to.isAlreadyOpen) {
+    //   Get.offAllNamed(RouteNames.systemWelcome);
+    // } else {
+    //   Get.offAllNamed(RouteNames.main);
+    // }
     // _initData();
     _jumpToPage(); // 跳轉界面
   }
 
   _jumpToPage() {
-    Get.offAllNamed(RouteNames.main);
+    Future.delayed(const Duration(seconds: 1)).then((_) {
+      if (!ConfigService.to.isAlreadyOpen) {
+        Get.offAllNamed(RouteNames.main);
+      } else {
+        Get.offAllNamed(RouteNames.systemWelcome);
+      }
+    });
 
     // Get.toNamed(RouteNames.stylesStylesIndex);
 

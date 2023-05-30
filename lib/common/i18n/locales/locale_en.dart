@@ -68,4 +68,10 @@ Map<String, String> localeEn = {
   LocaleKeys.pageBtnSetting: 'Setting',
   LocaleKeys.pageBtnCommunity: 'Community',
   LocaleKeys.pageBtnWorkout: 'Workout',
+
+  // 社群 導航列
+  LocaleKeys.tabBarHome: 'Home',
+  LocaleKeys.tabBarMessage: 'Message',
+  LocaleKeys.tabBarProfile: 'Profile',
+  LocaleKeys.tabBarRanking: 'Ranking',
 };

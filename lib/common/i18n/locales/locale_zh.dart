@@ -67,4 +67,10 @@ Map<String, String> localeZh = {
   LocaleKeys.pageBtnCommunity: '社群',
   LocaleKeys.pageBtnSetting: '設定',
   LocaleKeys.pageBtnWorkout: '運動',
+
+  // 社群 導航列
+  LocaleKeys.tabBarHome: '主頁',
+  LocaleKeys.tabBarMessage: '聊天',
+  LocaleKeys.tabBarProfile: '個人檔案',
+  LocaleKeys.tabBarRanking: '排行榜',
 };

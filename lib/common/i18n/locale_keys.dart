@@ -62,4 +62,10 @@ class LocaleKeys {
   static const pageBtnAchievement = 'page_btn_achievement';
   static const pageBtnSetting = 'page_btn_setting';
   static const pageBtnWorkout = 'page_btn_workout';
+
+  // 社群 導航列
+  static const tabBarHome = 'tab_bar_home';
+  static const tabBarMessage = 'tab_bar_message';
+  static const tabBarRanking = 'tab_bar_ranking';
+  static const tabBarProfile = 'tab_bar_profile';
 }

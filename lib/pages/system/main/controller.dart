@@ -6,14 +6,12 @@ class MainController extends GetxController {
 
   _initData() {
     update(["main"]);
+
+    // 測試用
+    Get.toNamed(RouteNames.systemLogin);
   }
 
   void onTap() {}
-
-  // @override
-  // void onInit() {
-  //   super.onInit();
-  // }
 
   // 歷史紀錄
   void onHistory() {
@@ -47,6 +45,17 @@ class MainController extends GetxController {
 
     Get.toNamed(RouteNames.systemRegister);
   }
+
+  // @override
+  // void onInit() {
+  //   super.onInit();
+  // }
+
+  // @override
+  // void onReady() {
+  //   super.onReady();
+  //   _initData();
+  // }
 
   // @override
   // void onClose() {

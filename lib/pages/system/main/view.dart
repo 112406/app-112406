@@ -5,27 +5,8 @@ import 'package:project_fitness/common/index.dart';
 
 import 'index.dart';
 
-class MainPage extends StatefulWidget {
+class MainPage extends GetView<MainController> {
   const MainPage({Key? key}) : super(key: key);
-
-  @override
-  State<MainPage> createState() => _MainPageState();
-}
-
-class _MainPageState extends State<MainPage>
-    with AutomaticKeepAliveClientMixin {
-  @override
-  bool get wantKeepAlive => true;
-
-  @override
-  Widget build(BuildContext context) {
-    super.build(context);
-    return const _MainViewGetX();
-  }
-}
-
-class _MainViewGetX extends GetView<MainController> {
-  const _MainViewGetX({Key? key}) : super(key: key);
 
   // 主視圖
   Widget _buildView() {

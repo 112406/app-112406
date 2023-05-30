@@ -32,6 +32,9 @@ class LoginController extends GetxController {
         // 本地保存 token
         await UserService.to.setToken(res.token!);
 
+        //獲取用戶資料
+        // await UserService.to.getProfile();
+
         Loading.success();
         Get.back(result: true);
       } finally {
