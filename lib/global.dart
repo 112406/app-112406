@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get/get.dart';
-import 'package:project_fitness/common/utils/loading.dart';
 
 import 'common/index.dart';
 
@@ -15,9 +14,7 @@ class Global {
     Loading();
 
     // 初始化服務
-    await Future.wait([
-      Get.putAsync<ConfigService>(() async => await ConfigService().init()),
-    ]).whenComplete(() {});
+    Get.put<ConfigService>(ConfigService());
     Get.put<WPHttpService>(WPHttpService());
     Get.put<UserService>(UserService());
   }

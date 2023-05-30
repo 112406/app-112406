@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'index.dart';
 
-/// 记录路由的变化
+/// 記錄路由的變化
 class RouteObservers<R extends Route<dynamic>> extends RouteObserver<R> {
   @override
   void didPush(Route<dynamic> route, Route<dynamic>? previousRoute) {
