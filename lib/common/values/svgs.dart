@@ -14,4 +14,8 @@ class AssetsSvgs {
   static const workmode7Svg = 'assets/svgs/workmode7.svg';
   static const facebookSvg = 'assets/svgs/facebook.svg';
   static const googleSvg = 'assets/svgs/google.svg';
+  static const navHomeSvg = 'assets/svgs/nav-home.svg';
+  static const navMessageSvg = 'assets/svgs/nav-message.svg';
+  static const navProfileSvg = 'assets/svgs/nav-profile.svg';
+  static const navRankingSvg = 'assets/svgs/nav-ranking.svg';
 }

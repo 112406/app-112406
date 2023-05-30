@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-        designSize: const Size(414, 896), // 設計稿中設備的尺寸(單位隨意,建議dp,但在使用過程中必須保持一致)
+        designSize: const Size(414, 896), // 設計稿中設備的尺寸
         splitScreenMode: false, // 支持分屏尺寸
         minTextAdapt: false, // 是否根據寬度/高度中的最小值適配文字
         // 一般返回一個material app類型的function()
