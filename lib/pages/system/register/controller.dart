@@ -25,7 +25,7 @@ class RegisterController extends GetxController {
   // 註冊
   void onSignUp() {
     if ((formKey.currentState as FormState).validate()) {
-      // aes 加密密碼
+      // AES 加密密碼
       // var password = EncryptUtil().aesEncode(passwordController.text);
       var password = passwordController.text;
 
