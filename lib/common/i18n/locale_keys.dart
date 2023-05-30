@@ -58,8 +58,8 @@ class LocaleKeys {
 
   // 首頁
   static const pageBtnhistory = 'page_btn_record';
-  static const pageBtnSocial = 'page_btn_social';
-  static const pageBtnArchievement = 'page_btn_archieve';
+  static const pageBtnCommunity = 'page_btn_community';
+  static const pageBtnAchievement = 'page_btn_achievement';
   static const pageBtnSetting = 'page_btn_setting';
   static const pageBtnWorkout = 'page_btn_workout';
 }

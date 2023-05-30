@@ -64,8 +64,8 @@ Map<String, String> localeEn = {
 
   // 首頁
   LocaleKeys.pageBtnhistory: 'Record',
-  LocaleKeys.pageBtnArchievement: 'Archieve',
+  LocaleKeys.pageBtnAchievement: 'Achievement',
   LocaleKeys.pageBtnSetting: 'Setting',
-  LocaleKeys.pageBtnSocial: 'Social',
+  LocaleKeys.pageBtnCommunity: 'Community',
   LocaleKeys.pageBtnWorkout: 'Workout',
 };

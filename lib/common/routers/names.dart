@@ -1,6 +1,8 @@
 class RouteNames {
   static const main = '/';
 
+  static const communityCommunityMain = '/community_community_main';
+  static const achievementAchievementIndex = '/achievement_achievement_index';
   static const sportsSportsIndex = '/sports_sports_index';
   static const historyHistoryDetails = '/history_history_details';
   static const historyHistoryList = '/history_history_list';

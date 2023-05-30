@@ -14,6 +14,15 @@ class RoutePages {
       name: RouteNames.main,
       page: () => const MainPage(),
     ),
+
+    GetPage(
+      name: RouteNames.achievementAchievementIndex,
+      page: () => const AchievementIndexPage(),
+    ),
+    GetPage(
+      name: RouteNames.communityCommunityMain,
+      page: () => const CommunityMainPage(),
+    ),
     GetPage(
       name: RouteNames.sportsSportsIndex,
       page: () => const SportsIndexPage(),

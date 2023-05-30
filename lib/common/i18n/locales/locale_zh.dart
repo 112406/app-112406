@@ -63,8 +63,8 @@ Map<String, String> localeZh = {
 
   // 首頁
   LocaleKeys.pageBtnhistory: '記錄',
-  LocaleKeys.pageBtnArchievement: '成就',
-  LocaleKeys.pageBtnSocial: '社群',
+  LocaleKeys.pageBtnAchievement: '成就',
+  LocaleKeys.pageBtnCommunity: '社群',
   LocaleKeys.pageBtnSetting: '設定',
   LocaleKeys.pageBtnWorkout: '運動',
 };

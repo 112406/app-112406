@@ -65,9 +65,9 @@ class _MainViewGetX extends GetView<MainController> {
                         AssetsImages.socialPng,
                         size: 80,
                       ).paddingLeft(AppSpace.page),
-                      LocaleKeys.pageBtnSocial.tr,
+                      LocaleKeys.pageBtnCommunity.tr,
                       onTap: () {
-                        // Get.toNamed(R)
+                        controller.onCommunity();
                       },
                     ),
                     ButtonWidget.icon(
@@ -82,8 +82,10 @@ class _MainViewGetX extends GetView<MainController> {
                         AssetsImages.achievementPng,
                         size: 80,
                       ),
-                      LocaleKeys.pageBtnArchievement.tr,
-                      onTap: () {},
+                      LocaleKeys.pageBtnAchievement.tr,
+                      onTap: () {
+                        controller.onAchievement();
+                      },
                     ).paddingRight(AppSpace.page),
                   ],
                 ),
@@ -108,7 +110,9 @@ class _MainViewGetX extends GetView<MainController> {
                         size: 80,
                       ),
                       LocaleKeys.pageBtnWorkout.tr,
-                      onTap: () {},
+                      onTap: () {
+                        controller.onSport();
+                      },
                     ),
                     ButtonWidget.iconTextUpDown(
                       IconWidget.image(
@@ -116,7 +120,9 @@ class _MainViewGetX extends GetView<MainController> {
                         size: 80,
                       ).paddingHorizontal(25),
                       LocaleKeys.pageBtnhistory.tr,
-                      onTap: () {},
+                      onTap: () {
+                        controller.onHistory();
+                      },
                     ),
                     ButtonWidget.iconTextUpDown(
                       IconWidget.image(
@@ -124,7 +130,9 @@ class _MainViewGetX extends GetView<MainController> {
                         size: 80,
                       ),
                       LocaleKeys.pageBtnSetting.tr,
-                      onTap: () {},
+                      onTap: () {
+                        controller.onSetting();
+                      },
                     ),
                   ],
                 ),

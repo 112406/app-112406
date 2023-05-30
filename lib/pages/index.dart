@@ -1,6 +1,8 @@
 library pages;
 
 // export './xxxx.dart';
+export 'achievement/achievement_index/index.dart';
+export 'community/community_main/index.dart';
 export 'sports/sports_index/index.dart';
 export 'history/history_details/index.dart';
 export 'history/history_list/index.dart';
