@@ -20,7 +20,7 @@
 |        | bottom_sheet     | 底部彈出框   |
 |        | components       | 業務組件     |
 |        | other            | 其它         |
-| system | splash           | 進入首頁前置  |
+| system | splash           | 進入首頁前置 |
 |        | welcome          | 歡迎         |
 |        | main             | 主界面       |
 |        | login            | 登錄         |
@@ -29,15 +29,18 @@
 |        | user_agreement   | 用戶協議     |
 | my     | my_index         | 個人化首頁   |
 |        | profile_edit     | 編輯個人信息 |
-|        | language         | 多語言      |
-|        | theme            | 主題        |
+|        | language         | 多語言       |
+|        | theme            | 主題         |
 | history| home             | 歷史首頁     |
 |        | history_list     | 歷史列表     |
 |        | history_details  | 歷史詳情頁   |
 | sports | category         | 運動種類頁   |
-|        | item_search      | 項目搜尋      |
-|        | counter_index     | 計數列表     |
-
+|        | item_search      | 項目搜尋     |
+|        | counter_index    | 計數列表     |
+| ranking| ranking_index    | 運動記錄排名 |
+| msg    | msg_index        | 聊天介面     |
+| community| community_main | 社群介面     |
+|achievement| achievement_index | 成就介面 |
 
 This project is a starting point for a Flutter application.
 
