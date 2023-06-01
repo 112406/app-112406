@@ -1,5 +1,4 @@
-library community_main;
+library ranking_index;
 
 export './controller.dart';
 export './view.dart';
-export './binding.dart';

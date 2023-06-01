@@ -131,7 +131,7 @@ class RequestInterceptors extends Interceptor {
     }
   }
 
-  // 退出並重新登錄
+  // 退出並重新登入
   Future<void> _errorNoAuthLogout() async {
     // await UserService.to.logout();
     Get.toNamed(RouteNames.systemLogin);
@@ -146,7 +146,7 @@ class RequestInterceptors extends Interceptor {
           final response = err.response;
           final errorMessage = ErrorMessageModel.fromJson(response?.data);
           switch (errorMessage.statusCode) {
-            // 401 未登錄
+            // 401 未登入
             case 401:
               // 註銷 並跳轉到登錄頁面
               _errorNoAuthLogout();

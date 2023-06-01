@@ -52,7 +52,7 @@ class ConfigService extends GetxService {
     _platform = await PackageInfo.fromPlatform();
   }
 
-  // 初始语言
+  // 初始語言
   void initLocale() {
     var langCode = Storage().getString(Constants.storageLanguageCode);
     if (langCode.isEmpty) return;
@@ -63,7 +63,7 @@ class ConfigService extends GetxService {
     locale = Translation.supportedLocales[index];
   }
 
-  // 更改语言
+  // 更改語言
   void onLocaleUpdate(Locale value) {
     locale = value;
     Get.updateLocale(value);

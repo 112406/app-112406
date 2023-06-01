@@ -31,7 +31,7 @@ Map<String, String> localeEn = {
   LocaleKeys.welcomeNext: 'Next',
   LocaleKeys.welcomeStart: 'Get Started',
 
-  // 登錄、註冊 - 通用
+  // 登入、註冊 - 通用
   LocaleKeys.loginForgotPassword: 'Forgot Password?',
   LocaleKeys.loginSignIn: 'Sign In',
   LocaleKeys.loginSignUp: 'Sign Up',

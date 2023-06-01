@@ -15,7 +15,7 @@ class UserApi {
     return false;
   }
 
-  /// 登錄
+  /// 登入
   static Future<UserTokenModel> login(UserLoginReq? req) async {
     var res = await WPHttpService.to.post(
       '/signin',

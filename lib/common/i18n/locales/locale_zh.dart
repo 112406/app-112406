@@ -31,7 +31,7 @@ Map<String, String> localeZh = {
   LocaleKeys.welcomeNext: '下一頁',
   LocaleKeys.welcomeStart: '立刻開始',
 
-  // 登錄、註冊 - 通用
+  // 登入、註冊 - 通用
   LocaleKeys.loginForgotPassword: '忘記密碼?',
   LocaleKeys.loginSignIn: '登 入',
   LocaleKeys.loginSignUp: '註 冊',
@@ -55,7 +55,7 @@ Map<String, String> localeZh = {
   LocaleKeys.validatorMax: '長度不能大於 @size',
   LocaleKeys.validatorPassword: '密碼長度必須 大於 @min 小於 @max',
 
-  // 登錄 - back login
+  // 登入 - back login
   LocaleKeys.loginBackTitle: '歡迎登入!',
   LocaleKeys.loginBackDesc: '登入後繼續',
   LocaleKeys.loginBackFieldEmail: '帳號',

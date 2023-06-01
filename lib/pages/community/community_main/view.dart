@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:project_fitness/common/index.dart';
-
-import 'index.dart';
+import 'package:project_fitness/pages/index.dart';
 
 class CommunityMainPage extends StatefulWidget {
   const CommunityMainPage({Key? key}) : super(key: key);
@@ -78,15 +77,14 @@ class _CommunityMainViewGetX extends GetView<CommunityMainController> {
         ),
         // 內容頁
         body: PageView(
-          physics: const NeverScrollableScrollPhysics(),
+          physics: const NeverScrollableScrollPhysics(), // 不响应用户的滚动
           controller: controller.pageController,
           onPageChanged: controller.onIndexChanged,
           children: const [
-            // 加入空頁面佔位
-            Text("1"),
-            Text("2"),
-            Text("3"),
-            Text("4"),
+            HomePage(),
+            RankingIndexPage(),
+            MsgIndexPage(),
+            MyIndexPage(),
           ],
         ),
       ),
@@ -96,16 +94,9 @@ class _CommunityMainViewGetX extends GetView<CommunityMainController> {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<CommunityMainController>(
-      init: CommunityMainController(),
+      // init: CommunityMainController(),
       id: "community_main",
-      builder: (_) {
-        return Scaffold(
-          appBar: AppBar(title: const Text("community_main")),
-          body: SafeArea(
-            child: _buildView(),
-          ),
-        );
-      },
+      builder: (_) => _buildView(),
     );
   }
 }

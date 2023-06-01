@@ -10,7 +10,7 @@ class UserService extends GetxService {
   String token = '';
   // final _profile = UserProfileModel().obs;
 
-  /// 是否登錄
+  /// 是否登入
   bool get isLogin => _isLogin.value;
 
   /// 用戶 profile
@@ -63,7 +63,7 @@ class UserService extends GetxService {
   //   token = '';
   // }
 
-  /// 檢查是否登錄
+  /// 檢查是否登入
   Future<bool> checkIsLogin() async {
     if (_isLogin.value == false) {
       await Get.toNamed(RouteNames.systemLogin);

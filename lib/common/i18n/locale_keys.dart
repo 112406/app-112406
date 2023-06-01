@@ -26,7 +26,7 @@ class LocaleKeys {
   static const welcomeNext = 'welcome_next';
   static const welcomeStart = 'welcome_start';
 
-  // 登錄、註冊 - 通用
+  // 登入、註冊 - 通用
   static const loginForgotPassword = 'login_forgot_password';
   static const loginSignIn = 'login_sign_in';
   static const loginOrText = 'login_or_text';

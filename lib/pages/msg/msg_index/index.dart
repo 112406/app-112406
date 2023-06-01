@@ -1,5 +1,4 @@
-library community_main;
+library msg_index;
 
 export './controller.dart';
 export './view.dart';
-export './binding.dart';

@@ -22,10 +22,7 @@ class RoutePages {
     GetPage(
       name: RouteNames.communityCommunityMain,
       page: () => const CommunityMainPage(),
-    ),
-    GetPage(
-      name: RouteNames.sportsSportsIndex,
-      page: () => const SportsIndexPage(),
+      binding: CommunityMainBinding(),
     ),
     GetPage(
       name: RouteNames.historyHistoryDetails,
@@ -38,6 +35,10 @@ class RoutePages {
     GetPage(
       name: RouteNames.historyHome,
       page: () => const HomePage(),
+    ),
+    GetPage(
+      name: RouteNames.msgMsgIndex,
+      page: () => const MsgIndexPage(),
     ),
     GetPage(
       name: RouteNames.myLanguage,
@@ -56,6 +57,10 @@ class RoutePages {
       page: () => const ThemePage(),
     ),
     GetPage(
+      name: RouteNames.rankingRankingIndex,
+      page: () => const RankingIndexPage(),
+    ),
+    GetPage(
       name: RouteNames.sportsCategory,
       page: () => const CategoryPage(),
     ),
@@ -66,6 +71,10 @@ class RoutePages {
     GetPage(
       name: RouteNames.sportsItemSearch,
       page: () => const ItemSearchPage(),
+    ),
+    GetPage(
+      name: RouteNames.sportsSportsIndex,
+      page: () => const SportsIndexPage(),
     ),
     GetPage(
       name: RouteNames.stylesBottomSheet,
@@ -118,6 +127,10 @@ class RoutePages {
     GetPage(
       name: RouteNames.systemLogin,
       page: () => const LoginPage(),
+    ),
+    GetPage(
+      name: RouteNames.systemLoginQuick,
+      page: () => const LoginQuickPage(),
     ),
     GetPage(
       name: RouteNames.systemMain,
