@@ -77,7 +77,7 @@ class _CommunityMainViewGetX extends GetView<CommunityMainController> {
         ),
         // 內容頁
         body: PageView(
-          physics: const NeverScrollableScrollPhysics(), // 不响应用户的滚动
+          physics: const NeverScrollableScrollPhysics(), // 不響應用戶的滾動
           controller: controller.pageController,
           onPageChanged: controller.onIndexChanged,
           children: const [
