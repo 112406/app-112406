@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "249167061297",
+    "firebase_url": "https://healthcareapp-6996a-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "healthcareapp-6996a",
+    "storage_bucket": "healthcareapp-6996a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:249167061297:android:6970419525d2da80c85010",
+        "android_client_info": {
+          "package_name": "com.ntub.healthcare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "249167061297-kuaeibgbf44kve1or34ai9uvf6kd19j3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ntub.healthcare",
+            "certificate_hash": "86c66b8535d181ad9f2d20dcab4c15fc8ae00057"
+          }
+        },
+        {
+          "client_id": "249167061297-ig828ce8tq5avgis7nkebjfoeb5s72r0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAV93cS5mBqD-klIEzXZVRpgqwfYFufGqE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "249167061297-ig828ce8tq5avgis7nkebjfoeb5s72r0.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "249167061297-9d26lbqhqa5ok8o31hs22mnghuiqoiih.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.ntub.healthcare"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

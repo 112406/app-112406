@@ -1,0 +1,9 @@
+
+      GetPage(
+        name: RouteNames.wellnessWellnessContent,
+        page: () => const WellnessContentPage(),
+      ),
+      GetPage(
+        name: RouteNames.wellnessWellnessIndex,
+        page: () => const WellnessIndexPage(),
+      ),

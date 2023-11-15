@@ -1,0 +1,6 @@
+static const 01ExtraGridSvg = 'assets/svgs/Monotone/extra/01__extra_grid.svg';
+static const 02ExtaPaddingSvg = 'assets/svgs/Monotone/extra/02__exta_padding.svg';
+static const 03ExtraFigmaComponentSvg = 'assets/svgs/Monotone/extra/03__extra_figma_component.svg';
+static const 04ExtraOutlineSvg = 'assets/svgs/Monotone/extra/04__extra_outline.svg';
+static const 05ExtraSolidSvg = 'assets/svgs/Monotone/extra/05__extra_solid.svg';
+static const 06ExtraDuotoneSvg = 'assets/svgs/Monotone/extra/06__extra_duotone.svg';

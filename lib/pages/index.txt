@@ -1,0 +1,2 @@
+export 'wellness/wellness_content/index.dart';
+export 'wellness/wellness_index/index.dart';

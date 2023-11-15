@@ -1,0 +1,2 @@
+static const wellnessWellnessContent = '/wellness_wellness_content';
+static const wellnessWellnessIndex = '/wellness_wellness_index';
