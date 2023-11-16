@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-/// 产品色
+/// 產品色
 @immutable
 class ExtWooColorTheme extends ThemeExtension<ExtWooColorTheme> {
   static const light = ExtWooColorTheme(highlight: Color(0xFFF77866));
   static const dark = ExtWooColorTheme(highlight: Color(0xFFFFB4A9));
 
-  /// 强调色
+  /// 強調色
   final Color? highlight;
 
   const ExtWooColorTheme({

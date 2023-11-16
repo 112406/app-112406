@@ -36,7 +36,6 @@ class HomeIndexPage extends GetView<HomeIndexController> {
               // 文字
               TextWidget.textsm(
                 Day().format("WWW,DD MMM YYYY"),
-                color: AppColors.gray50,
                 weight: FontWeight.w600,
               ),
             ],
@@ -45,24 +44,10 @@ class HomeIndexPage extends GetView<HomeIndexController> {
           TextWidget.headingsm(
             "${LocaleKeys.ghomeHelloUser.tr}${UserService.to.profile.name}",
             // LocaleKeys.ghomeHelloUser.tr,
-            color: AppColors.gray100,
             weight: FontWeight.w900,
           ).alignLeft()
         ],
       ),
-      // TextWidget.textsm(
-      //   Day().format("WWW,DD MMM YYYY"),
-      //   color: AppColors.gray50,
-      //   weight: FontWeight.w600,
-      // ),
-      // title: InputWidget.search(
-      //   // 提示文字，多語言
-      //   hintText: LocaleKeys.ghomeHelloUser.tr,
-      //   // 點擊事件
-      //   onTap: controller.onAppBarTap,
-      //   // 只讀
-      //   readOnly: true,
-      // ),
       // 右側的按鈕區
       actions: [
         // 圖標
@@ -70,7 +55,7 @@ class HomeIndexPage extends GetView<HomeIndexController> {
           width: 64.w,
           height: 64.w,
           decoration: BoxDecoration(
-            color: AppColors.white,
+            color: AppColors.onPrimaryContainer,
             borderRadius: BorderRadius.circular(16),
           ),
           child: ButtonWidget.icon(IconWidget.svg(
@@ -82,16 +67,6 @@ class HomeIndexPage extends GetView<HomeIndexController> {
               // left: 0,
               right: AppSpace.page,
             ),
-        // IconWidget.svg(
-        //   AssetsMonotoneSvgs.bellNotificationSvg41,
-        //   size: 20,
-        //   isDot: true, // 未讀訊息 小圓點
-        // )
-        //     .unconstrained() // 去掉約束, appBar 會有個約束下來
-        //     .padding(
-        //       left: AppSpace.listItem,
-        //       right: AppSpace.page,
-        //     ),
       ],
     );
   }
@@ -99,74 +74,61 @@ class HomeIndexPage extends GetView<HomeIndexController> {
   // 身體分數
   Widget _buildBanner() {
     return Container(
-            padding: const EdgeInsets.all(12),
-            height: 104,
-            width: double.infinity,
-            decoration: BoxDecoration(
-              color: AppColors.white,
-              borderRadius: BorderRadius.circular(16),
-            ),
-            child: Row(
-              children: [
-                Container(
-                  // padding: const EdgeInsets.only(
-                  //   left: 16,
-                  //   right: 16,
-                  // ),
-                  height: 80.w,
-                  width: 80.w,
-                  decoration: BoxDecoration(
-                    color: AppColors.purple60,
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  // padding: const EdgeInsets.only(
-                  //   left: 16,
-                  //   right: 16,
-                  // ),
-                  child: Center(
-                    child: TextWidget.headingmd(
-                      "88",
-                      weight: FontWeight.w900,
-                      color: AppColors.white,
-                    ).paddingAll(8),
-                  ),
-                ),
-                const SizedBox(width: 16),
-                Expanded(
-                    child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    TextWidget.textmd(
-                      LocaleKeys.ghomeWellnessScoreTitle.tr,
-                      weight: FontWeight.w900,
-                    ),
-                    const SizedBox(height: 8),
-                    TextWidget.paragraphxs(
-                      LocaleKeys.ghomeWellnessScoreDesc.tr,
-                      color: AppColors.gray70,
-                      weight: FontWeight.w500,
-                      maxLines: 2,
-                      softWrap: true,
-                    )
-                  ],
-                ))
-              ],
-            )
-
-            // Container(
+      padding: const EdgeInsets.all(12),
+      height: 104,
+      width: double.infinity,
+      decoration: BoxDecoration(
+        color: AppColors.white,
+        borderRadius: BorderRadius.circular(16),
+      ),
+      child: Row(
+        children: [
+          Container(
             // padding: const EdgeInsets.only(
-            //   top: 12,
-            //   bottom: 12,
-            // // ),
-            // height: 64.w,
-            // width: 64.w,
-            // decoration: BoxDecoration(
-            //   color: AppColors.purple60,
-            //   borderRadius: BorderRadius.circular(12),
+            //   left: 16,
+            //   right: 16,
             // ),
+            height: 80.w,
+            width: 80.w,
+            decoration: BoxDecoration(
+              color: AppColors.purple60,
+              borderRadius: BorderRadius.circular(12),
+            ),
+            // padding: const EdgeInsets.only(
+            //   left: 16,
+            //   right: 16,
             // ),
-            )
+            child: Center(
+              child: TextWidget.headingmd(
+                "88",
+                weight: FontWeight.w900,
+                color: AppColors.white,
+              ).paddingAll(8),
+            ),
+          ),
+          const SizedBox(width: 16),
+          Expanded(
+              child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              TextWidget.textmd(
+                LocaleKeys.ghomeWellnessScoreTitle.tr,
+                weight: FontWeight.w900,
+              ),
+              const SizedBox(height: 8),
+              TextWidget.paragraphxs(
+                LocaleKeys.ghomeWellnessScoreDesc.tr,
+                color: AppColors.gray70,
+                weight: FontWeight.w500,
+                maxLines: 2,
+                softWrap: true,
+              )
+            ],
+          ))
+        ],
+      ),
+    )
         .sliverToBoxAdapter()
         .sliverPaddingHorizontal(AppSpace.page)
         .sliverPaddingTop(32);
@@ -449,7 +411,7 @@ class HomeIndexPage extends GetView<HomeIndexController> {
           height: 104,
           width: double.infinity,
           decoration: BoxDecoration(
-            color: AppColors.white,
+            color: AppColors.primaryContainer,
             borderRadius: BorderRadius.circular(16),
           ),
           child: Row(
@@ -458,7 +420,7 @@ class HomeIndexPage extends GetView<HomeIndexController> {
                 height: 64.w,
                 width: 64.w,
                 decoration: BoxDecoration(
-                  color: AppColors.gray10,
+                  color: AppColors.onPrimaryContainer,
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Padding(
@@ -501,7 +463,7 @@ class HomeIndexPage extends GetView<HomeIndexController> {
           height: 104,
           width: double.infinity,
           decoration: BoxDecoration(
-            color: AppColors.white,
+            color: AppColors.primaryContainer,
             borderRadius: BorderRadius.circular(16),
           ),
           child: Row(
@@ -510,7 +472,7 @@ class HomeIndexPage extends GetView<HomeIndexController> {
                 height: 64.w,
                 width: 64.w,
                 decoration: BoxDecoration(
-                  color: AppColors.gray10,
+                  color: AppColors.onPrimaryContainer,
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Padding(
@@ -571,7 +533,7 @@ class HomeIndexPage extends GetView<HomeIndexController> {
           height: 104,
           width: double.infinity,
           decoration: BoxDecoration(
-            color: AppColors.white,
+            color: AppColors.primaryContainer,
             borderRadius: BorderRadius.circular(16),
           ),
           child: Row(
@@ -580,7 +542,7 @@ class HomeIndexPage extends GetView<HomeIndexController> {
                 height: 64.w,
                 width: 64.w,
                 decoration: BoxDecoration(
-                  color: AppColors.gray10,
+                  color: AppColors.onPrimaryContainer,
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Padding(
@@ -623,7 +585,7 @@ class HomeIndexPage extends GetView<HomeIndexController> {
           height: 104,
           width: double.infinity,
           decoration: BoxDecoration(
-            color: AppColors.white,
+            color: AppColors.primaryContainer,
             borderRadius: BorderRadius.circular(16),
           ),
           child: Row(
@@ -632,7 +594,7 @@ class HomeIndexPage extends GetView<HomeIndexController> {
                 height: 64.w,
                 width: 64.w,
                 decoration: BoxDecoration(
-                  color: AppColors.gray10,
+                  color: AppColors.onPrimaryContainer,
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Padding(

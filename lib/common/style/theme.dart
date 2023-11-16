@@ -17,6 +17,7 @@ class AppTheme {
 
   /// 暗色
   static ThemeData dark = ThemeData(
+    scaffoldBackgroundColor: const Color(0xFF090E1D),
     appBarTheme: const AppBarTheme(
       systemOverlayStyle: SystemUiOverlayStyle.light,
     ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-/// 基础功能色
+/// 基礎功能色
 @immutable
 class ExtBaseColorTheme extends ThemeExtension<ExtBaseColorTheme> {
   /// 亮
@@ -19,7 +19,7 @@ class ExtBaseColorTheme extends ThemeExtension<ExtBaseColorTheme> {
     danger: Color(0xFFF44336),
   );
 
-  /// 信息
+  /// 資訊
   final Color? info;
 
   /// 成功
@@ -28,7 +28,7 @@ class ExtBaseColorTheme extends ThemeExtension<ExtBaseColorTheme> {
   /// 警告
   final Color? warning;
 
-  /// 错误
+  /// 錯誤
   final Color? danger;
 
   const ExtBaseColorTheme({
