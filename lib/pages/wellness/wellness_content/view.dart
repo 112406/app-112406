@@ -25,17 +25,37 @@ class WellnessContentPage extends GetView<WellnessContentController> {
   Widget _newsContentItem(BuildContext context, NewsContentModel news) {
     if (news.paragraph != null && controller.i == 0) {
       controller.i++;
-      return Card(
-        child: Row(
-          children: [
-            Text(
-              news.paragraph!,
-              style: const TextStyle(fontSize: 18),
-              softWrap: true,
-            )
-          ],
+      return Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Text(
+          news.paragraph!,
+          style: const TextStyle(fontSize: 18),
+          softWrap: true,
         ),
       );
+      // return Card(
+      //   child: Row(
+      //     children: [
+      //       Container(
+      //         width: 10,
+      //         color: Colors.green,
+      //       ),
+      //       const VerticalDivider(
+      //         color: Colors.green,
+      //         thickness: 10,
+      //         width: 10,
+      //       ),
+      //       SizedBox(
+      //         width: MediaQuery.of(context).size.width * 0.9,
+      //         child: Text(
+      //           news.paragraph!,
+      //           style: const TextStyle(fontSize: 18),
+      //           softWrap: true,
+      //         ),
+      //       )
+      //     ],
+      //   ),
+      // );
     } else if (news.title != null) {
       return Padding(
         padding: const EdgeInsets.all(8.0),
