@@ -54,13 +54,13 @@ const darkColorScheme = ColorScheme(
   onErrorContainer: Color(0xFFFFDAD6),
   background: Color(0xFF090E1D),
   onBackground: Color(0xFFE4E2E6),
-  surface: Color(0xFF242E49),   // changed
+  surface: Color(0xFF242E49), // changed
   onSurface: Color(0xFFBEC5D2), // changed
   surfaceVariant: Color(0xFF45464F),
   onSurfaceVariant: Color(0xFFC5C6D0),
   outline: Color(0xFF3D4966), // changed
   onInverseSurface: Color(0xFF1B1B1F),
-  inverseSurface: Color(0xFFE4E2E6),
+  inverseSurface: Color(0xFFE4E2E6), // changed
   inversePrimary: Color(0xFF0054D7),
   shadow: Color(0xFF000000),
   surfaceTint: Color(0xFFB3C5FF),

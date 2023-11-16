@@ -59,8 +59,10 @@ class HomeIndexPage extends GetView<HomeIndexController> {
           ),
           child: ButtonWidget.icon(IconWidget.svg(
             AssetsMonotoneSvgs.bellNotificationSvg41,
+            color: AppColors.inverseSurface,
+
             /// color follow text color
-            color: Theme.of(Get.context!).colorScheme.onPrimary,
+            // color: Theme.of(Get.context!).colorScheme.onPrimary,
             size: 32,
             isDot: true, // 未讀訊息 小圓點
           )),
