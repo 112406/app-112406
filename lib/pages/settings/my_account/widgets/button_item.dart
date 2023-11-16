@@ -51,7 +51,7 @@ class ButtonItemWidget extends StatelessWidget {
         // 疊加圖示
         IconWidget.svg(
           svgPath,
-          color: Theme.of(context).colorScheme.onPrimary,
+          color: AppColors.onSurface,
           size: 24.w,
         ),
       ].toStack(

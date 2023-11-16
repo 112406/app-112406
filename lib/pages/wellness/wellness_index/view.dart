@@ -58,7 +58,11 @@ class WellnessIndexPage extends GetView<WellnessIndexController> {
       id: "wellness_index",
       builder: (_) {
         return Scaffold(
-          appBar: AppBar(title: Text(LocaleKeys.wellnessNewsTitle.tr)),
+          appBar: AppBar(
+            title: Text(LocaleKeys.wellnessNewsTitle.tr),
+            backgroundColor: Colors.transparent,
+            elevation: 0,
+          ),
           body: SafeArea(
             child: controller.newsCover.isEmpty
                 ? const Center(child: CircularProgressIndicator())

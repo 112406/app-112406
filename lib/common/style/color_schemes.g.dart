@@ -21,7 +21,7 @@ const lightColorScheme = ColorScheme(
   background: Color(0xFFF2F5F9),
   onBackground: Color(0xFF1B1B1F),
   surface: Color(0xFFFEFBFF),
-  onSurface: Color(0xFF1B1B1F),
+  onSurface: Color(0xFF090E1D),
   surfaceVariant: Color(0xFFE2E2EC),
   onSurfaceVariant: Color(0xFF45464F),
   outline: Color(0xFFDCE1E8),
@@ -38,9 +38,9 @@ const darkColorScheme = ColorScheme(
   brightness: Brightness.dark,
   primary: Color(0xFF0F67FE),
   onPrimary: Color(0xFFFFFFFF),
-  primaryContainer: Color(0xFF141B31),
-  onPrimaryContainer: Color(0xFF242E49),
-  secondary: Color(0xFF0F67FE),
+  primaryContainer: Color(0xFF141B31), // changed
+  onPrimaryContainer: Color(0xFF242E49), // changed
+  secondary: Color(0xFF0F67FE), // changed
   onSecondary: Color(0xFF003450),
   secondaryContainer: Color(0xFF004B71),
   onSecondaryContainer: Color(0xFFCBE6FF),
@@ -54,11 +54,11 @@ const darkColorScheme = ColorScheme(
   onErrorContainer: Color(0xFFFFDAD6),
   background: Color(0xFF090E1D),
   onBackground: Color(0xFFE4E2E6),
-  surface: Color(0xFF1B1B1F),
-  onSurface: Color(0xFFE4E2E6),
+  surface: Color(0xFF242E49),   // changed
+  onSurface: Color(0xFFBEC5D2), // changed
   surfaceVariant: Color(0xFF45464F),
   onSurfaceVariant: Color(0xFFC5C6D0),
-  outline: Color(0xFF3D4966),
+  outline: Color(0xFF3D4966), // changed
   onInverseSurface: Color(0xFF1B1B1F),
   inverseSurface: Color(0xFFE4E2E6),
   inversePrimary: Color(0xFF0054D7),
