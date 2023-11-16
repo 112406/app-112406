@@ -118,5 +118,8 @@ class LocaleKeys {
   // setting my account - sign out
   static const settingSignOutTitle = 'setting_sign_out_title';
 
+  // wellness news page
+  static const wellnessNewsTitle = 'wellness_news_title';
+
   // day package
 }

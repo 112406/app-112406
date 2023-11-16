@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:healthcare_app/common/index.dart';
+import 'package:healthcare_app/common/index.dart';
 
 /// 導航欄數據模型
 class NavigationItemModel {
@@ -31,7 +32,7 @@ class BuildNavigation extends StatelessWidget {
   Widget build(BuildContext context) {
     var ws = <Widget>[];
     for (var i = 0; i < items.length; i++) {
-      var color = (i == currentIndex) ? AppColors.primary : AppColors.gray30;
+      var color = (i == currentIndex) ? AppColors.primary : AppColors.gray40;
       var item = items[i];
       ws.add(
         <Widget>[

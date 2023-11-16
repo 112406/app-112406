@@ -1,7 +1,3 @@
-import 'dart:ui';
-
-import 'package:flutter/foundation.dart';
-
 import '../locale_keys.dart';
 
 /// 多語言 英文
@@ -121,4 +117,7 @@ Map<String, String> localeEn = {
 
   // setting my account - sign out
   LocaleKeys.settingSignOutTitle: 'Sign Out',
+
+  // wellness news page
+  LocaleKeys.wellnessNewsTitle: 'Wellness News',
 };

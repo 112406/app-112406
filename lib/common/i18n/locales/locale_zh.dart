@@ -109,4 +109,7 @@ Map<String, String> localeZh = {
 
   // setting my account - sign out
   LocaleKeys.settingSignOutTitle: '登出',
+
+  // wellness news page
+  LocaleKeys.wellnessNewsTitle: '健康新聞',
 };

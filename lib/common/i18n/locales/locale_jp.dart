@@ -1,7 +1,7 @@
 import '../locale_keys.dart';
 
 /// 多語言 英文
-Map<String, String> localeJp = {
+Map<String, String> localeJa = {
   // 通用
   LocaleKeys.commonSearchInput: 'キーワード検索',
   LocaleKeys.commonBottomSave: 'セーフ',
@@ -107,4 +107,7 @@ Map<String, String> localeJp = {
 
   // setting my account - sign out
   LocaleKeys.settingSignOutTitle: 'サインアウト',
+
+  // wellness news page
+  LocaleKeys.wellnessNewsTitle: 'ヘルシーニュース',
 };

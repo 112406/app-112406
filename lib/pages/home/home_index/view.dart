@@ -30,7 +30,7 @@ class HomeIndexPage extends GetView<HomeIndexController> {
               IconWidget.svg(
                 AssetsMonotoneSvgs.calendarSvg17,
                 size: 20,
-                color: AppColors.blue40,
+                color: AppColors.secondary,
               ),
               const SizedBox(width: 8),
               // 文字
@@ -43,7 +43,6 @@ class HomeIndexPage extends GetView<HomeIndexController> {
           const SizedBox(height: 8),
           TextWidget.headingsm(
             "${LocaleKeys.ghomeHelloUser.tr}${UserService.to.profile.name}",
-            // LocaleKeys.ghomeHelloUser.tr,
             weight: FontWeight.w900,
           ).alignLeft()
         ],
@@ -60,6 +59,8 @@ class HomeIndexPage extends GetView<HomeIndexController> {
           ),
           child: ButtonWidget.icon(IconWidget.svg(
             AssetsMonotoneSvgs.bellNotificationSvg41,
+            /// color follow text color
+            color: Theme.of(Get.context!).colorScheme.onPrimary,
             size: 32,
             isDot: true, // 未讀訊息 小圓點
           )),
@@ -78,7 +79,7 @@ class HomeIndexPage extends GetView<HomeIndexController> {
       height: 104,
       width: double.infinity,
       decoration: BoxDecoration(
-        color: AppColors.white,
+        color: AppColors.primaryContainer,
         borderRadius: BorderRadius.circular(16),
       ),
       child: Row(

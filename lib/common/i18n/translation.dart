@@ -8,12 +8,13 @@ import '../index.dart';
 class Translation extends Translations {
   // 當前系統語言
   static Locale? get locale => Get.deviceLocale;
-  // 默認語言 Locale(語言代碼, 國家代碼)
+  // 默認語言 Locale(語言代碼, 國家/地區代碼)
   static const fallbackLocale = Locale('en', 'US');
   // 支持語言列表
   static const supportedLocales = [
     Locale('en', 'US'),
     Locale('zh', 'TW'),
+    Locale('ja', 'JP')
   ];
   // 代理
   static const localizationsDelegates = [
@@ -26,5 +27,6 @@ class Translation extends Translations {
   Map<String, Map<String, String>> get keys => {
         'en': localeEn,
         'zh': localeZh,
+        'ja': localeJa,
       };
 }

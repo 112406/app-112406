@@ -21,6 +21,7 @@ class WellnessIndexPage extends GetView<WellnessIndexController> {
 
   Widget _newsItem(BuildContext context, NewsCoverModel news) {
     return Card(
+      color: AppColors.primaryContainer,
       margin: const EdgeInsets.all(12),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       child: InkWell(
@@ -57,7 +58,7 @@ class WellnessIndexPage extends GetView<WellnessIndexController> {
       id: "wellness_index",
       builder: (_) {
         return Scaffold(
-          appBar: AppBar(title: const Text("wellness_index")),
+          appBar: AppBar(title: Text(LocaleKeys.wellnessNewsTitle.tr)),
           body: SafeArea(
             child: controller.newsCover.isEmpty
                 ? const Center(child: CircularProgressIndicator())

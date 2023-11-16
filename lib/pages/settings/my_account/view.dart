@@ -75,7 +75,6 @@ class MyAccountPage extends GetView<MyAccountController> {
       ButtonItemWidget(
         title: LocaleKeys.settingSignOutTitle.tr,
         svgPath: AssetsSolidSvgs.arrowCurvedBottomRightSvg29,
-        // color: "41AA3D".toColor,
         onTap: () => controller.onLogout(),
       ).paddingBottom(8),
 

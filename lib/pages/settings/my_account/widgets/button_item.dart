@@ -24,10 +24,11 @@ class ButtonItemWidget extends StatelessWidget {
 
     return ListTile(
       shape: RoundedRectangleBorder(
-        side: const BorderSide(width: 2),
+        // side: const BorderSide(width: 2,),
         borderRadius: BorderRadius.circular(12.w),
       ),
       dense: true,
+      tileColor: AppColors.primaryContainer,
       contentPadding: EdgeInsets.symmetric(
         horizontal: 8.w,
         vertical: 8.w,
@@ -36,16 +37,21 @@ class ButtonItemWidget extends StatelessWidget {
       leading: <Widget>[
         // 底部圓形
         Container().tightSize(48.w).decorated(
-              // 按主色 0.2 的透明度
-              color: color.withOpacity(0.2),
+              // // 按主色 0.2 的透明度
+              // color: color.withOpacity(0.2),
               // 圓形邊框
               borderRadius: BorderRadius.circular(12.w),
+              // outline
+              border: Border.all(
+                color: AppColors.outline,
+                width: 1.w,
+              ),
             ),
 
         // 疊加圖示
         IconWidget.svg(
           svgPath,
-          color: color,
+          color: Theme.of(context).colorScheme.onPrimary,
           size: 24.w,
         ),
       ].toStack(
@@ -65,7 +71,7 @@ class ButtonItemWidget extends StatelessWidget {
       // 右側箭頭
       trailing: IconWidget.svg(
         AssetsSolidSvgs.chevronRightLgSvg36,
-        color: AppColors.outline,
+        color: Theme.of(context).colorScheme.onPrimary,
         size: 24.w,
       ),
       // size: 14.w,

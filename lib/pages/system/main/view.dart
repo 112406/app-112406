@@ -66,6 +66,7 @@ class _MainViewGetX extends GetView<MainController> {
                   NavigationItemModel(
                     // label: LocaleKeys.tabBarMessage.tr,
                     icon: AssetsMonotoneSvgs.chartSvg02,
+                    
                     // count: 9,
                   ),
                   NavigationItemModel(
