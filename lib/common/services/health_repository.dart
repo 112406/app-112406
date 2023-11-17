@@ -69,7 +69,7 @@ class HealthRepository {
     return [];
   }
 
-  Future<List<Step>> getStep() async {
+  Future<List<Steps>> getStep() async {
     bool requested = await health.requestAuthorization([HealthDataType.STEPS]);
     if (requested) {
       List<HealthDataPoint> healthData = await health.getHealthDataFromTypes(
@@ -80,7 +80,26 @@ class HealthRepository {
       return healthData.map((e) {
         var b = e;
         print(b.value.toJson()['numericValue']);
-        return Step(double.parse(b.value.toJson()['numericValue']),
+        return Steps(double.parse(b.value.toJson()['numericValue']),
+            b.unit.toString(), b.dateFrom, b.dateTo);
+      }).toList();
+    }
+    return [];
+  }
+
+  Future<List<Colories>> getBurnedEnergy() async {
+    bool requested = await health
+        .requestAuthorization([HealthDataType.ACTIVE_ENERGY_BURNED]);
+    if (requested) {
+      List<HealthDataPoint> healthData = await health.getHealthDataFromTypes(
+          DateTime.now().subtract(const Duration(days: 7)),
+          DateTime.now(),
+          [HealthDataType.ACTIVE_ENERGY_BURNED]);
+
+      return healthData.map((e) {
+        var b = e;
+        print(b.value.toJson()['numericValue']);
+        return Colories(double.parse(b.value.toJson()['numericValue']),
             b.unit.toString(), b.dateFrom, b.dateTo);
       }).toList();
     }

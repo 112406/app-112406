@@ -24,11 +24,9 @@ class HeartRatePage extends GetView<HeartRateController> {
           return Scaffold(
             appBar: AppBar(
                 backgroundColor: Colors.transparent,
-                iconTheme: const IconThemeData(color: Colors.black),
                 elevation: 0,
                 title: TextWidget.textxl(
               LocaleKeys.ghomeFuncCardHeartRate.tr,
-              color: Colors.black,
             ),),
             floatingActionButton: FloatingActionButton(
               onPressed: (() => controller.getData()),

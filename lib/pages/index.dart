@@ -2,8 +2,6 @@ library pages;
 
 // export './xxxx.dart';
 export 'home/blood_pressure/index.dart';
-export 'home/blood_pressure_stats/index.dart';
-export 'home/heart_analysis/index.dart';
 export 'home/heart_rate/index.dart';
 export 'home/home_index/index.dart';
 export 'home/sleep_tracker/index.dart';

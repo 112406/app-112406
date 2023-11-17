@@ -15,4 +15,5 @@ export 'user_auth/health_model/heart_rate.dart';
 export 'user_auth/health_model/blood_pressure.dart';
 export 'user_auth/health_model/step.dart';
 export 'user_auth/health_model/sleephour.dart';
+export 'user_auth/health_model/calories.dart';
 // export 'user_auth/health_model/blood_oxygen.dart';

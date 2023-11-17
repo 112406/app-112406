@@ -10,7 +10,7 @@ class HomeIndexController extends GetxController {
   final repository = HealthRepository();
   final heartRates = ValueNotifier(<HeartRate>[]);
   final bloodPressures = ValueNotifier(<BloodPressure>[]);
-  final steps = ValueNotifier(<Step>[]);
+  final steps = ValueNotifier(<Steps>[]);
   // final health = HealthFactory(useHealthConnectIfAvailable: true);
   // final health = HealthFactory(useHealthConnectIfAvailable: false);
   // final repository = HealthRepository();

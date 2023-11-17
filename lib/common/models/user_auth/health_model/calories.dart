@@ -1,12 +1,12 @@
-class Steps {
+class Colories {
   final num value;
   final String unit;
   final DateTime dateFrom;
   final DateTime dateTo;
 
-  Steps(this.value, this.unit, this.dateFrom, this.dateTo);
+  Colories(this.value, this.unit, this.dateFrom, this.dateTo);
 
-  factory Steps.fromJson(Map<String, dynamic> json) => Steps(
+  factory Colories.fromJson(Map<String, dynamic> json) => Colories(
         json['value'],
         json['unit'],
         DateTime.parse(json['dateFrom']),

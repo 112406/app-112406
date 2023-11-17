@@ -24,11 +24,9 @@ class BloodPressurePage extends GetView<BloodPressureController> {
         return Scaffold(
           appBar: AppBar(
             backgroundColor: Colors.transparent,
-            iconTheme: const IconThemeData(color: Colors.black),
             elevation: 0,
             title: TextWidget.textxl(
               LocaleKeys.ghomeFuncCardBloodPressure.tr,
-              color: Colors.black,
             ),
           ),
           floatingActionButton: FloatingActionButton(

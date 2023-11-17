@@ -26,14 +26,6 @@ class RoutePages {
       page: () => const BloodPressurePage(),
     ),
     GetPage(
-      name: RouteNames.homeBloodPressureStats,
-      page: () => const BloodPressureStatsPage(),
-    ),
-    GetPage(
-      name: RouteNames.homeHeartAnalysis,
-      page: () => const HeartAnalysisPage(),
-    ),
-    GetPage(
       name: RouteNames.homeHeartRate,
       page: () => const HeartRatePage(),
     ),

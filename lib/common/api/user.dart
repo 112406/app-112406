@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:firebase_database/firebase_database.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -116,6 +117,15 @@ class UserApi {
     var res = await _db
         .ref(
             "users/${_authRepo.firebaseUser.value!.uid}/healthData/bloodPressure/${req.dateFrom.millisecondsSinceEpoch.toString()}")
+        .set(req.toJson());
+    // var jsonData = _jsonRegExp(res.value.toString());
+    // return UserProfileModel.fromJson(res);
+  }
+
+  Future<void> saveStepsData(Steps req) async {
+    var res = await _db
+        .ref(
+            "users/${_authRepo.firebaseUser.value!.uid}/healthData/steps/${req.dateFrom.millisecondsSinceEpoch.toString()}")
         .set(req.toJson());
     // var jsonData = _jsonRegExp(res.value.toString());
     // return UserProfileModel.fromJson(res);
