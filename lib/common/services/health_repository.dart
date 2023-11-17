@@ -87,7 +87,7 @@ class HealthRepository {
     return [];
   }
 
-  Future<List<Colories>> getBurnedEnergy() async {
+  Future<List<Calories>> getBurnedEnergy() async {
     bool requested = await health
         .requestAuthorization([HealthDataType.ACTIVE_ENERGY_BURNED]);
     if (requested) {
@@ -99,7 +99,7 @@ class HealthRepository {
       return healthData.map((e) {
         var b = e;
         print(b.value.toJson()['numericValue']);
-        return Colories(double.parse(b.value.toJson()['numericValue']),
+        return Calories(double.parse(b.value.toJson()['numericValue']),
             b.unit.toString(), b.dateFrom, b.dateTo);
       }).toList();
     }

@@ -11,6 +11,7 @@ class HomeIndexController extends GetxController {
   final heartRates = ValueNotifier(<HeartRate>[]);
   final bloodPressures = ValueNotifier(<BloodPressure>[]);
   final steps = ValueNotifier(<Steps>[]);
+  final calories = ValueNotifier(<Calories>[]);
   // final health = HealthFactory(useHealthConnectIfAvailable: true);
   // final health = HealthFactory(useHealthConnectIfAvailable: false);
   // final repository = HealthRepository();
@@ -76,6 +77,10 @@ class HomeIndexController extends GetxController {
 
   Future<void> getStepData() async {
     steps.value = await repository.getStep();
+  }
+
+  Future<void> getCaloriesData() async {
+    calories.value = await repository.getBurnedEnergy();
   }
 
   // Future<void> getBloodPressureData() async {

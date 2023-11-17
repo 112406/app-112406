@@ -1,12 +1,12 @@
-class Colories {
+class Calories {
   final num value;
   final String unit;
   final DateTime dateFrom;
   final DateTime dateTo;
 
-  Colories(this.value, this.unit, this.dateFrom, this.dateTo);
+  Calories(this.value, this.unit, this.dateFrom, this.dateTo);
 
-  factory Colories.fromJson(Map<String, dynamic> json) => Colories(
+  factory Calories.fromJson(Map<String, dynamic> json) => Calories(
         json['value'],
         json['unit'],
         DateTime.parse(json['dateFrom']),
