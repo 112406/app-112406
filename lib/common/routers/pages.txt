@@ -1,9 +1,29 @@
 
       GetPage(
-        name: RouteNames.wellnessWellnessContent,
-        page: () => const WellnessContentPage(),
+        name: RouteNames.settingsLanguage,
+        page: () => const LanguagePage(),
       ),
       GetPage(
-        name: RouteNames.wellnessWellnessIndex,
-        page: () => const WellnessIndexPage(),
+        name: RouteNames.settingsMyAccount,
+        page: () => const MyAccountPage(),
+      ),
+      GetPage(
+        name: RouteNames.settingsMyAccountWidgets,
+        page: () => const WidgetsPage(),
+      ),
+      GetPage(
+        name: RouteNames.settingsNotification,
+        page: () => const NotificationPage(),
+      ),
+      GetPage(
+        name: RouteNames.settingsPersonalInfomation,
+        page: () => const PersonalInfomationPage(),
+      ),
+      GetPage(
+        name: RouteNames.settingsSecurity,
+        page: () => const SecurityPage(),
+      ),
+      GetPage(
+        name: RouteNames.settingsSettingsIndex,
+        page: () => const SettingsIndexPage(),
       ),

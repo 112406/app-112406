@@ -90,7 +90,11 @@ class WellnessContentPage extends GetView<WellnessContentController> {
       id: "wellness_content",
       builder: (_) {
         return Scaffold(
-          appBar: AppBar(title: Text(LocaleKeys.wellnessNewsTitle.tr)),
+          appBar: AppBar(
+            title: Text(LocaleKeys.wellnessNewsTitle.tr),
+            backgroundColor: Colors.transparent,
+            elevation: 0,
+          ),
           body: SafeArea(
             child: controller.newsContent.isEmpty
                 ? const Center(child: CircularProgressIndicator())

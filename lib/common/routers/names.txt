@@ -1,2 +1,7 @@
-static const wellnessWellnessContent = '/wellness_wellness_content';
-static const wellnessWellnessIndex = '/wellness_wellness_index';
+static const settingsLanguage = '/settings_language';
+static const settingsMyAccount = '/settings_my_account';
+static const settingsMyAccountWidgets = '/settings_my_account_widgets';
+static const settingsNotification = '/settings_notification';
+static const settingsPersonalInfomation = '/settings_personal_infomation';
+static const settingsSecurity = '/settings_security';
+static const settingsSettingsIndex = '/settings_settings_index';

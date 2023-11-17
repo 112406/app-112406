@@ -53,6 +53,10 @@ class RoutePages {
       name: RouteNames.settingsNotification,
       page: () => const NotificationPage(),
     ),
+     GetPage(
+        name: RouteNames.settingsLanguage,
+        page: () => const LanguagePage(),
+      ),
     GetPage(
       name: RouteNames.settingsPersonalInfomation,
       page: () => const PersonalInfomationPage(),

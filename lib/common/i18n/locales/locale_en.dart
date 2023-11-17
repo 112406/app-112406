@@ -72,7 +72,7 @@ Map<String, String> localeEn = {
   // home main page
   LocaleKeys.ghomeHelloUser: 'Hello, ',
   LocaleKeys.ghomeHealthTitle: 'Smart Health Metrics',
-  LocaleKeys.ghomeFitnessTrackerTitle: 'AI Fitness Tracker',
+  LocaleKeys.ghomeFitnessTrackerTitle: 'Fitness Tracker',
   LocaleKeys.ghomeWellnessChatbotTitle: 'Wellness AI Chatbot',
   LocaleKeys.ghomeWellnessScoreTitle: 'Wellness Score',
   LocaleKeys.ghomeWellnessScoreDesc:

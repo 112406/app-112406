@@ -1,2 +1,7 @@
-export 'wellness/wellness_content/index.dart';
-export 'wellness/wellness_index/index.dart';
+export 'settings/language/index.dart';
+export 'settings/my_account/index.dart';
+export 'settings/my_account/widgets/index.dart';
+export 'settings/notification/index.dart';
+export 'settings/personal_infomation/index.dart';
+export 'settings/security/index.dart';
+export 'settings/settings_index/index.dart';

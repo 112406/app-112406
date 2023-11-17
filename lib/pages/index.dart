@@ -12,6 +12,7 @@ export 'settings/notification/index.dart';
 export 'settings/personal_infomation/index.dart';
 export 'settings/security/index.dart';
 export 'settings/settings_index/index.dart';
+export 'settings/language/index.dart';
 export 'styles/bottom_sheet/index.dart';
 export 'styles/buttons/index.dart';
 export 'styles/carousel/index.dart';

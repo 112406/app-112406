@@ -65,7 +65,7 @@ Map<String, String> localeZh = {
   // home main page
   LocaleKeys.ghomeHelloUser: '你好， ',
   LocaleKeys.ghomeHealthTitle: '智能健康指標',
-  LocaleKeys.ghomeFitnessTrackerTitle: 'AI健身追蹤器',
+  LocaleKeys.ghomeFitnessTrackerTitle: '健康追蹤',
   LocaleKeys.ghomeWellnessChatbotTitle: 'AI健康聊天機器人',
   LocaleKeys.ghomeWellnessScoreTitle: '健康分數',
   LocaleKeys.ghomeWellnessScoreDesc: '健康分數是您的健康狀況的綜合評分。',

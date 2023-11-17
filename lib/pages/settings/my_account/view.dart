@@ -42,7 +42,7 @@ class MyAccountPage extends GetView<MyAccountController> {
       ButtonItemWidget(
         title: LocaleKeys.settingAccessibilityLanguage.tr,
         svgPath: AssetsMonotoneSvgs.flagSvg39,
-        // onTap: () => Get.toNamed(RouteNames.myLanguage),
+        onTap: () => Get.toNamed(RouteNames.settingsLanguage),
       ).paddingBottom(8),
 
       // Theme

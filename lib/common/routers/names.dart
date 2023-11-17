@@ -7,6 +7,7 @@ class RouteNames {
   static const homeHeartRate = '/home_heart_rate';
   static const homeHomeIndex = '/home_home_index';
   static const homeSleepTracker = '/home_sleep_tracker';
+  static const settingsLanguage = '/settings_language';
   static const settingsMyAccount = '/settings_my_account';
   static const settingsNotification = '/settings_notification';
   static const settingsPersonalInfomation = '/settings_personal_infomation';

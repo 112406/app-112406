@@ -1,30 +1,25 @@
 import 'package:get/get.dart';
+import 'package:healthcare_app/common/index.dart';
 
-import '../../../common/index.dart';
-
-class StylesIndexController extends GetxController {
-  StylesIndexController();
-
-  // 主題
-  onThemeSelected() async {
-    await ConfigService.to.switchThemeModel();
-    update(["styles_index"]);
-  }
+class LanguageController extends GetxController {
+  LanguageController();
 
   // 多語言
   onLanguageSelected() {
     var en = Translation.supportedLocales[0];
     var zh = Translation.supportedLocales[1];
+    var ja = Translation.supportedLocales[2];
     
     ConfigService.to.onLocaleUpdate(
         ConfigService.to.locale.toLanguageTag() == en.toLanguageTag()
             ? zh
             : en);
-    update(["styles_index"]);
+     update(["language"]);
   }
 
+
   _initData() {
-    update(["styles_index"]);
+    update(["language"]);
   }
 
   void onTap() {}
