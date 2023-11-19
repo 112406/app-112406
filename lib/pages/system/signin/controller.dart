@@ -15,9 +15,9 @@ class SigninController extends GetxController {
 
   /// 定義輸入控制器
   TextEditingController emailaddressController =
-      TextEditingController(text: "dawnspfff91@gmail.com");
+      TextEditingController();
   TextEditingController passwordController =
-      TextEditingController(text: "spfff91");
+      TextEditingController();
 
   /// Sign In
   Future<void> onSignIn() async {
