@@ -98,7 +98,7 @@ class HealthRepository {
     bool requested = await health.requestAuthorization([HealthDataType.STEPS]);
     if (requested) {
       List<HealthDataPoint> healthData = await health.getHealthDataFromTypes(
-          DateTime.now().subtract(const Duration(days: 7)),
+          DateTime.now().subtract(const Duration(days: 1)),
           DateTime.now(),
           [HealthDataType.STEPS]);
 
