@@ -100,8 +100,6 @@ class UserApi {
     });
   }
 
-  
-
   /// save healthdata in realtime database
   Future<void> saveHeartRateData(HeartRate req) async {
     print(req.dateFrom.toString().trim());
@@ -113,10 +111,19 @@ class UserApi {
     // return UserProfileModel.fromJson(res);
   }
 
-  Future<void> saveBloodPressureData(BloodPressure req) async {
+  Future<void> saveBloodPressureSystolicData(BloodPressureSystolic req) async {
     var res = await _db
         .ref(
-            "users/${_authRepo.firebaseUser.value!.uid}/healthData/bloodPressure/${req.dateFrom.millisecondsSinceEpoch.toString()}")
+            "users/${_authRepo.firebaseUser.value!.uid}/healthData/bloodPressureSystolic/${req.dateFrom.millisecondsSinceEpoch.toString()}")
+        .set(req.toJson());
+    // var jsonData = _jsonRegExp(res.value.toString());
+    // return UserProfileModel.fromJson(res);
+  }
+
+  Future<void> saveBloodPressureDiastolicData(BloodPressureDiastolic req) async {
+    var res = await _db
+        .ref(
+            "users/${_authRepo.firebaseUser.value!.uid}/healthData/bloodPressureDiastolic/${req.dateFrom.millisecondsSinceEpoch.toString()}")
         .set(req.toJson());
     // var jsonData = _jsonRegExp(res.value.toString());
     // return UserProfileModel.fromJson(res);

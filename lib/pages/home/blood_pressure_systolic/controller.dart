@@ -5,10 +5,8 @@ import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:healthcare_app/common/index.dart';
 
-import '../../../common/services/health_repository.dart';
-
-class BloodPressureController extends GetxController {
-  BloodPressureController();
+class BloodPressureSystolicController extends GetxController {
+  BloodPressureSystolicController();
 
   final repository = HealthRepository();
   final bloodPressures = ValueNotifier(<BloodPressureSystolic>[]);
@@ -17,30 +15,26 @@ class BloodPressureController extends GetxController {
   final _authRepo = Get.put(AuthService());
 
   final _db = FirebaseDatabase.instance;
-
+ 
   List<BloodPressureSystolic> needs = [];
 
-  Future<Object?> getBloodPressureData() async {
+  Future<Object?> getBloodPressureSystolicData() async {
     var res = await _db
         .ref(
-            "users/${_authRepo.firebaseUser.value!.uid}/healthData/bloodPressure")
+            "users/${_authRepo.firebaseUser.value!.uid}/healthData/bloodPressureSystolic")
         .get();
     return res.value;
   }
 
-  Future loadBloodPressureData() async {
-    var value = await getBloodPressureData();
+  Future loadBloodPressureSystolicData() async {
+    var value = await getBloodPressureSystolicData();
     if (value == null) {
       return null;
     }
     var values = value as Map;
-    // Map<dynamic, dynamic> values = await getHeartRateData() as Map;
     values.forEach((key, value) {
       var jsonData = jsonDecode(jsonEncode(value));
       needs.add(BloodPressureSystolic.fromJson(jsonData));
-      // for (var element in needs) {
-      //   print(element.value);
-      // }
     });
     print(needs);
   }
@@ -54,14 +48,14 @@ class BloodPressureController extends GetxController {
   }
 
   _initData() {
-    update(["blood_pressure"]);
+    update(["blood_pressure_systolic"]);
   }
 
   void onTap() {}
 
   @override
   void onInit() {
-    loadBloodPressureData();
+    loadBloodPressureSystolicData();
     super.onInit();
   }
 

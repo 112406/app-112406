@@ -4,7 +4,7 @@ class UserHealthModel {
   HeartRate? heartRate;
   Steps? steps;
   SleepHour? sleep;
-  BloodPressure? bloodPressure;
+  BloodPressureSystolic? bloodPressure;
 
   UserHealthModel({
     this.heartRate,
@@ -29,7 +29,7 @@ class UserHealthModel {
       sleep: json['sleep'] == null ? null : SleepHour.fromJson(json['sleep']),
       bloodPressure: json['bloodPressure'] == null
           ? null
-          : BloodPressure.fromJson(
+          : BloodPressureSystolic.fromJson(
               json['bloodPressure'] as Map<String, dynamic>),
     );
   }

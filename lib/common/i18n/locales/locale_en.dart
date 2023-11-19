@@ -83,6 +83,8 @@ Map<String, String> localeEn = {
   LocaleKeys.ghomeFuncCardHeartRateNumber: '65',
   LocaleKeys.ghomeFuncCardHeartRateBPM: 'BPM',
   LocaleKeys.ghomeFuncCardBloodPressure: 'Blood Pressure',
+  LocaleKeys.ghomeFuncCardBloodPressureSystolic: 'Systolic Pressure',
+  LocaleKeys.ghomeFuncCardBloodPressureDiastolic: 'Diastolic Pressure',
   LocaleKeys.ghomeFuncCardBloodPressureNumber: '120',
   LocaleKeys.ghomeFuncCardBloodPressureMMHG: 'mmHg',
   LocaleKeys.ghomeFuncCardStep: 'Step',

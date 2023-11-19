@@ -1,7 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:healthcare_app/common/index.dart';
-import 'package:healthcare_app/common/services/health_repository.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 class HomeIndexController extends GetxController {
@@ -9,7 +8,8 @@ class HomeIndexController extends GetxController {
 
   final repository = HealthRepository();
   final heartRates = ValueNotifier(<HeartRate>[]);
-  final bloodPressures = ValueNotifier(<BloodPressure>[]);
+  final bloodPressureSystolics = ValueNotifier(<BloodPressureSystolic>[]);
+  final bloodPressureDiastolics = ValueNotifier(<BloodPressureDiastolic>[]);
   final steps = ValueNotifier(<Steps>[]);
   final calories = ValueNotifier(<Calories>[]);
   // final health = HealthFactory(useHealthConnectIfAvailable: true);
@@ -26,24 +26,24 @@ class HomeIndexController extends GetxController {
   // Future<bool> _loadNewsSell(bool isRefresh) async {
   // 拉取數據
   // var result = await ProductApi.products(ProductsReq(
-  //   // 刷新, 重置页数1
+  //   // 刷新, 重置頁數1
   //   page: isRefresh ? 1 : _page,
-  //   // 每页条数
+  //   // 每頁條數
   //   prePage: _limit,
   // ));
 
   // 下拉刷新
   // if (isRefresh) {
-  //   _page = 1; // 重置页数1
+  //   _page = 1; // 重置頁數1
   //   newProductProductList.clear(); // 清空数据
   // }
 
-  // 有数据
+  // 有數據
   // if (result.isNotEmpty) {
-  //   // 页数+1
+  //   // 頁數+1
   //   _page++;
 
-  //   // 添加数据
+  //   // 新增數據
   //   newProductProductList.addAll(result);
   // }
 
@@ -55,8 +55,10 @@ class HomeIndexController extends GetxController {
   void onRefresh() async {
     try {
       await getHeartRateData();
-      await getBloodPressureData();
+      await getBloodPressureSystolicData();
+      await getBloodPressureDiastolicData();
       await getStepData();
+      await getCaloriesData();
       refreshController.refreshCompleted();
     } catch (error) {
       refreshController.refreshFailed();
@@ -71,8 +73,12 @@ class HomeIndexController extends GetxController {
     heartRates.value = await repository.getHeartRate();
   }
 
-  Future<void> getBloodPressureData() async {
-    bloodPressures.value = await repository.getBloodPressure();
+  Future<void> getBloodPressureSystolicData() async {
+    bloodPressureSystolics.value = await repository.getBloodPressureSystolic();
+  }
+
+  Future<void> getBloodPressureDiastolicData() async {
+    bloodPressureDiastolics.value = await repository.getBloodPressureDiastolic();
   }
 
   Future<void> getStepData() async {

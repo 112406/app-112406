@@ -76,6 +76,10 @@ class LocaleKeys {
       'home_func_card_heart_rate_number';
   static const ghomeFuncCardHeartRateBPM = 'home_func_card_heart_rate_bpm';
   static const ghomeFuncCardBloodPressure = 'home_func_card_blood_pressure';
+  static const ghomeFuncCardBloodPressureSystolic =
+      'home_func_card_blood_pressure_systolic';
+  static const ghomeFuncCardBloodPressureDiastolic =
+      'home_func_card_blood_pressure_diastolic';
   static const ghomeFuncCardBloodPressureNumber =
       'home_func_card_blood_pressure_number';
   static const ghomeFuncCardBloodPressureMMHG =

@@ -75,6 +75,8 @@ Map<String, String> localeZh = {
   LocaleKeys.ghomeFuncCardHeartRateNumber: ' @heatrate',
   LocaleKeys.ghomeFuncCardHeartRateBPM: '次/分鐘',
   LocaleKeys.ghomeFuncCardBloodPressure: '血壓',
+  LocaleKeys.ghomeFuncCardBloodPressureSystolic: '收縮壓',
+  LocaleKeys.ghomeFuncCardBloodPressureDiastolic: '舒張壓',
   LocaleKeys.ghomeFuncCardBloodPressureNumber: '@bloodpressure',
   LocaleKeys.ghomeFuncCardBloodPressureMMHG: 'mmHg',
   LocaleKeys.ghomeFuncCardStep: '步數',

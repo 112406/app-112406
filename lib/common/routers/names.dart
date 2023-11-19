@@ -2,7 +2,8 @@ class RouteNames {
   static const main = '/';
 
   static const homeBloodPressure = '/home_blood_pressure';
-  static const homeBloodPressureStats = '/home_blood_pressure_stats';
+  static const homeBloodPressureDiastolic = '/home_blood_pressure_diastolic';
+  static const homeBloodPressureSystolic = '/home_blood_pressure_systolic';
   static const homeHeartAnalysis = '/home_heart_analysis';
   static const homeHeartRate = '/home_heart_rate';
   static const homeHomeIndex = '/home_home_index';

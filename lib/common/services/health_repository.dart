@@ -32,7 +32,29 @@ class HealthRepository {
     return [];
   }
 
-  Future<List<BloodPressure>> getBloodPressure() async {
+  Future<List<BloodPressureDiastolic>> getBloodPressureDiastolic() async {
+    bool requested = await health
+        .requestAuthorization([HealthDataType.BLOOD_PRESSURE_DIASTOLIC]);
+    if (requested) {
+      List<HealthDataPoint> healthData = await health.getHealthDataFromTypes(
+          DateTime.now().subtract(const Duration(days: 7)),
+          DateTime.now(),
+          [HealthDataType.BLOOD_PRESSURE_DIASTOLIC]);
+
+      return healthData.map((e) {
+        var b = e;
+        print(b.value.toJson()['numericValue']);
+        return BloodPressureDiastolic(
+            double.parse(b.value.toJson()['numericValue']),
+            b.unit.toString(),
+            b.dateFrom,
+            b.dateTo);
+      }).toList();
+    }
+    return [];
+  }
+
+  Future<List<BloodPressureSystolic>> getBloodPressureSystolic() async {
     bool requested = await health
         .requestAuthorization([HealthDataType.BLOOD_PRESSURE_SYSTOLIC]);
     if (requested) {
@@ -44,8 +66,11 @@ class HealthRepository {
       return healthData.map((e) {
         var b = e;
         print(b.value.toJson()['numericValue']);
-        return BloodPressure(double.parse(b.value.toJson()['numericValue']),
-            b.unit.toString(), b.dateFrom, b.dateTo);
+        return BloodPressureSystolic(
+            double.parse(b.value.toJson()['numericValue']),
+            b.unit.toString(),
+            b.dateFrom,
+            b.dateTo);
       }).toList();
     }
     return [];
@@ -92,12 +117,13 @@ class HealthRepository {
         .requestAuthorization([HealthDataType.ACTIVE_ENERGY_BURNED]);
     if (requested) {
       List<HealthDataPoint> healthData = await health.getHealthDataFromTypes(
-          DateTime.now().subtract(const Duration(days: 7)),
+          DateTime.now().subtract(const Duration(days: 1)),
           DateTime.now(),
           [HealthDataType.ACTIVE_ENERGY_BURNED]);
 
       return healthData.map((e) {
         var b = e;
+        print(b.value.toJson());
         print(b.value.toJson()['numericValue']);
         return Calories(double.parse(b.value.toJson()['numericValue']),
             b.unit.toString(), b.dateFrom, b.dateTo);

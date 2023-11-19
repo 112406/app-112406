@@ -75,6 +75,8 @@ Map<String, String> localeJa = {
   LocaleKeys.ghomeFuncCardHeartRateNumber: ' @heatrate',
   LocaleKeys.ghomeFuncCardHeartRateBPM: '回/分',
   LocaleKeys.ghomeFuncCardBloodPressure: '血圧',
+  LocaleKeys.ghomeFuncCardBloodPressureSystolic: '収縮期血圧',
+  LocaleKeys.ghomeFuncCardBloodPressureDiastolic: '拡張期血圧',
   LocaleKeys.ghomeFuncCardBloodPressureNumber: '@bloodpressure',
   LocaleKeys.ghomeFuncCardBloodPressureMMHG: 'mmHg',
   LocaleKeys.ghomeFuncCardSleep: '睡眠',

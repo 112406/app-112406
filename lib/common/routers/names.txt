@@ -1,7 +1,6 @@
-static const settingsLanguage = '/settings_language';
-static const settingsMyAccount = '/settings_my_account';
-static const settingsMyAccountWidgets = '/settings_my_account_widgets';
-static const settingsNotification = '/settings_notification';
-static const settingsPersonalInfomation = '/settings_personal_infomation';
-static const settingsSecurity = '/settings_security';
-static const settingsSettingsIndex = '/settings_settings_index';
+static const homeBloodPressure = '/home_blood_pressure';
+static const homeBloodPressureDiastolic = '/home_blood_pressure_diastolic';
+static const homeBloodPressureSystolic = '/home_blood_pressure_systolic';
+static const homeHeartRate = '/home_heart_rate';
+static const homeHomeIndex = '/home_home_index';
+static const homeSleepTracker = '/home_sleep_tracker';

@@ -5,65 +5,40 @@ import 'package:syncfusion_flutter_charts/charts.dart';
 
 import 'index.dart';
 
-class BloodPressurePage extends GetView<BloodPressureController> {
-  const BloodPressurePage({Key? key}) : super(key: key);
+class BloodPressureSystolicPage extends GetView<BloodPressureSystolicController> {
+  const BloodPressureSystolicPage({Key? key}) : super(key: key);
 
-  // 主視圖
+  // 主视图
   Widget _buildView() {
     return const Center(
-      child: Text("BloodPressurePage"),
+      child: Text("BloodPressureSystolicPage"),
     );
   }
 
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<BloodPressureController>(
-      init: BloodPressureController(),
-      id: "blood_pressure",
+    return GetBuilder<BloodPressureSystolicController>(
+      init: BloodPressureSystolicController(),
+      id: "blood_pressure_systolic",
       builder: (_) {
         return Scaffold(
           appBar: AppBar(
             backgroundColor: Colors.transparent,
             elevation: 0,
             title: TextWidget.textxl(
-              LocaleKeys.ghomeFuncCardBloodPressure.tr,
+              LocaleKeys.ghomeFuncCardBloodPressureSystolic.tr,
             ),
           ),
-          floatingActionButton: FloatingActionButton(
-            onPressed: (() => controller.getData()),
-            child: const Icon(Icons.refresh),
-          ),
-          // body: ValueListenableBuilder(
-          //   valueListenable: controller.bloodPressures,
-          //   builder: (context, value, child) {
-          //     return GridView(
-          //       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          //           crossAxisCount: 2),
-          //       children: List.generate(value.length, (index) {
-          //         return Card(
-          //           child: Column(
-          //             children: [
-          //               Text(value[index].value.toString()),
-          //               Text(value[index].unit),
-          //               Text(value[index].dateFrom.toString()),
-          //               Text(value[index].dateTo.toString()),
-          //             ],
-          //           ),
-          //         );
-          //       }),
-          //     );
-          //   },
-          // ),
-          body: Center(
+           body: Center(
             child: Container(
               //Initialize chart
               child: FutureBuilder(
-                  future: controller.getBloodPressureData(),
+                  future: controller.getBloodPressureSystolicData(),
                   builder: (context, snapshot) {
                     if (snapshot.hasData) {
                       return SfCartesianChart(
                           primaryXAxis: CategoryAxis(),
-                          title: ChartTitle(text: 'Blood Pressure Chart'),
+                          title: ChartTitle(text: 'Blood Pressure Systolic Chart'),
                           series: <ChartSeries<BloodPressureSystolic, String>>[
                             LineSeries<BloodPressureSystolic, String>(
                               dataSource: controller.needs,
@@ -81,9 +56,6 @@ class BloodPressurePage extends GetView<BloodPressureController> {
                   }),
             ),
           ).paddingBottom(100),
-          // body: SafeArea(
-          //   child: _buildView(),
-          // ),
         );
       },
     );

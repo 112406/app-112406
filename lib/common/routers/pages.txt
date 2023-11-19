@@ -1,29 +1,25 @@
 
       GetPage(
-        name: RouteNames.settingsLanguage,
-        page: () => const LanguagePage(),
+        name: RouteNames.homeBloodPressure,
+        page: () => const BloodPressurePage(),
       ),
       GetPage(
-        name: RouteNames.settingsMyAccount,
-        page: () => const MyAccountPage(),
+        name: RouteNames.homeBloodPressureDiastolic,
+        page: () => const BloodPressureDiastolicPage(),
       ),
       GetPage(
-        name: RouteNames.settingsMyAccountWidgets,
-        page: () => const WidgetsPage(),
+        name: RouteNames.homeBloodPressureSystolic,
+        page: () => const BloodPressureSystolicPage(),
       ),
       GetPage(
-        name: RouteNames.settingsNotification,
-        page: () => const NotificationPage(),
+        name: RouteNames.homeHeartRate,
+        page: () => const HeartRatePage(),
       ),
       GetPage(
-        name: RouteNames.settingsPersonalInfomation,
-        page: () => const PersonalInfomationPage(),
+        name: RouteNames.homeHomeIndex,
+        page: () => const HomeIndexPage(),
       ),
       GetPage(
-        name: RouteNames.settingsSecurity,
-        page: () => const SecurityPage(),
-      ),
-      GetPage(
-        name: RouteNames.settingsSettingsIndex,
-        page: () => const SettingsIndexPage(),
+        name: RouteNames.homeSleepTracker,
+        page: () => const SleepTrackerPage(),
       ),

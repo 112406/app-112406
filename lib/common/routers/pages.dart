@@ -20,7 +20,14 @@ class RoutePages {
       page: () => const MainPage(),
       binding: MainBinding(),
     ),
-
+    GetPage(
+        name: RouteNames.homeBloodPressureDiastolic,
+        page: () => const BloodPressureDiastolicPage(),
+      ),
+      GetPage(
+        name: RouteNames.homeBloodPressureSystolic,
+        page: () => const BloodPressureSystolicPage(),
+      ),
     GetPage(
       name: RouteNames.homeBloodPressure,
       page: () => const BloodPressurePage(),

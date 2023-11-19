@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:healthcare_app/common/index.dart';
+import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 import 'index.dart';
@@ -236,7 +237,7 @@ class HomeIndexPage extends GetView<HomeIndexController> {
           width: 8,
         ),
         Material(
-          color: AppColors.red50,
+          color: AppColors.red80,
           borderRadius: BorderRadius.circular(16),
           child: Ink(
             // decoration: BoxDecoration(
@@ -248,7 +249,7 @@ class HomeIndexPage extends GetView<HomeIndexController> {
               // splashColor: Colors.black,
               onTap: () {
                 print('Card tapped.');
-                Get.toNamed(RouteNames.homeBloodPressure);
+                Get.toNamed(RouteNames.homeBloodPressureSystolic);
               },
               child: Container(
                 width: 140,
@@ -259,7 +260,7 @@ class HomeIndexPage extends GetView<HomeIndexController> {
                 child: Column(
                   children: [
                     TextWidget.textxs(
-                      LocaleKeys.ghomeFuncCardBloodPressure.tr,
+                      LocaleKeys.ghomeFuncCardBloodPressureSystolic.tr,
                       weight: FontWeight.w700,
                       color: AppColors.white,
                     ).alignLeft().paddingOnly(top: 12, left: 12),
@@ -269,7 +270,7 @@ class HomeIndexPage extends GetView<HomeIndexController> {
                     ).alignLeft().paddingHorizontal(12),
                     const SizedBox(height: 8),
                     ValueListenableBuilder(
-                        valueListenable: controller.bloodPressures,
+                        valueListenable: controller.bloodPressureSystolics,
                         builder: (context, value, child) {
                           return Row(
                             children: [
@@ -318,7 +319,7 @@ class HomeIndexPage extends GetView<HomeIndexController> {
           width: 8,
         ),
         Material(
-          color: AppColors.teal30,
+          color: AppColors.red50,
           borderRadius: BorderRadius.circular(16),
           child: Ink(
             // decoration: BoxDecoration(
@@ -330,60 +331,59 @@ class HomeIndexPage extends GetView<HomeIndexController> {
               // splashColor: Colors.black,
               onTap: () {
                 print('Card tapped.');
-                Get.toNamed(RouteNames.homeSleepTracker);
+                Get.toNamed(RouteNames.homeBloodPressureDiastolic);
               },
               child: Container(
                 width: 140,
                 decoration: BoxDecoration(
-                  // color: AppColors.teal30,
+                  // color: AppColors.red50,
                   borderRadius: BorderRadius.circular(16),
                 ),
                 child: Column(
                   children: [
                     TextWidget.textxs(
-                      LocaleKeys.ghomeFuncCardStep.tr,
+                      LocaleKeys.ghomeFuncCardBloodPressureDiastolic.tr,
                       weight: FontWeight.w700,
                       color: AppColors.white,
                     ).alignLeft().paddingOnly(top: 12, left: 12),
                     const SizedBox(height: 8),
                     const ImageWidget.asset(
-                      AssetsImages.sleepcardPng,
+                      AssetsImages.bloodpressurecardPng,
                     ).alignLeft().paddingHorizontal(12),
                     const SizedBox(height: 8),
                     ValueListenableBuilder(
-                      valueListenable: controller.steps,
-                      builder: (context, value, child) {
-                        return Row(
-                          children: [
-                            TextWidget.text2xl(
-                              // value.last.value.toString(),
-                              value.isNotEmpty
-                                  ? value.last.value.toInt().toString()
-                                  : "-",
-                              // LocaleKeys.ghomeFuncCardSleepNumber.tr,
-                              weight: FontWeight.w900,
-                              color: AppColors.white,
-                            ).alignLeft().paddingOnly(bottom: 12, left: 12),
-                            TextWidget.textxs(
-                              LocaleKeys.ghomeFuncCardStepSteps.tr,
-                              weight: FontWeight.w600,
-                              color: AppColors.white,
-                            )
-                                .alignBottom()
-                                .paddingOnly(bottom: 12, top: 10, left: 2),
-                          ],
-                        );
-                      },
-                    ),
+                        valueListenable: controller.bloodPressureDiastolics,
+                        builder: (context, value, child) {
+                          return Row(
+                            children: [
+                              TextWidget.text2xl(
+                                // value.last.value.toString(),
+                                value.isNotEmpty
+                                    ? value.last.value.toInt().toString()
+                                    : "-",
+                                // LocaleKeys.ghomeFuncCardBloodPressureNumber.tr,
+                                weight: FontWeight.w900,
+                                color: AppColors.white,
+                              ).alignLeft().paddingOnly(bottom: 12, left: 12),
+                              TextWidget.textxs(
+                                LocaleKeys.ghomeFuncCardBloodPressureMMHG.tr,
+                                weight: FontWeight.w600,
+                                color: AppColors.white,
+                              )
+                                  .alignBottom()
+                                  .paddingOnly(bottom: 12, top: 10, left: 2),
+                            ],
+                          );
+                        }),
                     // Row(
                     //   children: [
                     //     TextWidget.text2xl(
-                    //       LocaleKeys.ghomeFuncCardSleepNumber.tr,
+                    //       LocaleKeys.ghomeFuncCardBloodPressureNumber.tr,
                     //       weight: FontWeight.w900,
                     //       color: AppColors.white,
                     //     ).alignLeft().paddingOnly(bottom: 12, left: 12),
                     //     TextWidget.textxs(
-                    //       LocaleKeys.ghomeFuncCardSleepHours.tr,
+                    //       LocaleKeys.ghomeFuncCardBloodPressureMMHG.tr,
                     //       weight: FontWeight.w600,
                     //       color: AppColors.white,
                     //     )
@@ -446,13 +446,61 @@ class HomeIndexPage extends GetView<HomeIndexController> {
                     weight: FontWeight.w900,
                   ),
                   const SizedBox(height: 8),
-                  TextWidget.paragraphxs(
-                    LocaleKeys.ghomeWellnessScoreDesc.tr,
-                    color: AppColors.gray70,
-                    weight: FontWeight.w500,
-                    maxLines: 2,
-                    softWrap: true,
-                  )
+                  ValueListenableBuilder(
+                    valueListenable: controller.calories,
+                    builder: (context, value, child) {
+                      // return TextWidget.paragraphxs(
+                      //   value.isNotEmpty
+                      //       ? value.last.value.truncate().toString()
+                      //       : "-",
+                      //   color: AppColors.gray70,
+                      //   weight: FontWeight.w500,
+                      //   maxLines: 2,
+                      //   softWrap: true,
+                      // );
+                      return LinearPercentIndicator(
+                        percent: value.isNotEmpty
+                            ? (value.last.value.truncate() / 2000)
+                            : 0,
+                        leading: TextWidget.paragraphxs(
+                          value.isNotEmpty
+                              ? value.last.value.truncate().toString()
+                              : "-",
+                          color: AppColors.gray70,
+                          weight: FontWeight.w500,
+                          maxLines: 2,
+                          softWrap: true,
+                        ),
+                        trailing: TextWidget.paragraphxs(
+                          value.isNotEmpty ? "2000" : "-",
+                          color: AppColors.gray70,
+                          weight: FontWeight.w500,
+                          maxLines: 2,
+                          softWrap: true,
+                        ),
+                        progressColor: AppColors.red90,
+                      );
+                      // return TextWidget.paragraphxs(
+                      //   LocaleKeys.ghomeFitnessStepsTakenDesc.trParams({
+                      //     "steps": value.isNotEmpty
+                      //         ? value.last.value.toInt().toString()
+                      //         : "-",
+                      //   }),
+                      //   color: AppColors.gray70,
+                      //   weight: FontWeight.w500,
+                      //   maxLines: 2,
+                      //   softWrap: true,
+                      // );
+                    },
+                  ),
+
+                  // TextWidget.paragraphxs(
+                  //   LocaleKeys.ghomeWellnessScoreDesc.tr,
+                  //   color: AppColors.gray70,
+                  //   weight: FontWeight.w500,
+                  //   maxLines: 2,
+                  //   softWrap: true,
+                  // )
                 ],
               ))
             ],
