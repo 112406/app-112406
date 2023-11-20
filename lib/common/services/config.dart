@@ -43,6 +43,8 @@ class ConfigService extends GetxService {
     await Storage().setString(Constants.storageThemeCode,
         _isDarkModel.value == true ? "dark" : "light");
     Get.offAllNamed(RouteNames.systemSplash);
+
+    await Get.forceAppUpdate();
   }
 
   // 初始語言
