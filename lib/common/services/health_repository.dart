@@ -7,6 +7,19 @@ class HealthRepository {
 
   final userRepo = Get.put(UserService());
 
+  Future<void> requestPermission() async {
+    var types = [
+      HealthDataType.WEIGHT,
+      HealthDataType.STEPS,
+      HealthDataType.HEIGHT,
+      HealthDataType.ACTIVE_ENERGY_BURNED,
+      HealthDataType.BLOOD_PRESSURE_DIASTOLIC,
+      HealthDataType.BLOOD_PRESSURE_SYSTOLIC,
+      HealthDataType.HEART_RATE,
+    ];
+    await health.requestAuthorization(types);
+  }
+
   Future<List<HeartRate>> getHeartRate() async {
     bool requested =
         await health.requestAuthorization([HealthDataType.HEART_RATE]);
@@ -94,20 +107,37 @@ class HealthRepository {
     return [];
   }
 
+  // Future<List<Steps>> getStep() async {
+  //   bool requested = await health.requestAuthorization([HealthDataType.STEPS]);
+  //   if (requested) {
+  //     List<HealthDataPoint> healthData = await health.getHealthDataFromTypes(
+  //         DateTime.now().subtract(const Duration(days: 1)),
+  //         DateTime.now(),
+  //         [HealthDataType.STEPS]);
+
+  //     return healthData.map((e) {
+  //       var b = e;
+  //       print(b.value.toJson()['numericValue']);
+  //       return Steps(double.parse(b.value.toJson()['numericValue']),
+  //           b.unit.toString(), b.dateFrom, b.dateTo);
+  //     }).toList();
+  //   }
+  //   return [];
+  // }
   Future<List<Steps>> getStep() async {
     bool requested = await health.requestAuthorization([HealthDataType.STEPS]);
     if (requested) {
-      List<HealthDataPoint> healthData = await health.getHealthDataFromTypes(
-          DateTime.now().subtract(const Duration(days: 1)),
-          DateTime.now(),
-          [HealthDataType.STEPS]);
-
-      return healthData.map((e) {
-        var b = e;
-        print(b.value.toJson()['numericValue']);
-        return Steps(double.parse(b.value.toJson()['numericValue']),
-            b.unit.toString(), b.dateFrom, b.dateTo);
-      }).toList();
+      var healthData = await health.getTotalStepsInInterval(
+        DateTime.now().subtract(const Duration(days: 1)),
+        DateTime.now(),
+      );
+      return [Steps(healthData!, 'count', DateTime.now(), DateTime.now())];
+      // return healthData.map((e) {
+      //   var b = e;
+      //   print(b.value.toJson()['numericValue']);
+      //   return Steps(double.parse(b.value.toJson()['numericValue']),
+      //       b.unit.toString(), b.dateFrom, b.dateTo);
+      // }).toList();
     }
     return [];
   }

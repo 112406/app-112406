@@ -552,7 +552,7 @@ class HomeIndexPage extends GetView<HomeIndexController> {
                       return TextWidget.paragraphxs(
                         LocaleKeys.ghomeFitnessStepsTakenDesc.trParams({
                           "steps": value.isNotEmpty
-                              ? value.last.value.toInt().toString()
+                              ? value.last.value.toString()
                               : "-",
                         }),
                         color: AppColors.gray70,

@@ -14,7 +14,8 @@ class DBHelper {
       return;
     }
     try {
-      String path = '${await getDatabasesPath()}tasks.db';
+      // String path = '${await getDatabasesPath()}tasks.db';
+      String path = p.join(await getDatabasesPath(), 'tasks.db');
       debugPrint("in database path");
       _db = await openDatabase(
         path,

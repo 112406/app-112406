@@ -9,7 +9,7 @@ import 'common/index.dart';
 
 Future<void> main() async {
   await Global.init();
-  
+
   runApp(const MyApp());
 }
 
@@ -33,27 +33,29 @@ class MyApp extends StatelessWidget {
           maxOverScrollExtent: 100, // 最大的拖曳距離
           footerTriggerDistance: 150, // 觸發加載的距離
           child: GetMaterialApp(
+            debugShowCheckedModeBanner: false,
             title: 'Flutter Demo',
             // 樣式
-            theme: ConfigService.to.isDarkModel ? AppTheme.dark : AppTheme.light,
-        
+            theme:
+                ConfigService.to.isDarkModel ? AppTheme.dark : AppTheme.light,
+
             // 路由
             // initialRoute: RouteNames.stylesStylesIndex,
             initialRoute: RouteNames.systemSplash,
             getPages: RoutePages.list,
             navigatorObservers: [RoutePages.observer],
-        
+
             // 多語言
             translations: Translation(), // 詞典
             localizationsDelegates: Translation.localizationsDelegates, // 代理
             supportedLocales: Translation.supportedLocales, // 支持的語言種類
             locale: ConfigService.to.locale, // 當前語言種類
             fallbackLocale: Translation.fallbackLocale, // 默認語言種類
-        
+
             // builder
             builder: (context, widget) {
               widget = EasyLoading.init()(context, widget); // EasyLoading 初始化
-        
+
               // 不隨系統字體縮放比例
               return MediaQuery(
                 data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),

@@ -54,6 +54,7 @@ class HomeIndexController extends GetxController {
   // 下拉刷新
   void onRefresh() async {
     try {
+      await HealthRepository().requestPermission();
       await getHeartRateData();
       await getBloodPressureSystolicData();
       await getBloodPressureDiastolicData();
@@ -78,7 +79,8 @@ class HomeIndexController extends GetxController {
   }
 
   Future<void> getBloodPressureDiastolicData() async {
-    bloodPressureDiastolics.value = await repository.getBloodPressureDiastolic();
+    bloodPressureDiastolics.value =
+        await repository.getBloodPressureDiastolic();
   }
 
   Future<void> getStepData() async {
