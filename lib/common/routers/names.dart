@@ -29,6 +29,7 @@ class RouteNames {
   static const systemMain = '/system_main';
   static const systemSignin = '/system_signin';
   static const systemSignup = '/system_signup';
+  static const systemForgotPassword = '/system_forgot_password';
   static const systemSplash = '/system_splash';
   static const systemWelcome = '/system_welcome';
   static const trackerTaskAdd = '/tracker_task_add';

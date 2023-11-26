@@ -1,25 +1,5 @@
 
       GetPage(
-        name: RouteNames.homeBloodPressure,
-        page: () => const BloodPressurePage(),
-      ),
-      GetPage(
-        name: RouteNames.homeBloodPressureDiastolic,
-        page: () => const BloodPressureDiastolicPage(),
-      ),
-      GetPage(
-        name: RouteNames.homeBloodPressureSystolic,
-        page: () => const BloodPressureSystolicPage(),
-      ),
-      GetPage(
-        name: RouteNames.homeHeartRate,
-        page: () => const HeartRatePage(),
-      ),
-      GetPage(
-        name: RouteNames.homeHomeIndex,
-        page: () => const HomeIndexPage(),
-      ),
-      GetPage(
-        name: RouteNames.homeSleepTracker,
-        page: () => const SleepTrackerPage(),
+        name: RouteNames.systemForgotPassword,
+        page: () => const ForgotPasswordPage(),
       ),

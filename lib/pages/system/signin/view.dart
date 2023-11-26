@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:healthcare_app/common/index.dart';
 import 'package:validatorless/validatorless.dart';
@@ -119,18 +120,36 @@ class SigninPage extends GetView<SigninController> {
 
   // 提示
   Widget _buildTips() {
-    return <Widget>[
-      // 提示
-      TextWidget.textsm(LocaleKeys.alreadyHaveaccount.tr),
-      // 登入文字按鈕
-      ButtonWidget.text(
-        LocaleKeys.loginSignUp.tr,
-        onTap: controller.onSignUp,
-        textSize: 12,
-        textColor: AppColors.primary,
-      )
-    ].toRow(
-      mainAxisAlignment: MainAxisAlignment.center,
+    return Column(
+      children: [
+        <Widget>[
+          // 提示
+          TextWidget.textsm(LocaleKeys.alreadyHaveaccount.tr),
+          // 註冊文字按鈕
+          ButtonWidget.text(
+            LocaleKeys.loginSignUp.tr,
+            onTap: controller.onSignUp,
+            textSize: 12,
+            textColor: AppColors.primary,
+          )
+        ].toRow(
+          mainAxisAlignment: MainAxisAlignment.center,
+        ),
+        TextWidget.textmd(LocaleKeys.loginOrText.tr),
+        <Widget>[
+          // 提示
+          TextWidget.textsm(LocaleKeys.forgotPassword.tr),
+          // 註冊文字按鈕
+          ButtonWidget.text(
+            LocaleKeys.retrievePassword.tr,
+            onTap: controller.onForgotPassword,
+            textSize: 12,
+            textColor: AppColors.primary,
+          )
+        ].toRow(
+          mainAxisAlignment: MainAxisAlignment.center,
+        ),
+      ],
     );
   }
 

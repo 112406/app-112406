@@ -26,6 +26,7 @@ export 'styles/styles_index/index.dart';
 export 'styles/text/index.dart';
 export 'styles/text_form/index.dart';
 export 'system/main/index.dart';
+export 'system/forgot_password/index.dart';
 export 'system/signin/index.dart';
 export 'system/signup/index.dart';
 export 'system/splash/index.dart';

@@ -129,6 +129,10 @@ class RoutePages {
       page: () => const SignupPage(),
     ),
     GetPage(
+        name: RouteNames.systemForgotPassword,
+        page: () => const ForgotPasswordPage(),
+      ),
+    GetPage(
       name: RouteNames.systemSplash,
       page: () => const SplashPage(),
     ),

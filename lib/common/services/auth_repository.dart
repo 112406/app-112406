@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 import 'package:healthcare_app/common/index.dart';
+import 'package:healthcare_app/common/models/exception/reset_password_failure.dart';
 
 class AuthService extends GetxController {
   static AuthService get to => Get.find();
@@ -45,6 +46,21 @@ class AuthService extends GetxController {
       return ex.message;
     } catch (_) {
       const ex = LogInWithEmailAndPasswordFailure();
+      return ex.message;
+    }
+    return null;
+  }
+
+  /// reset password
+  Future<String?> resetPassword(String email) async {
+    try {
+      await _auth.sendPasswordResetEmail(email: email);
+    } on FirebaseAuthException catch (e) {
+      print(e.code);
+      final ex = ResetPasswordFailure.fromCode(e.code);
+      return ex.message;
+    } catch (_) {
+      const ex = ResetPasswordFailure();
       return ex.message;
     }
     return null;

@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 import '../locale_keys.dart';
 
 /// 多語言 中文
@@ -39,6 +41,12 @@ Map<String, String> localeZh = {
   LocaleKeys.passwordconfirm: '確認密碼',
   LocaleKeys.dontHaveAccount: '沒有帳號?',
   LocaleKeys.alreadyHaveaccount: '已經有帳號?',
+  LocaleKeys.forgotPassword: '忘記密碼?',
+
+  // 找回密碼 - forgot password
+  LocaleKeys.resetPasswordEmailSent: '郵件已發送',
+  LocaleKeys.retrievePassword: '找回密碼',
+  LocaleKeys.sentEmail: '發送郵件',
 
   // 註冊 - register user
   LocaleKeys.registerTitle: '歡迎',

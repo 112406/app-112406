@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 import '../locale_keys.dart';
 
 /// 多語言 英文
@@ -43,6 +45,13 @@ Map<String, String> localeEn = {
   LocaleKeys.passwordconfirm: 'Password Confirmation',
   LocaleKeys.dontHaveAccount: 'Don\'t have an account?',
   LocaleKeys.alreadyHaveaccount: 'Already have an account?',
+  LocaleKeys.forgotPassword: 'Forgot Password?',
+
+  // 找回密碼 - forgot password
+  LocaleKeys.resetPasswordEmailSent:
+      'Email has been sent',
+  LocaleKeys.retrievePassword: 'Retrieve Password',
+  LocaleKeys.sentEmail: 'Sent Email',
 
   // 註冊 - new user
   LocaleKeys.registerTitle: 'Sign Up',

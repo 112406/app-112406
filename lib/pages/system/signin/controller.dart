@@ -90,6 +90,10 @@ class SigninController extends GetxController {
     Get.offNamed(RouteNames.systemSignup);
   }
 
+  void onForgotPassword() {
+    Get.toNamed(RouteNames.systemForgotPassword);
+  }
+
   /// 釋放
   @override
   void onClose() {

@@ -39,6 +39,12 @@ class LocaleKeys {
   static const passwordconfirm = 'password_confirm';
   static const dontHaveAccount = 'dont_have_account';
   static const alreadyHaveaccount = 'already_have_account';
+  static const forgotPassword = 'forgot_password';
+
+  // 找回密碼 - forgot password
+  static const resetPasswordEmailSent = 'reset_password_email_sent';
+  static const retrievePassword = 'retrieve_password';
+  static const sentEmail = 'sent_email';
 
   // 註冊 - register user
   static const registerTitle = 'register_title';
