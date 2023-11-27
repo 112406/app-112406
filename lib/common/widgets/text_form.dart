@@ -100,7 +100,7 @@ class _TextFormWidgetState extends State<TextFormWidget> {
                 padding: const EdgeInsets.fromLTRB(16, 0, 8, 0),
                 child: IconWidget.svg(
                   AssetsMonotoneSvgs.keySvg38,
-                  color: AppColors.onPrimary,
+                  color: AppColors.onSurface,
                 ),
               ),
               border: OutlineInputBorder(
@@ -137,7 +137,7 @@ class _TextFormWidgetState extends State<TextFormWidget> {
                   _isShowObscureIcon == true
                       ? AssetsSolidSvgs.emotionDepressedMinimalSvg98
                       : AssetsSolidSvgs.eyeSvg37,
-                  color: AppColors.onPrimary,
+                  color: AppColors.onSurface,
                   // color: AppColors.gray70,
                   // color: AppColors.white,
                   size: 24,
@@ -156,7 +156,7 @@ class _TextFormWidgetState extends State<TextFormWidget> {
                 padding: const EdgeInsets.fromLTRB(16, 0, 8, 0),
                 child: IconWidget.svg(
                   AssetsMonotoneSvgs.emailSv55g,
-                  color: AppColors.onPrimary,
+                  color: AppColors.onSurface,
                 ),
               ),
               border: OutlineInputBorder(
