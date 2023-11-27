@@ -23,9 +23,11 @@ class PersonalInfomationController extends GetxController {
     }
   }
 
-  // updateRecordName(UserProfileModel user) {
-  //   _userRepo.updateUserName(user);
-  // }
+
+
+  Future<void> updateRecordName(UserProfileModel user) async {
+    _userRepo.setProfile(user);
+  }
   // Future<List<UserModel>> getAllUser() async {
   //   final snapshot = await _userRepo.allUser();
   // }

@@ -578,58 +578,6 @@ class HomeIndexPage extends GetView<HomeIndexController> {
         ),
         const SizedBox(height: 8),
 
-        // nutrition
-        Container(
-          padding: const EdgeInsets.all(12),
-          height: 104,
-          width: double.infinity,
-          decoration: BoxDecoration(
-            color: AppColors.primaryContainer,
-            borderRadius: BorderRadius.circular(16),
-          ),
-          child: Row(
-            children: [
-              Container(
-                height: 64.w,
-                width: 64.w,
-                decoration: BoxDecoration(
-                  color: AppColors.onPrimaryContainer,
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(20.0),
-                  child: IconWidget.svg(
-                    AssetsMonotoneSvgs.appleSvg48,
-                    size: 24,
-                    color: AppColors.gray50,
-                  ),
-                ),
-              ).unconstrained(),
-              const SizedBox(width: 12),
-              Expanded(
-                  child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  TextWidget.textmd(
-                    LocaleKeys.ghomeFitnessNutrition.tr,
-                    weight: FontWeight.w900,
-                  ),
-                  const SizedBox(height: 8),
-                  TextWidget.paragraphxs(
-                    LocaleKeys.ghomeWellnessScoreDesc.tr,
-                    color: AppColors.gray70,
-                    weight: FontWeight.w500,
-                    maxLines: 2,
-                    softWrap: true,
-                  )
-                ],
-              ))
-            ],
-          ),
-        ),
-        const SizedBox(height: 8),
-
         // sleep
         Container(
           padding: const EdgeInsets.all(12),

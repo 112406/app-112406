@@ -95,6 +95,8 @@ class UserService extends GetxController {
     return true;
   }
 
+
+
   /// get healthdata from realtime database
   // Future<void> getHeartRateData() async {
   //   UserProfileModel result = await UserApi().heartRateData();

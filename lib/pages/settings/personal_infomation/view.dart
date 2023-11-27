@@ -10,178 +10,369 @@ class PersonalInfomationPage extends GetView<PersonalInfomationController> {
   const PersonalInfomationPage({Key? key}) : super(key: key);
 
   // 主視圖
-  Widget _buildView() {
+  Widget _buildView(BuildContext context) {
+    final tName = TextEditingController(text: UserService.to.profile.name);
+    final tHeight = TextEditingController(text: UserService.to.profile.height);
+    final tWeight = TextEditingController(text: UserService.to.profile.weight);
+    final tBirth =
+        TextEditingController(text: UserService.to.profile.dateOfBirth);
     return SingleChildScrollView(
-      child: FutureBuilder(
-          future: controller.getUserData(),
-          builder: (context, snapshot) {
-            if (snapshot.connectionState == ConnectionState.done) {
-              if (snapshot.hasData) {
-                UserProfileModel userData = snapshot.data as UserProfileModel;
-
-                final tName = TextEditingController(text: userData.name);
-                final tHeight = TextEditingController(text: userData.height);
-                final tWeight = TextEditingController(text: userData.weight);
-                final tBirth =
-                    TextEditingController(text: userData.dateOfBirth);
-
-                return Column(
-                  children: [
-                    Form(
-                      child: Column(
-                        children: [
-                          /// Name
-                          TextWidget.textsm(
-                            LocaleKeys.userName.tr,
-                            weight: FontWeight.w900,
-                          ).alignLeft().paddingBottom(8).paddingTop(80),
-                          TextFormField(
-                            controller: tName,
-                            decoration: InputDecoration(
-                              border: OutlineInputBorder(
-                                borderSide: BorderSide(color: AppColors.blue60),
-                                borderRadius: BorderRadius.all(
-                                    Radius.circular(AppRadius.input)),
-                              ),
-                              prefixIcon: Padding(
-                                padding: const EdgeInsets.fromLTRB(16, 0, 8, 0),
-                                child: IconWidget.svg(
-                                    AssetsMonotoneSvgs.userSv22g),
-                              ),
-                              suffixIcon: Padding(
-                                padding: const EdgeInsets.only(right: 16),
-                                child: IconWidget.svg(
-                                    AssetsMonotoneSvgs.editSvg33),
-                              ),
-                            ),
-                          ).paddingBottom(16),
-
-                          /// height
-                          TextWidget.textsm(
-                            LocaleKeys.settingPersonalInfomationHeight.tr,
-                            weight: FontWeight.w900,
-                          ).alignLeft().paddingBottom(8),
-                          TextFormField(
-                            controller: tHeight,
-                            decoration: InputDecoration(
-                              border: OutlineInputBorder(
-                                borderSide: BorderSide(color: AppColors.blue60),
-                                borderRadius: BorderRadius.all(
-                                    Radius.circular(AppRadius.input)),
-                              ),
-                              prefixIcon: Padding(
-                                padding: const EdgeInsets.fromLTRB(16, 0, 8, 0),
-                                child: IconWidget.svg(
-                                    AssetsMonotoneSvgs.userSv22g),
-                              ),
-                              suffixIcon: Padding(
-                                padding: const EdgeInsets.only(right: 16),
-                                child: IconWidget.svg(
-                                    AssetsMonotoneSvgs.editSvg33),
-                              ),
-                            ),
-                          ).paddingBottom(16),
-
-                          /// weight
-                          TextWidget.textsm(
-                            LocaleKeys.settingPersonalInfomationWeight.tr,
-                            weight: FontWeight.w900,
-                          ).alignLeft().paddingBottom(8),
-                          TextFormField(
-                            controller: tWeight,
-                            decoration: InputDecoration(
-                              border: OutlineInputBorder(
-                                borderSide: BorderSide(color: AppColors.blue60),
-                                borderRadius: BorderRadius.all(
-                                    Radius.circular(AppRadius.input)),
-                              ),
-                              prefixIcon: Padding(
-                                padding: const EdgeInsets.fromLTRB(16, 0, 8, 0),
-                                child: IconWidget.svg(
-                                    AssetsMonotoneSvgs.userSv22g),
-                              ),
-                              suffixIcon: Padding(
-                                padding: const EdgeInsets.only(right: 16),
-                                child: IconWidget.svg(
-                                    AssetsMonotoneSvgs.editSvg33),
-                              ),
-                            ),
-                          ).paddingBottom(16),
-
-                          /// birth
-                          TextWidget.textsm(
-                            LocaleKeys.settingPersonalInfomationDateOfBirth.tr,
-                            weight: FontWeight.w900,
-                          ).alignLeft().paddingBottom(8),
-                          TextFormField(
-                            controller: tBirth,
-                            decoration: InputDecoration(
-                              border: OutlineInputBorder(
-                                borderSide: BorderSide(color: AppColors.blue60),
-                                borderRadius: BorderRadius.all(
-                                    Radius.circular(AppRadius.input)),
-                              ),
-                              prefixIcon: Padding(
-                                padding: const EdgeInsets.fromLTRB(16, 0, 8, 0),
-                                child: IconWidget.svg(
-                                    AssetsMonotoneSvgs.calendarSvg17),
-                              ),
-                              suffixIcon: Padding(
-                                padding: const EdgeInsets.only(right: 16),
-                                child: IconWidget.svg(
-                                    AssetsSolidSvgs.chevronDownMdSvg37),
-                              ),
-                            ),
-                            onTap: () async {
-                              DateTime pickedDate = (await showDatePicker(
-                                context: context,
-                                initialDate: DateTime.now(),
-                                firstDate: DateTime(1900),
-                                lastDate: DateTime.now(),
-                              ))!;
-                              tBirth.text =
-                                  DateFormat('yyyy-MM-dd').format(pickedDate);
-                            },
-                          ).paddingBottom(16),
-
-                          // -- Form Submit Button
-                          SizedBox(
-                            width: double.infinity,
-                            child: ElevatedButton(
-                              onPressed: () async {
-                                final userData = UserProfileModel(
-                                  name: tName.text.trim(),
-                                  height: tHeight.text.trim(),
-                                  weight: tWeight.text.trim(),
-                                  dateOfBirth: tBirth.text.trim(),
-                                );
-                                // await controller.updateRecordName(userData);
-                              },
-                              style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.amber,
-                                  side: BorderSide.none,
-                                  shape: const StadiumBorder()),
-                              child: const Text('UPDATE',
-                                  style: TextStyle(color: Colors.white)),
-                            ),
-                          ),
-                          const SizedBox(height: 12),
-                        ],
-                      ),
+        child: Column(
+      children: [
+        Form(
+          child: Column(
+            children: [
+              /// Name
+              TextWidget.textsm(
+                LocaleKeys.userName.tr,
+                weight: FontWeight.w900,
+              ).alignLeft().paddingBottom(8).paddingTop(80),
+              TextFormField(
+                controller: tName,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                    borderSide: BorderSide(color: AppColors.blue60),
+                    borderRadius:
+                        BorderRadius.all(Radius.circular(AppRadius.input)),
+                  ),
+                  prefixIcon: Padding(
+                    padding: const EdgeInsets.fromLTRB(16, 0, 8, 0),
+                    child: IconWidget.svg(
+                      AssetsMonotoneSvgs.userSv22g,
+                      color: AppColors.onPrimary,
                     ),
-                  ],
-                );
-              } else if (snapshot.hasError) {
-                return Center(child: Text(snapshot.error.toString()));
-              } else {
-                return const Center(child: Text('Something went wrong.'));
-              }
-            } else {
-              return const Center(child: CircularProgressIndicator());
-            }
-          }),
-    ).paddingHorizontal(AppSpace.page);
+                  ),
+                  suffixIcon: Padding(
+                    padding: const EdgeInsets.only(right: 16),
+                    child: IconWidget.svg(
+                      AssetsMonotoneSvgs.editSvg33,
+                      color: AppColors.onPrimary,
+                    ),
+                  ),
+                ),
+              ).paddingBottom(16),
+
+              /// height
+              TextWidget.textsm(
+                LocaleKeys.settingPersonalInfomationHeight.tr,
+                weight: FontWeight.w900,
+              ).alignLeft().paddingBottom(8),
+              TextFormField(
+                controller: tHeight,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                    borderSide: BorderSide(color: AppColors.blue60),
+                    borderRadius:
+                        BorderRadius.all(Radius.circular(AppRadius.input)),
+                  ),
+                  prefixIcon: Padding(
+                    padding: const EdgeInsets.fromLTRB(16, 0, 8, 0),
+                    child: IconWidget.svg(
+                      AssetsMonotoneSvgs.userSv22g,
+                      color: AppColors.onPrimary,
+                    ),
+                  ),
+                  suffixIcon: Padding(
+                    padding: const EdgeInsets.only(right: 16),
+                    child: IconWidget.svg(
+                      AssetsMonotoneSvgs.editSvg33,
+                      color: AppColors.onPrimary,
+                    ),
+                  ),
+                ),
+              ).paddingBottom(16),
+
+              /// weight
+              TextWidget.textsm(
+                LocaleKeys.settingPersonalInfomationWeight.tr,
+                weight: FontWeight.w900,
+              ).alignLeft().paddingBottom(8),
+              TextFormField(
+                controller: tWeight,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                    borderSide: BorderSide(color: AppColors.blue60),
+                    borderRadius:
+                        BorderRadius.all(Radius.circular(AppRadius.input)),
+                  ),
+                  prefixIcon: Padding(
+                    padding: const EdgeInsets.fromLTRB(16, 0, 8, 0),
+                    child: IconWidget.svg(
+                      AssetsMonotoneSvgs.userSv22g,
+                      color: AppColors.onPrimary,
+                    ),
+                  ),
+                  suffixIcon: Padding(
+                    padding: const EdgeInsets.only(right: 16),
+                    child: IconWidget.svg(
+                      AssetsMonotoneSvgs.editSvg33,
+                      color: AppColors.onPrimary,
+                    ),
+                  ),
+                ),
+              ).paddingBottom(16),
+
+              /// birth
+              TextWidget.textsm(
+                LocaleKeys.settingPersonalInfomationDateOfBirth.tr,
+                weight: FontWeight.w900,
+              ).alignLeft().paddingBottom(8),
+              TextFormField(
+                controller: tBirth,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                    borderSide: BorderSide(color: AppColors.blue60),
+                    borderRadius:
+                        BorderRadius.all(Radius.circular(AppRadius.input)),
+                  ),
+                  prefixIcon: Padding(
+                    padding: const EdgeInsets.fromLTRB(16, 0, 8, 0),
+                    child: IconWidget.svg(
+                      AssetsMonotoneSvgs.calendarSvg17,
+                      color: AppColors.onPrimary,
+                    ),
+                  ),
+                  suffixIcon: Padding(
+                    padding: const EdgeInsets.only(right: 16),
+                    child: IconWidget.svg(
+                      AssetsSolidSvgs.chevronDownMdSvg37,
+                      color: AppColors.onPrimary,
+                    ),
+                  ),
+                ),
+                onTap: () async {
+                  DateTime? pickedDate = (await showDatePicker(
+                    context: context,
+                    initialDate: DateTime.now(),
+                    firstDate: DateTime(1900),
+                    lastDate: DateTime.now(),
+                  ));
+                  tBirth.text = DateFormat('yyyy-MM-dd')
+                      .format(pickedDate ?? DateTime.now());
+                },
+              ).paddingBottom(16),
+
+              // -- Form Submit Button
+              SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () async {
+                    final userData = UserProfileModel(
+                      name: tName.text.trim(),
+                      height: tHeight.text.trim(),
+                      weight: tWeight.text.trim(),
+                      dateOfBirth: tBirth.text.trim(),
+                    );
+                    await controller.updateRecordName(userData);
+                  },
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.amber,
+                      side: BorderSide.none,
+                      shape: const StadiumBorder()),
+                  child: const Text('UPDATE',
+                      style: TextStyle(color: Colors.white)),
+                ),
+              ),
+              const SizedBox(height: 12),
+            ],
+          ),
+        ),
+      ],
+    )
+        // .toColumn(
+        //   crossAxisAlignment: CrossAxisAlignment.start,
+        // )
+        // .paddingHorizontal(AppSpace.page),
+        ).paddingHorizontal(AppSpace.page);
   }
+  // Widget _buildView() {
+  //   return SingleChildScrollView(
+  //     child: FutureBuilder(
+  //         future: controller.getUserData(),
+  //         builder: (context, snapshot) {
+  //           if (snapshot.connectionState == ConnectionState.done) {
+  //             if (snapshot.hasData) {
+  //               UserProfileModel userData = snapshot.data as UserProfileModel;
+
+  //               final tName = TextEditingController(text: userData.name);
+  //               final tHeight = TextEditingController(text: userData.height);
+  //               final tWeight = TextEditingController(text: userData.weight);
+  //               final tBirth =
+  //                   TextEditingController(text: userData.dateOfBirth);
+
+  //               return Column(
+  //                 children: [
+  //                   Form(
+  //                     child: Column(
+  //                       children: [
+  //                         /// Name
+  //                         TextWidget.textsm(
+  //                           LocaleKeys.userName.tr,
+  //                           weight: FontWeight.w900,
+  //                         ).alignLeft().paddingBottom(8).paddingTop(80),
+  //                         TextFormField(
+  //                           controller: tName,
+  //                           decoration: InputDecoration(
+  //                             border: OutlineInputBorder(
+  //                               borderSide: BorderSide(color: AppColors.blue60),
+  //                               borderRadius: BorderRadius.all(
+  //                                   Radius.circular(AppRadius.input)),
+  //                             ),
+  //                             prefixIcon: Padding(
+  //                               padding: const EdgeInsets.fromLTRB(16, 0, 8, 0),
+  //                               child: IconWidget.svg(
+  //                                 AssetsMonotoneSvgs.userSv22g,
+  //                                 color: AppColors.onPrimary,
+  //                               ),
+  //                             ),
+  //                             suffixIcon: Padding(
+  //                               padding: const EdgeInsets.only(right: 16),
+  //                               child: IconWidget.svg(
+  //                                 AssetsMonotoneSvgs.editSvg33,
+  //                                 color: AppColors.onPrimary,
+  //                               ),
+  //                             ),
+  //                           ),
+  //                         ).paddingBottom(16),
+
+  //                         /// height
+  //                         TextWidget.textsm(
+  //                           LocaleKeys.settingPersonalInfomationHeight.tr,
+  //                           weight: FontWeight.w900,
+  //                         ).alignLeft().paddingBottom(8),
+  //                         TextFormField(
+  //                           controller: tHeight,
+  //                           decoration: InputDecoration(
+  //                             border: OutlineInputBorder(
+  //                               borderSide: BorderSide(color: AppColors.blue60),
+  //                               borderRadius: BorderRadius.all(
+  //                                   Radius.circular(AppRadius.input)),
+  //                             ),
+  //                             prefixIcon: Padding(
+  //                               padding: const EdgeInsets.fromLTRB(16, 0, 8, 0),
+  //                               child: IconWidget.svg(
+  //                                 AssetsMonotoneSvgs.userSv22g,
+  //                                 color: AppColors.onPrimary,
+  //                               ),
+  //                             ),
+  //                             suffixIcon: Padding(
+  //                               padding: const EdgeInsets.only(right: 16),
+  //                               child: IconWidget.svg(
+  //                                 AssetsMonotoneSvgs.editSvg33,
+  //                                 color: AppColors.onPrimary,
+  //                               ),
+  //                             ),
+  //                           ),
+  //                         ).paddingBottom(16),
+
+  //                         /// weight
+  //                         TextWidget.textsm(
+  //                           LocaleKeys.settingPersonalInfomationWeight.tr,
+  //                           weight: FontWeight.w900,
+  //                         ).alignLeft().paddingBottom(8),
+  //                         TextFormField(
+  //                           controller: tWeight,
+  //                           decoration: InputDecoration(
+  //                             border: OutlineInputBorder(
+  //                               borderSide: BorderSide(color: AppColors.blue60),
+  //                               borderRadius: BorderRadius.all(
+  //                                   Radius.circular(AppRadius.input)),
+  //                             ),
+  //                             prefixIcon: Padding(
+  //                               padding: const EdgeInsets.fromLTRB(16, 0, 8, 0),
+  //                               child: IconWidget.svg(
+  //                                 AssetsMonotoneSvgs.userSv22g,
+  //                                 color: AppColors.onPrimary,
+  //                               ),
+  //                             ),
+  //                             suffixIcon: Padding(
+  //                               padding: const EdgeInsets.only(right: 16),
+  //                               child: IconWidget.svg(
+  //                                 AssetsMonotoneSvgs.editSvg33,
+  //                                 color: AppColors.onPrimary,
+  //                               ),
+  //                             ),
+  //                           ),
+  //                         ).paddingBottom(16),
+
+  //                         /// birth
+  //                         TextWidget.textsm(
+  //                           LocaleKeys.settingPersonalInfomationDateOfBirth.tr,
+  //                           weight: FontWeight.w900,
+  //                         ).alignLeft().paddingBottom(8),
+  //                         TextFormField(
+  //                           controller: tBirth,
+  //                           decoration: InputDecoration(
+  //                             border: OutlineInputBorder(
+  //                               borderSide: BorderSide(color: AppColors.blue60),
+  //                               borderRadius: BorderRadius.all(
+  //                                   Radius.circular(AppRadius.input)),
+  //                             ),
+  //                             prefixIcon: Padding(
+  //                               padding: const EdgeInsets.fromLTRB(16, 0, 8, 0),
+  //                               child: IconWidget.svg(
+  //                                 AssetsMonotoneSvgs.calendarSvg17,
+  //                                 color: AppColors.onPrimary,
+  //                               ),
+  //                             ),
+  //                             suffixIcon: Padding(
+  //                               padding: const EdgeInsets.only(right: 16),
+  //                               child: IconWidget.svg(
+  //                                 AssetsSolidSvgs.chevronDownMdSvg37,
+  //                                 color: AppColors.onPrimary,
+  //                               ),
+  //                             ),
+  //                           ),
+  //                           onTap: () async {
+  //                             DateTime? pickedDate = (await showDatePicker(
+  //                               context: context,
+  //                               initialDate: DateTime.now(),
+  //                               firstDate: DateTime(1900),
+  //                               lastDate: DateTime.now(),
+  //                             ));
+  //                             tBirth.text = DateFormat('yyyy-MM-dd')
+  //                                 .format(pickedDate ?? DateTime.now());
+  //                           },
+  //                         ).paddingBottom(16),
+
+  //                         // -- Form Submit Button
+  //                         SizedBox(
+  //                           width: double.infinity,
+  //                           child: ElevatedButton(
+  //                             onPressed: () async {
+  //                               final userData = UserProfileModel(
+  //                                 name: tName.text.trim(),
+  //                                 height: tHeight.text.trim(),
+  //                                 weight: tWeight.text.trim(),
+  //                                 dateOfBirth: tBirth.text.trim(),
+  //                               );
+  //                               await controller.updateRecordName(userData);
+  //                             },
+  //                             style: ElevatedButton.styleFrom(
+  //                                 backgroundColor: Colors.amber,
+  //                                 side: BorderSide.none,
+  //                                 shape: const StadiumBorder()),
+  //                             child: const Text('UPDATE',
+  //                                 style: TextStyle(color: Colors.white)),
+  //                           ),
+  //                         ),
+  //                         const SizedBox(height: 12),
+  //                       ],
+  //                     ),
+  //                   ),
+  //                 ],
+  //               );
+  //             } else if (snapshot.hasError) {
+  //               return Center(child: Text(snapshot.error.toString()));
+  //             } else {
+  //               return const Center(child: Text('Something went wrong.'));
+  //             }
+  //           } else {
+  //             return const Center(child: CircularProgressIndicator());
+  //           }
+  //         }),
+  //   ).paddingHorizontal(AppSpace.page);
+  // }
 
   Widget profileView() {
     return const Stack(
@@ -275,12 +466,7 @@ class PersonalInfomationPage extends GetView<PersonalInfomationController> {
                   // ),
                 ],
               )),
-          body: Column(
-            children: [
-              _buildView(),
-              // profileView(),
-            ],
-          ),
+          body: _buildView(context),
         );
       },
     );
