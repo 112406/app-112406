@@ -364,9 +364,13 @@ class TaskAddPage extends GetView<TrackerIndexController> {
   double toDouble(TimeOfDay myTime) => myTime.hour + myTime.minute / 60.0;
 
   _getTimeFromUser(BuildContext context, bool isStartTime) async {
-    var pickedTime = await _showTimePicker(context);
+    TimeOfDay? pickedTime = await _showTimePicker(context);
     if (!context.mounted) return;
-    String? formatedTime = pickedTime?.format(context);
+    // String? formatedTime = pickedTime.format(context);
+    // print(pickedTime);
+    String? formatedTime = pickedTime?.to24hours();
+
+    // String? formatedTime = pickedTime?.to24hours();
     print(formatedTime);
     if (pickedTime == null) {
       print("time canceld");
@@ -385,6 +389,9 @@ class TaskAddPage extends GetView<TrackerIndexController> {
           minute: int.parse(controller.startTime!.split(":")[1].split(" ")[0])),
       initialEntryMode: TimePickerEntryMode.input,
       context: context,
+      builder: (context, child) => MediaQuery(
+          data: MediaQuery.of(context).copyWith(alwaysUse24HourFormat: true),
+          child: child!),
     );
   }
 

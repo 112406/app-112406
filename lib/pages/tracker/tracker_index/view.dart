@@ -200,8 +200,9 @@ class TrackerIndexPage extends GetView<TrackerIndexController> {
                   var minutes = task.startTime.toString().split(":")[1];
                   debugPrint("My time is $hour");
                   debugPrint("My minute is $minutes");
-                  DateTime date = DateFormat.jm().parse(task.startTime!);
-                  var myTime = DateFormat("HH:mm").format(date);
+                  // DateTime date = DateFormat.jm().parse(task.startTime!);
+                  // var myTime = DateFormat("HH:mm").format(date);
+                  var myTime = task.startTime;
                   /*
                   print("my date "+date.toString());
                   print("my time " +myTime);

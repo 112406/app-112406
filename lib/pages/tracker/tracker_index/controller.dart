@@ -25,9 +25,9 @@ class TrackerIndexController extends GetxController {
   //String _startTime = DateFormat("hh:mm").format(DateTime.now());
   //_startTime = DateFormat('hh:mm a').format(DateTime.now()).toString();
   RxString? startTime =
-      DateFormat('hh:mm a').format(DateTime.now()).toString().obs;
+      DateFormat('hh:mm').format(DateTime.now()).toString().obs;
 
-  RxString? endTime = "9:30 AM".obs;
+  RxString? endTime = "21:30".obs;
   RxInt selectedColor = 0.obs;
 
   RxInt selectedRemind = 5.obs;
