@@ -10,7 +10,11 @@ import 'package:rxdart/rxdart.dart';
 
 class NotifyHelper {
   FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
-      FlutterLocalNotificationsPlugin(); //
+      FlutterLocalNotificationsPlugin();
+
+  // flutterLocalNotificationsPlugin.resolvePlatformSpecificImplementation<
+  //   AndroidFlutterLocalNotificationsPlugin>().requestNotificationsPermission();
+
   String? selectedNotificationPayload;
 
   final BehaviorSubject<String?> selectNotificationSubject =
@@ -21,9 +25,9 @@ class NotifyHelper {
     // this is for latest iOS settings
     final DarwinInitializationSettings initializationSettingsIOS =
         DarwinInitializationSettings(
-            requestSoundPermission: false,
-            requestBadgePermission: false,
-            requestAlertPermission: false,
+            requestSoundPermission: true,
+            requestBadgePermission: true,
+            requestAlertPermission: true,
             onDidReceiveLocalNotification: onDidReceiveLocalNotification);
 
     const AndroidInitializationSettings initializationSettingsAndroid =
@@ -34,6 +38,11 @@ class NotifyHelper {
       iOS: initializationSettingsIOS,
       android: initializationSettingsAndroid,
     );
+
+    flutterLocalNotificationsPlugin
+        .resolvePlatformSpecificImplementation<
+            AndroidFlutterLocalNotificationsPlugin>()
+        ?.requestNotificationsPermission();
 
     await flutterLocalNotificationsPlugin.initialize(initializationSettings,
         onDidReceiveNotificationResponse: (data) async {
@@ -56,6 +65,7 @@ class NotifyHelper {
   Future<void> _configureLocalTimeZone() async {
     tz.initializeTimeZones();
     final String timeZoneName = await FlutterTimezone.getLocalTimezone();
+    // print(timeZoneName);
     tz.setLocalLocation(tz.getLocation(timeZoneName));
   }
 
@@ -116,7 +126,7 @@ class NotifyHelper {
     );
   }
 
-  scheduledNotification(int hour, int minutes, Task task) async {
+  Future<void> scheduledNotification(int hour, int minutes, Task task) async {
     await flutterLocalNotificationsPlugin.zonedSchedule(
       task.id!,
       task.title,
@@ -149,7 +159,7 @@ class NotifyHelper {
       scheduledDate = scheduledDate.add(const Duration(days: 1));
     }
     // print(tz.TZDateTime.parse(tz.local, scheduledDate.toString()));
-    print(scheduledDate);
+    print("${scheduledDate}aaa");
     // print(tz.TZDateTime.now(tz.local));
     // print(tz.TZDateTime.now(tz.local)
     //     .add(const Duration(days: 0, minutes: 1, seconds: 15)));
