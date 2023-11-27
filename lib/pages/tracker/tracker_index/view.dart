@@ -203,6 +203,7 @@ class TrackerIndexPage extends GetView<TrackerIndexController> {
                   // DateTime date = DateFormat.jm().parse(task.startTime!);
                   // var myTime = DateFormat("HH:mm").format(date);
                   var myTime = task.startTime;
+
                   /*
                   print("my date "+date.toString());
                   print("my time " +myTime);
@@ -214,6 +215,7 @@ class TrackerIndexPage extends GetView<TrackerIndexController> {
                   controller.notifyHelper.scheduledNotification(
                       int.parse(myTime.toString().split(":")[0]),
                       int.parse(myTime.toString().split(":")[1]),
+                      // myTime,
                       task);
                   return AnimationConfiguration.staggeredList(
                     position: index,

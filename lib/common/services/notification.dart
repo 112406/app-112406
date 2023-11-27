@@ -126,16 +126,17 @@ class NotifyHelper {
     );
   }
 
-  Future<void> scheduledNotification(int hour, int minutes, Task task) async {
+  Future<void> scheduledNotification(int hour, int minutes ,Task task) async {
     await flutterLocalNotificationsPlugin.zonedSchedule(
       task.id!,
       task.title,
       task.note,
       // tz.TZDateTime.parse(
       //     tz.local, _nextInstanceOfTenAM(hour, minutes).toString()),
-      // _nextInstanceOfTenAM(hour, minutes),
-      tz.TZDateTime.now(tz.local)
-          .add(const Duration(days: 0, minutes: 0, seconds: 5)),
+      _nextInstanceOfTenAM(hour, minutes),
+      // tz.TZDateTime.now(tz.local)
+      //     .add(const Duration(days: 0, minutes: 0, seconds: 5)),
+      // tz.TZDateTime.parse(tz.local, date),
       const NotificationDetails(
           android: AndroidNotificationDetails(
               'your channel id', 'your channel name',
