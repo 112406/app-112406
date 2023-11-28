@@ -641,7 +641,7 @@ class HomeIndexPage extends GetView<HomeIndexController> {
                         return TextWidget.paragraphxs(
                           LocaleKeys.ghomeFitnessSleepDesc.trParams({
                             "sleep": value.isNotEmpty
-                                ? value.last.value.toString()
+                                ? (value.last.value/480).toString()
                                 : "-",
                           }),
                           color: AppColors.gray70,
