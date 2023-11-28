@@ -669,10 +669,10 @@ class HomeIndexPage extends GetView<HomeIndexController> {
                   return CircularPercentIndicator(
                     radius: 32,
                     lineWidth: 4,
-                    percent: value.isNotEmpty ? (value.last.value / 8) : 0,
+                    percent: value.isNotEmpty ? (value.last.value / 60) : 0,
                     center: TextWidget.labelXS(
                       value.isNotEmpty
-                          ? "${(value.last.value / 8*100).toString()}%"
+                          ? "${(value.last.value / 480*100).toString()}%"
                           : "-",
                       weight: FontWeight.w900,
                     ),
