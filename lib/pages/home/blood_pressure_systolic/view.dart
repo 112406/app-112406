@@ -29,6 +29,10 @@ class BloodPressureSystolicPage extends GetView<BloodPressureSystolicController>
               LocaleKeys.ghomeFuncCardBloodPressureSystolic.tr,
             ),
           ),
+          floatingActionButton: FloatingActionButton(
+              onPressed: (() => controller.getData()),
+              child: const Icon(Icons.refresh),
+            ),
            body: Center(
             child: Container(
               //Initialize chart

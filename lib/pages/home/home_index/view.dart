@@ -584,7 +584,7 @@ class HomeIndexPage extends GetView<HomeIndexController> {
                     percent: value.isNotEmpty ? (value.last.value / 10000) : 0,
                     center: TextWidget.labelXS(
                       value.isNotEmpty
-                          ? "${(value.last.value / 10000).toString()}%"
+                          ? "${(value.last.value / 10000*100).toString()}%"
                           : "-",
                       weight: FontWeight.w900,
                     ),
@@ -672,7 +672,7 @@ class HomeIndexPage extends GetView<HomeIndexController> {
                     percent: value.isNotEmpty ? (value.last.value / 8) : 0,
                     center: TextWidget.labelXS(
                       value.isNotEmpty
-                          ? "${(value.last.value / 8).toString()}%"
+                          ? "${(value.last.value / 8*100).toString()}%"
                           : "-",
                       weight: FontWeight.w900,
                     ),
