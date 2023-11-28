@@ -133,7 +133,7 @@ class NotifyHelper {
       task.note,
       // tz.TZDateTime.parse(
       //     tz.local, _nextInstanceOfTenAM(hour, minutes).toString()),
-      _nextInstanceOfTenAM(hour, minutes),
+      await _nextInstanceOfTime(hour, minutes),
       // tz.TZDateTime.now(tz.local)
       //     .add(const Duration(days: 0, minutes: 0, seconds: 5)),
       // tz.TZDateTime.parse(tz.local, date),
@@ -151,8 +151,11 @@ class NotifyHelper {
     );
   }
 
-  tz.TZDateTime _nextInstanceOfTenAM(int hour, int minutes) {
+  static Future<tz.TZDateTime> _nextInstanceOfTime(int hour, int minutes) async{
     tz.initializeTimeZones();
+    final String timeZoneName = await FlutterTimezone.getLocalTimezone();
+    // print(timeZoneName);
+    tz.setLocalLocation(tz.getLocation(timeZoneName));
     final tz.TZDateTime now = tz.TZDateTime.now(tz.local);
     tz.TZDateTime scheduledDate =
         tz.TZDateTime(tz.local, now.year, now.month, now.day, hour, minutes);
