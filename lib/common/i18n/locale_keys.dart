@@ -104,6 +104,17 @@ class LocaleKeys {
   static const ghomeFitnessSleep = 'home_fitness_sleep';
   static const ghomeFitnessSleepDesc = 'home_fitness_sleep_desc';
 
+  // task page
+  static const addTask = 'add_task';
+  static const taskToday = 'task_today';
+  static const addTaskTitle = 'add_task_title';
+  static const addTaskNote = 'add_task_note';
+  static const addTaskDate = 'add_task_date';
+  static const addTaskStartTime = 'add_task_start_time';
+  static const addTaskEndTime = 'add_task_end_time';
+  static const addTaskRepeat = 'add_task_repeat';
+  static const addTaskRemind = '';
+
   // setting my account
   static const settingMyAccountTitle = 'setting_my_account_title';
   static const settingGeneralTitle = 'setting_general_title';
