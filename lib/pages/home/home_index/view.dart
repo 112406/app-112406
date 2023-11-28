@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:healthcare_app/common/index.dart';
+import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
@@ -460,7 +461,7 @@ class HomeIndexPage extends GetView<HomeIndexController> {
                       // );
                       return LinearPercentIndicator(
                         percent: value.isNotEmpty
-                            ? (value.last.value.truncate() / 2000)
+                            ? (value.last.value.truncate() / 3000)
                             : 0,
                         leading: TextWidget.paragraphxs(
                           value.isNotEmpty
@@ -472,7 +473,7 @@ class HomeIndexPage extends GetView<HomeIndexController> {
                           softWrap: true,
                         ),
                         trailing: TextWidget.paragraphxs(
-                          value.isNotEmpty ? "2000" : "-",
+                          value.isNotEmpty ? "3000" : "-",
                           color: AppColors.gray70,
                           weight: FontWeight.w500,
                           maxLines: 2,
@@ -537,42 +538,60 @@ class HomeIndexPage extends GetView<HomeIndexController> {
               ).unconstrained(),
               const SizedBox(width: 12),
               Expanded(
-                  child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  TextWidget.textmd(
-                    LocaleKeys.ghomeFitnessStepsTaken.tr,
-                    weight: FontWeight.w900,
-                  ),
-                  const SizedBox(height: 8),
-                  ValueListenableBuilder(
-                    valueListenable: controller.steps,
-                    builder: (context, value, child) {
-                      return TextWidget.paragraphxs(
-                        LocaleKeys.ghomeFitnessStepsTakenDesc.trParams({
-                          "steps": value.isNotEmpty
-                              ? value.last.value.toString()
-                              : "-",
-                        }),
-                        color: AppColors.gray70,
-                        weight: FontWeight.w500,
-                        maxLines: 2,
-                        softWrap: true,
-                      );
-                    },
-                  ),
-                  // TextWidget.paragraphxs(
-                  //   LocaleKeys.ghomeFitnessStepsTakenDesc.trParams({
-                  //     "steps": ,
-                  //   }),
-                  //   color: AppColors.gray70,
-                  //   weight: FontWeight.w500,
-                  //   maxLines: 2,
-                  //   softWrap: true,
-                  // )
-                ],
-              ))
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    TextWidget.textmd(
+                      LocaleKeys.ghomeFitnessStepsTaken.tr,
+                      weight: FontWeight.w900,
+                    ),
+                    const SizedBox(height: 8),
+                    ValueListenableBuilder(
+                      valueListenable: controller.steps,
+                      builder: (context, value, child) {
+                        return TextWidget.paragraphxs(
+                          LocaleKeys.ghomeFitnessStepsTakenDesc.trParams({
+                            "steps": value.isNotEmpty
+                                ? value.last.value.toString()
+                                : "-",
+                          }),
+                          color: AppColors.gray70,
+                          weight: FontWeight.w500,
+                          maxLines: 2,
+                          softWrap: true,
+                        );
+                      },
+                    ),
+                    // TextWidget.paragraphxs(
+                    //   LocaleKeys.ghomeFitnessStepsTakenDesc.trParams({
+                    //     "steps": ,
+                    //   }),
+                    //   color: AppColors.gray70,
+                    //   weight: FontWeight.w500,
+                    //   maxLines: 2,
+                    //   softWrap: true,
+                    // )
+                  ],
+                ),
+              ),
+              ValueListenableBuilder(
+                valueListenable: controller.steps,
+                builder: (context, value, child) {
+                  return CircularPercentIndicator(
+                    radius: 32,
+                    lineWidth: 4,
+                    percent: value.isNotEmpty ? (value.last.value / 10000) : 0,
+                    center: TextWidget.labelXS(
+                      value.isNotEmpty
+                          ? "${(value.last.value / 10000).toString()}%"
+                          : "-",
+                      weight: FontWeight.w900,
+                    ),
+                    progressColor: Colors.blue,
+                  );
+                },
+              ),
             ],
           ),
         ),
@@ -616,17 +635,50 @@ class HomeIndexPage extends GetView<HomeIndexController> {
                       weight: FontWeight.w900,
                     ),
                     const SizedBox(height: 8),
-                    TextWidget.paragraphxs(
-                      LocaleKeys.ghomeFitnessSleepDesc.trParams({
-                        "hours": "8",
-                      }),
-                      color: AppColors.gray70,
-                      weight: FontWeight.w500,
-                      maxLines: 2,
-                      softWrap: true,
-                    )
+                    ValueListenableBuilder(
+                      valueListenable: controller.sleeps,
+                      builder: (context, value, child) {
+                        return TextWidget.paragraphxs(
+                          LocaleKeys.ghomeFitnessSleepDesc.trParams({
+                            "sleep": value.isNotEmpty
+                                ? value.last.value.toString()
+                                : "-",
+                          }),
+                          color: AppColors.gray70,
+                          weight: FontWeight.w500,
+                          maxLines: 2,
+                          softWrap: true,
+                        );
+                      },
+                    ),
+                    // TextWidget.paragraphxs(
+                    //   LocaleKeys.ghomeFitnessSleepDesc.trParams({
+                    //     "hours": "8",
+                    //   }),
+                    //   color: AppColors.gray70,
+                    //   weight: FontWeight.w500,
+                    //   maxLines: 2,
+                    //   softWrap: true,
+                    // )
                   ],
                 ),
+              ),
+              ValueListenableBuilder(
+                valueListenable: controller.sleeps,
+                builder: (context, value, child) {
+                  return CircularPercentIndicator(
+                    radius: 32,
+                    lineWidth: 4,
+                    percent: value.isNotEmpty ? (value.last.value / 8) : 0,
+                    center: TextWidget.labelXS(
+                      value.isNotEmpty
+                          ? "${(value.last.value / 8).toString()}%"
+                          : "-",
+                      weight: FontWeight.w900,
+                    ),
+                    progressColor: Colors.purple,
+                  );
+                },
               ),
             ],
           ),
@@ -652,7 +704,7 @@ class HomeIndexPage extends GetView<HomeIndexController> {
         // Flash Sell
         // title
         TextWidget.textmd(
-          LocaleKeys.ghomeFitnessTrackerTitle.tr,
+          LocaleKeys.ghomeHealthTitle.tr,
           weight: FontWeight.w900,
         )
             .sliverToBoxAdapter()
@@ -665,7 +717,7 @@ class HomeIndexPage extends GetView<HomeIndexController> {
         // new product
         // title
         TextWidget.textmd(
-          LocaleKeys.ghomeHealthTitle.tr,
+          LocaleKeys.ghomeFitnessTrackerTitle.tr,
           weight: FontWeight.w900,
         )
             .sliverToBoxAdapter()

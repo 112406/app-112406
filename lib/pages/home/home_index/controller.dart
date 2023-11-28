@@ -11,6 +11,7 @@ class HomeIndexController extends GetxController {
   final bloodPressureSystolics = ValueNotifier(<BloodPressureSystolic>[]);
   final bloodPressureDiastolics = ValueNotifier(<BloodPressureDiastolic>[]);
   final steps = ValueNotifier(<Steps>[]);
+  final sleeps = ValueNotifier(<SleepHour>[]);
   final calories = ValueNotifier(<Calories>[]);
   // final health = HealthFactory(useHealthConnectIfAvailable: true);
   // final health = HealthFactory(useHealthConnectIfAvailable: false);
@@ -59,6 +60,7 @@ class HomeIndexController extends GetxController {
       await getBloodPressureSystolicData();
       await getBloodPressureDiastolicData();
       await getStepData();
+      await getSleepData();
       await getCaloriesData();
       refreshController.refreshCompleted();
     } catch (error) {
@@ -85,6 +87,10 @@ class HomeIndexController extends GetxController {
 
   Future<void> getStepData() async {
     steps.value = await repository.getStep();
+  }
+
+  Future<void> getSleepData() async {
+    sleeps.value = await repository.getSleep();
   }
 
   Future<void> getCaloriesData() async {
