@@ -1,11 +1,17 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:health/health.dart';
+import 'package:healthcare_app/common/extension/ex_datefromtimeday.dart';
 import 'package:healthcare_app/common/index.dart';
 
 class HealthRepository {
   final health = HealthFactory();
 
   final userRepo = Get.put(UserService());
+
+  List<SleepHour> sleepTotal = [];
+  double sleepTotal2 = 0.0;
+  double burnedEnergyTotal = 0.0;
 
   Future<void> requestPermission() async {
     var types = [
@@ -56,7 +62,7 @@ class HealthRepository {
 
       return healthData.map((e) {
         var b = e;
-        print(b.value.toJson()['numericValue']);
+        // print(b.value.toJson()['numericValue']);
         return BloodPressureDiastolic(
             double.parse(b.value.toJson()['numericValue']),
             b.unit.toString(),
@@ -78,7 +84,7 @@ class HealthRepository {
 
       return healthData.map((e) {
         var b = e;
-        print(b.value.toJson()['numericValue']);
+        // print(b.value.toJson()['numericValue']);
         return BloodPressureSystolic(
             double.parse(b.value.toJson()['numericValue']),
             b.unit.toString(),
@@ -94,14 +100,32 @@ class HealthRepository {
         await health.requestAuthorization([HealthDataType.SLEEP_ASLEEP]);
     if (requested) {
       List<HealthDataPoint> healthData = await health.getHealthDataFromTypes(
-          DateTime.now().subtract(const Duration(days: 7)),
+          // DateTime.now().subtract(const Duration(days: 1)),
+          DateTime.now()
+              .appliedFromTimeOfDay(const TimeOfDay(hour: 0, minute: 0)),
           DateTime.now(),
           [HealthDataType.SLEEP_ASLEEP]);
+      // for (var item in healthData) {
+      //   // print(item.toJson());
+      //   sleepTotal.add(item.value.toJson()['numericValue'].toInt());
+      //   print();
+
+      //   // SleepHour(
+      //   //     double.parse(item.value.toJson()['numericValue']),
+      //   //     item.unit.toString(),
+      //   //     item.dateFrom,
+      //   //     item.dateTo);
+      // }
+      // print(sleepTotal);
+      // return sleepTotal;
       return healthData.map((e) {
         var b = e;
-        print(b.value.toJson()['numericValue']);
-        return SleepHour(double.parse(b.value.toJson()['numericValue']),
-            b.unit.toString(), b.dateFrom, b.dateTo);
+        // print(b.value.toJson()['numericValue']);
+        // print(b.value.toJson()['numericValue']);
+        sleepTotal2 += double.parse(b.value.toJson()['numericValue']);
+        // print(b.toJson());
+        print(sleepTotal2);
+        return SleepHour(sleepTotal2, b.unit.toString(), b.dateFrom, b.dateTo);
       }).toList();
     }
     return [];
@@ -128,7 +152,8 @@ class HealthRepository {
     bool requested = await health.requestAuthorization([HealthDataType.STEPS]);
     if (requested) {
       var healthData = await health.getTotalStepsInInterval(
-        DateTime.now().subtract(const Duration(days: 1)),
+        DateTime.now()
+            .appliedFromTimeOfDay(const TimeOfDay(hour: 0, minute: 0)),
         DateTime.now(),
       );
       return [Steps(healthData!, 'count', DateTime.now(), DateTime.now())];
@@ -147,16 +172,18 @@ class HealthRepository {
         .requestAuthorization([HealthDataType.ACTIVE_ENERGY_BURNED]);
     if (requested) {
       List<HealthDataPoint> healthData = await health.getHealthDataFromTypes(
-          DateTime.now().subtract(const Duration(days: 1)),
+          DateTime.now()
+              .appliedFromTimeOfDay(const TimeOfDay(hour: 0, minute: 0)),
           DateTime.now(),
           [HealthDataType.ACTIVE_ENERGY_BURNED]);
 
       return healthData.map((e) {
         var b = e;
-        print(b.value.toJson());
-        print(b.value.toJson()['numericValue']);
-        return Calories(double.parse(b.value.toJson()['numericValue']),
-            b.unit.toString(), b.dateFrom, b.dateTo);
+        burnedEnergyTotal += double.parse(b.value.toJson()['numericValue']);
+        // print(b.value.toJson());
+        // print(b.value.toJson()['numericValue']);
+        return Calories(
+            burnedEnergyTotal, b.unit.toString(), b.dateFrom, b.dateTo);
       }).toList();
     }
     return [];

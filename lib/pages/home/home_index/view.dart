@@ -584,7 +584,7 @@ class HomeIndexPage extends GetView<HomeIndexController> {
                     percent: value.isNotEmpty ? (value.last.value / 10000) : 0,
                     center: TextWidget.labelXS(
                       value.isNotEmpty
-                          ? "${(value.last.value / 10000*100).toStringAsFixed(2)}%"
+                          ? "${(value.last.value / 10000 * 100).toStringAsFixed(2)}%"
                           : "-",
                       weight: FontWeight.w900,
                     ),
@@ -641,7 +641,7 @@ class HomeIndexPage extends GetView<HomeIndexController> {
                         return TextWidget.paragraphxs(
                           LocaleKeys.ghomeFitnessSleepDesc.trParams({
                             "sleep": value.isNotEmpty
-                                ? (value.last.value/480).toString()
+                                ? (value.last.value / 60).toStringAsFixed(2)
                                 : "-",
                           }),
                           color: AppColors.gray70,
@@ -669,10 +669,10 @@ class HomeIndexPage extends GetView<HomeIndexController> {
                   return CircularPercentIndicator(
                     radius: 32,
                     lineWidth: 4,
-                    percent: value.isNotEmpty ? (value.last.value / 60) : 0,
+                    percent: value.isNotEmpty ? (value.last.value / 480) : 0,
                     center: TextWidget.labelXS(
                       value.isNotEmpty
-                          ? "${(value.last.value / 480*100).toString()}%"
+                          ? "${(value.last.value / 480 * 100).toStringAsFixed(2)}%"
                           : "-",
                       weight: FontWeight.w900,
                     ),
