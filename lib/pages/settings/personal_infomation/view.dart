@@ -39,14 +39,14 @@ class PersonalInfomationPage extends GetView<PersonalInfomationController> {
                     padding: const EdgeInsets.fromLTRB(16, 0, 8, 0),
                     child: IconWidget.svg(
                       AssetsMonotoneSvgs.userSv22g,
-                      color: AppColors.onPrimary,
+                      color: AppColors.onSurface,
                     ),
                   ),
                   suffixIcon: Padding(
                     padding: const EdgeInsets.only(right: 16),
                     child: IconWidget.svg(
                       AssetsMonotoneSvgs.editSvg33,
-                      color: AppColors.onPrimary,
+                      color: AppColors.onSurface,
                     ),
                   ),
                 ),
@@ -69,14 +69,14 @@ class PersonalInfomationPage extends GetView<PersonalInfomationController> {
                     padding: const EdgeInsets.fromLTRB(16, 0, 8, 0),
                     child: IconWidget.svg(
                       AssetsMonotoneSvgs.userSv22g,
-                      color: AppColors.onPrimary,
+                      color: AppColors.onSurface,
                     ),
                   ),
                   suffixIcon: Padding(
                     padding: const EdgeInsets.only(right: 16),
                     child: IconWidget.svg(
                       AssetsMonotoneSvgs.editSvg33,
-                      color: AppColors.onPrimary,
+                      color: AppColors.onSurface,
                     ),
                   ),
                 ),
@@ -99,14 +99,14 @@ class PersonalInfomationPage extends GetView<PersonalInfomationController> {
                     padding: const EdgeInsets.fromLTRB(16, 0, 8, 0),
                     child: IconWidget.svg(
                       AssetsMonotoneSvgs.userSv22g,
-                      color: AppColors.onPrimary,
+                      color: AppColors.onSurface,
                     ),
                   ),
                   suffixIcon: Padding(
                     padding: const EdgeInsets.only(right: 16),
                     child: IconWidget.svg(
                       AssetsMonotoneSvgs.editSvg33,
-                      color: AppColors.onPrimary,
+                      color: AppColors.onSurface,
                     ),
                   ),
                 ),
@@ -129,14 +129,14 @@ class PersonalInfomationPage extends GetView<PersonalInfomationController> {
                     padding: const EdgeInsets.fromLTRB(16, 0, 8, 0),
                     child: IconWidget.svg(
                       AssetsMonotoneSvgs.calendarSvg17,
-                      color: AppColors.onPrimary,
+                      color: AppColors.onSurface,
                     ),
                   ),
                   suffixIcon: Padding(
                     padding: const EdgeInsets.only(right: 16),
                     child: IconWidget.svg(
                       AssetsSolidSvgs.chevronDownMdSvg37,
-                      color: AppColors.onPrimary,
+                      color: AppColors.onSurface,
                     ),
                   ),
                 ),

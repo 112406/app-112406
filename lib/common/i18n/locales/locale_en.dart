@@ -48,8 +48,7 @@ Map<String, String> localeEn = {
   LocaleKeys.forgotPassword: 'Forgot Password?',
 
   // 找回密碼 - forgot password
-  LocaleKeys.resetPasswordEmailSent:
-      'Email has been sent',
+  LocaleKeys.resetPasswordEmailSent: 'Email has been sent',
   LocaleKeys.retrievePassword: 'Retrieve Password',
   LocaleKeys.sentEmail: 'Sent Email',
 
@@ -109,6 +108,17 @@ Map<String, String> localeEn = {
   LocaleKeys.ghomeFitnessNutrition: 'Nutrition',
   LocaleKeys.ghomeFitnessSleep: 'Sleep',
   LocaleKeys.ghomeFitnessSleepDesc: 'You have slept @sleep hours.',
+
+  // task page
+  LocaleKeys.addTask: 'add Task',
+  LocaleKeys.taskToday: 'Today',
+  LocaleKeys.addTaskTitle: 'Add Task',
+  LocaleKeys.addTaskDate: 'Date',
+  LocaleKeys.addTaskNote: 'Note',
+  LocaleKeys.addTaskStartTime: 'Start Time',
+  LocaleKeys.addTaskEndTime: 'End Time',
+  LocaleKeys.addTaskRemind: 'Remind',
+  LocaleKeys.addTaskRepeat: 'Repeat',
 
   // setting my account
   LocaleKeys.settingMyAccountTitle: 'My Account',

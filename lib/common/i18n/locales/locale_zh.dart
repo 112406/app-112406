@@ -101,6 +101,17 @@ Map<String, String> localeZh = {
   LocaleKeys.ghomeFitnessSleep: '睡眠',
   LocaleKeys.ghomeFitnessSleepDesc: '睡了 @sleep 小時',
 
+  // task page
+  LocaleKeys.addTask: '新增提醒',
+  LocaleKeys.addTaskTitle: '事項',
+  LocaleKeys.addTaskNote: '內容',
+  LocaleKeys.addTaskDate: '日期',
+  LocaleKeys.addTaskStartTime: '開始時間',
+  LocaleKeys.addTaskEndTime: '結束時間',
+  LocaleKeys.addTaskRemind: '提醒',
+  LocaleKeys.addTaskRepeat: '重複',
+  LocaleKeys.taskToday: '今天',
+
   // setting my account
   LocaleKeys.settingMyAccountTitle: '我的帳號',
   LocaleKeys.settingGeneralTitle: '一般設定',

@@ -113,7 +113,7 @@ class LocaleKeys {
   static const addTaskStartTime = 'add_task_start_time';
   static const addTaskEndTime = 'add_task_end_time';
   static const addTaskRepeat = 'add_task_repeat';
-  static const addTaskRemind = '';
+  static const addTaskRemind = 'add_task_remind';
 
   // setting my account
   static const settingMyAccountTitle = 'setting_my_account_title';

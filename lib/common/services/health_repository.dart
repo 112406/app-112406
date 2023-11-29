@@ -9,9 +9,7 @@ class HealthRepository {
 
   final userRepo = Get.put(UserService());
 
-  List<SleepHour> sleepTotal = [];
-  double sleepTotal2 = 0.0;
-  double burnedEnergyTotal = 0.0;
+  // List<SleepHour> sleepTotal = [];
 
   Future<void> requestPermission() async {
     var types = [
@@ -96,6 +94,7 @@ class HealthRepository {
   }
 
   Future<List<SleepHour>> getSleep() async {
+    double sleepTotal2 = 0.0;
     bool requested =
         await health.requestAuthorization([HealthDataType.SLEEP_ASLEEP]);
     if (requested) {
@@ -168,6 +167,7 @@ class HealthRepository {
   }
 
   Future<List<Calories>> getBurnedEnergy() async {
+    double burnedEnergyTotal = 0.0;
     bool requested = await health
         .requestAuthorization([HealthDataType.ACTIVE_ENERGY_BURNED]);
     if (requested) {

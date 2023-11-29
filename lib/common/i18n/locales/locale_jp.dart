@@ -48,7 +48,6 @@ Map<String, String> localeJa = {
   LocaleKeys.retrievePassword: 'パスワードを取得',
   LocaleKeys.sentEmail: 'メールを送信',
 
-
   // 註冊 - register user
   LocaleKeys.registerTitle: 'こんにちは',
   LocaleKeys.registerDesc: '新規登録',
@@ -99,6 +98,17 @@ Map<String, String> localeJa = {
   LocaleKeys.ghomeFitnessNutrition: '栄養',
   LocaleKeys.ghomeFitnessSleep: '睡眠',
   LocaleKeys.ghomeFitnessSleepDesc: ' @sleep 時間を寝ました',
+
+  // task page
+  LocaleKeys.addTask: 'リマインダーを追加',
+  LocaleKeys.addTaskTitle: 'Title',
+  LocaleKeys.addTaskNote: 'Note',
+  LocaleKeys.addTaskDate: 'Date',
+  LocaleKeys.addTaskStartTime: 'Start Time',
+  LocaleKeys.addTaskEndTime: 'End Time',
+  LocaleKeys.addTaskRemind: 'Remind',
+  LocaleKeys.addTaskRepeat: 'Repeat',
+  LocaleKeys.taskToday: 'Today',
 
   // setting my account
   LocaleKeys.settingMyAccountTitle: 'マイアカウント',

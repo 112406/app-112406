@@ -69,6 +69,8 @@ class UserApi {
     return UserProfileModel.fromJson(jsonData);
   }
 
+  // Future
+
   /// Health Data
   Future<UserHealthModel> healthData() async {
     var res = await _db
@@ -120,7 +122,8 @@ class UserApi {
     // return UserProfileModel.fromJson(res);
   }
 
-  Future<void> saveBloodPressureDiastolicData(BloodPressureDiastolic req) async {
+  Future<void> saveBloodPressureDiastolicData(
+      BloodPressureDiastolic req) async {
     var res = await _db
         .ref(
             "users/${_authRepo.firebaseUser.value!.uid}/healthData/bloodPressureDiastolic/${req.dateFrom.millisecondsSinceEpoch.toString()}")
