@@ -114,6 +114,7 @@ Map<String, String> localeZh = {
   LocaleKeys.addTaskRepeat: '重複',
   LocaleKeys.taskToday: '今天',
   LocaleKeys.taskCreate: '新增提醒',
+  LocaleKeys.taskColor: '顏色',
 
   // setting my account
   LocaleKeys.settingMyAccountTitle: '我的帳號',

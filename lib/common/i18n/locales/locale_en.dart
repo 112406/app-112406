@@ -122,6 +122,7 @@ Map<String, String> localeEn = {
   LocaleKeys.addTaskRemind: 'Remind',
   LocaleKeys.addTaskRepeat: 'Repeat',
   LocaleKeys.taskCreate: 'Create Task',
+  LocaleKeys.taskColor: 'Color',
 
   // setting my account
   LocaleKeys.settingMyAccountTitle: 'My Account',

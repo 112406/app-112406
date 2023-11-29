@@ -117,6 +117,7 @@ class LocaleKeys {
   static const addTaskRepeat = 'add_task_repeat';
   static const addTaskRemind = 'add_task_remind';
   static const taskCreate = 'task_create';
+  static const taskColor = 'task_color';
 
   // setting my account
   static const settingMyAccountTitle = 'setting_my_account_title';
