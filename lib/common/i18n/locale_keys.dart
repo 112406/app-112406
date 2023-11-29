@@ -108,12 +108,15 @@ class LocaleKeys {
   static const addTask = 'add_task';
   static const taskToday = 'task_today';
   static const addTaskTitle = 'add_task_title';
+  static const addTaskTitleHint = 'add_task_title_hint';
   static const addTaskNote = 'add_task_note';
+  static const addTaskNoteHint = 'add_task_note_hint';
   static const addTaskDate = 'add_task_date';
   static const addTaskStartTime = 'add_task_start_time';
   static const addTaskEndTime = 'add_task_end_time';
   static const addTaskRepeat = 'add_task_repeat';
   static const addTaskRemind = 'add_task_remind';
+  static const taskCreate = 'task_create';
 
   // setting my account
   static const settingMyAccountTitle = 'setting_my_account_title';

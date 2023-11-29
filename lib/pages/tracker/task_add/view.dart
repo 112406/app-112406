@@ -43,24 +43,24 @@ class TaskAddPage extends GetView<TrackerIndexController> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "Add Task",
+                    LocaleKeys.addTask.tr,
                     style: headingTextStyle,
                   ),
                   const SizedBox(
                     height: 8,
                   ),
                   InputField(
-                    title: "Title",
-                    hint: "Enter title here.",
+                    title: LocaleKeys.addTaskTitle.tr,
+                    hint: LocaleKeys.addTaskTitleHint.tr,
                     controller: controller.titleController,
                   ),
                   InputField(
-                      title: "Note",
-                      hint: "Enter note here.",
+                      title: LocaleKeys.addTaskNote.tr,
+                      hint: LocaleKeys.addTaskNoteHint.tr,
                       controller: controller.noteController),
                   Obx(
                     () => InputField(
-                      title: "Date",
+                      title: LocaleKeys.addTaskDate.tr,
                       // hint: DateFormat.yMd().format(controller.selectedDate.value),
 
                       hint: controller.selectedDate?.value,
@@ -96,7 +96,7 @@ class TaskAddPage extends GetView<TrackerIndexController> {
                       Expanded(
                           child: Obx(
                         () => InputField(
-                          title: "Start Time",
+                          title: LocaleKeys.addTaskStartTime.tr,
                           hint: controller.startTime!.value,
                           widget: IconButton(
                             icon: (const Icon(
@@ -131,7 +131,7 @@ class TaskAddPage extends GetView<TrackerIndexController> {
                       ),
                       Expanded(
                         child: InputField(
-                          title: "End Time",
+                          title: LocaleKeys.addTaskEndTime.tr,
                           hint: controller.endTime?.value,
                           widget: IconButton(
                             icon: (const Icon(
@@ -148,7 +148,7 @@ class TaskAddPage extends GetView<TrackerIndexController> {
                   ),
                   Obx(
                     () => InputField(
-                      title: "Remind",
+                      title: LocaleKeys.addTaskRemind.tr,
                       hint: "${controller.selectedRemind.value} minutes early",
                       widget: Row(
                         children: [
@@ -185,7 +185,7 @@ class TaskAddPage extends GetView<TrackerIndexController> {
                   ),
                   Obx(
                     () => InputField(
-                      title: "Repeat",
+                      title: LocaleKeys.addTaskRepeat.tr,
                       hint: controller.selectedRepeat?.value,
                       widget: Row(
                         children: [
@@ -236,7 +236,7 @@ class TaskAddPage extends GetView<TrackerIndexController> {
                     children: [
                       _colorChips(),
                       MyButton(
-                        label: "Create Task",
+                        label: LocaleKeys.taskCreate.tr,
                         onTap: () {
                           _validateInputs();
                         },

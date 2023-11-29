@@ -116,13 +116,13 @@ class TrackerIndexPage extends GetView<TrackerIndexController> {
                 height: 10,
               ),
               Text(
-                "Today",
+                LocaleKeys.taskToday.tr,
                 style: headingTextStyle,
               ),
             ],
           ),
           MyButton(
-            label: "+ Add Task",
+            label: "+ ${LocaleKeys.addTask.tr}",
             onTap: () async {
               await Get.toNamed(RouteNames.trackerTaskAdd);
               // await Get.to(AddTaskPage());

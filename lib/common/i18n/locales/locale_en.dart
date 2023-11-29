@@ -110,15 +110,18 @@ Map<String, String> localeEn = {
   LocaleKeys.ghomeFitnessSleepDesc: 'You have slept @sleep hours.',
 
   // task page
-  LocaleKeys.addTask: 'add Task',
+  LocaleKeys.addTask: 'Add Task',
   LocaleKeys.taskToday: 'Today',
-  LocaleKeys.addTaskTitle: 'Add Task',
+  LocaleKeys.addTaskTitle: 'Title',
+  LocaleKeys.addTaskTitleHint: 'Enter title here.',
   LocaleKeys.addTaskDate: 'Date',
   LocaleKeys.addTaskNote: 'Note',
+  LocaleKeys.addTaskNoteHint: 'Enter note here.',
   LocaleKeys.addTaskStartTime: 'Start Time',
   LocaleKeys.addTaskEndTime: 'End Time',
   LocaleKeys.addTaskRemind: 'Remind',
   LocaleKeys.addTaskRepeat: 'Repeat',
+  LocaleKeys.taskCreate: 'Create Task',
 
   // setting my account
   LocaleKeys.settingMyAccountTitle: 'My Account',
