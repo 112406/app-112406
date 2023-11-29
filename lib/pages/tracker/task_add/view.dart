@@ -265,8 +265,8 @@ class TaskAddPage extends GetView<TrackerIndexController> {
     } else if (controller.titleController.text.isEmpty ||
         controller.noteController.text.isEmpty) {
       Get.snackbar(
-        "Required",
-        "All fields are required.",
+        LocaleKeys.taskRequired.tr,
+        LocaleKeys.taskAllFieldsRequired.tr,
         snackPosition: SnackPosition.BOTTOM,
       );
     } else {
@@ -295,7 +295,7 @@ class TaskAddPage extends GetView<TrackerIndexController> {
   _colorChips() {
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
       Text(
-        "Color",
+        LocaleKeys.taskColor.tr,
         style: titleTextStle,
       ),
       const SizedBox(

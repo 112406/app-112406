@@ -321,14 +321,14 @@ class TrackerIndexPage extends GetView<TrackerIndexController> {
           task.isCompleted == 1
               ? Container()
               : _buildBottomSheetButton(
-                  label: "Task Completed",
+                  label: LocaleKeys.taskCompleted.tr,
                   onTap: () {
                     controller.markTaskCompleted(task.id);
                     Get.back();
                   },
                   clr: primaryClr),
           _buildBottomSheetButton(
-              label: "Delete Task",
+              label: LocaleKeys.taskDelete.tr,
               onTap: () {
                 controller.deleteTask(task);
                 Get.back();
@@ -338,7 +338,7 @@ class TrackerIndexPage extends GetView<TrackerIndexController> {
             height: 20,
           ),
           _buildBottomSheetButton(
-              label: "Close",
+              label: LocaleKeys.taskClose.tr,
               onTap: () {
                 Get.back();
               },

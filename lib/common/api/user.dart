@@ -69,7 +69,26 @@ class UserApi {
     return UserProfileModel.fromJson(jsonData);
   }
 
-  // Future
+  /// Profile update
+  Future<void> updateProfile(UserProfileModel user) async {
+    var res = await _db
+        .ref("users/${_authRepo.firebaseUser.value!.uid}/profile")
+        .update(user.toJson())
+        .whenComplete(
+          () => Get.snackbar("Success", "You account has been updated",
+              snackPosition: SnackPosition.BOTTOM,
+              backgroundColor: Colors.green.withOpacity(0.1),
+              colorText: Colors.green),
+        )
+        .catchError((error, stackTrace) {
+      Get.snackbar("Error", "Something went wrong, please Try again",
+          snackPosition: SnackPosition.BOTTOM,
+          backgroundColor: Colors.redAccent.withOpacity(0.1),
+          colorText: Colors.red);
+      print(error.toString());
+    });
+  }
+  
 
   /// Health Data
   Future<UserHealthModel> healthData() async {

@@ -115,6 +115,11 @@ Map<String, String> localeZh = {
   LocaleKeys.taskToday: '今天',
   LocaleKeys.taskCreate: '新增提醒',
   LocaleKeys.taskColor: '顏色',
+  LocaleKeys.taskRequired: '必須填寫',
+  LocaleKeys.taskAllFieldsRequired: '所有欄位必須填寫',
+  LocaleKeys.taskCompleted: '已完成',
+  LocaleKeys.taskDelete: '刪除提醒',
+  LocaleKeys.taskClose: '關閉',
 
   // setting my account
   LocaleKeys.settingMyAccountTitle: '我的帳號',

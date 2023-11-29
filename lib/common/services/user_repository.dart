@@ -58,7 +58,7 @@ class UserService extends GetxController {
   /// 設定用戶 profile
   Future<void> setProfile(UserProfileModel profile) async {
     // if (token.isEmpty) return;
-    
+    await UserApi().updateProfile(profile);
     _isLogin.value = true;
     _profile(profile);
     Storage().setString(Constants.storageProfile, jsonEncode(profile));
@@ -94,8 +94,6 @@ class UserService extends GetxController {
     }
     return true;
   }
-
-
 
   /// get healthdata from realtime database
   // Future<void> getHeartRateData() async {

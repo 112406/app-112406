@@ -695,8 +695,8 @@ class HomeIndexPage extends GetView<HomeIndexController> {
   Widget _buildView() {
     return CustomScrollView(
       slivers: [
-        // 輪播廣告
-        _buildBanner(),
+        // 健康分數
+        // _buildBanner(),
 
         // 分類導航
         _buildCategories(),

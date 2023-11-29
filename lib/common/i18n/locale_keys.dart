@@ -118,6 +118,11 @@ class LocaleKeys {
   static const addTaskRemind = 'add_task_remind';
   static const taskCreate = 'task_create';
   static const taskColor = 'task_color';
+  static const taskRequired = 'task_required';
+  static const taskAllFieldsRequired = 'task_all_fields_required';
+  static const taskCompleted = 'task_completed';
+  static const taskDelete = 'task_delete';
+  static const taskClose = 'task_close';
 
   // setting my account
   static const settingMyAccountTitle = 'setting_my_account_title';

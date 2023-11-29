@@ -123,6 +123,11 @@ Map<String, String> localeEn = {
   LocaleKeys.addTaskRepeat: 'Repeat',
   LocaleKeys.taskCreate: 'Create Task',
   LocaleKeys.taskColor: 'Color',
+  LocaleKeys.taskRequired: 'Required',
+  LocaleKeys.taskAllFieldsRequired: 'All fields are required.',
+  LocaleKeys.taskCompleted: 'Completed',
+  LocaleKeys.taskDelete: 'Delete Task',
+  LocaleKeys.taskClose: 'Close',
 
   // setting my account
   LocaleKeys.settingMyAccountTitle: 'My Account',
