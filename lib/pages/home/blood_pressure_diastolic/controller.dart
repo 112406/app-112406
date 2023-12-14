@@ -4,9 +4,12 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:healthcare_app/common/index.dart';
+import 'package:syncfusion_flutter_charts/charts.dart';
 
 class BloodPressureDiastolicController extends GetxController {
   BloodPressureDiastolicController();
+
+  late ZoomPanBehavior zoomPanBehavior;
 
   final repository = HealthRepository();
   final bloodPressures = ValueNotifier(<BloodPressureDiastolic>[]);
@@ -36,6 +39,7 @@ class BloodPressureDiastolicController extends GetxController {
       var jsonData = jsonDecode(jsonEncode(value));
       needs.add(BloodPressureDiastolic.fromJson(jsonData));
     });
+    needs.sort((a, b) => a.dateFrom.compareTo(b.dateFrom));
     print(needs);
   }
 
@@ -56,6 +60,11 @@ class BloodPressureDiastolicController extends GetxController {
   @override
   void onInit() {
     loadBloodPressureDiastolicData();
+    zoomPanBehavior = ZoomPanBehavior(
+      enablePinching: true,
+      zoomMode: ZoomMode.x,
+      enablePanning: true,
+    );
     super.onInit();
   }
 

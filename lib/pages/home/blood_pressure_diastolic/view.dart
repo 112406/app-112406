@@ -31,9 +31,9 @@ class BloodPressureDiastolicPage
             ),
           ),
           floatingActionButton: FloatingActionButton(
-              onPressed: (() => controller.getData()),
-              child: const Icon(Icons.refresh),
-            ),
+            onPressed: (() => controller.getData()),
+            child: const Icon(Icons.refresh),
+          ),
           body: Center(
             child: Container(
               //Initialize chart
@@ -46,10 +46,10 @@ class BloodPressureDiastolicPage
                           title: ChartTitle(
                               text: 'Blood Pressure Diastolic Chart'),
                           series: <ChartSeries<BloodPressureDiastolic, String>>[
-                            LineSeries<BloodPressureDiastolic, String>(
+                            ColumnSeries<BloodPressureDiastolic, String>(
                               dataSource: controller.needs,
                               xValueMapper: (BloodPressureDiastolic rate, _) =>
-                                  rate.dateFrom.toString().dateFormatOfyyyyMMdd,
+                                  rate.dateFrom.toString().dateFormatOfMMdd,
                               yValueMapper: (BloodPressureDiastolic rate, _) =>
                                   rate.value,
                             )

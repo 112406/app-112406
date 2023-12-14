@@ -4,11 +4,14 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:healthcare_app/common/index.dart';
+import 'package:syncfusion_flutter_charts/charts.dart';
 
 import '../../../common/services/health_repository.dart';
 
 class HeartRateController extends GetxController {
   HeartRateController();
+
+  late ZoomPanBehavior zoomPanBehavior;
 
   final repository = HealthRepository();
   final heartRates = ValueNotifier(<HeartRate>[]);
@@ -77,7 +80,8 @@ class HeartRateController extends GetxController {
       //   print(element.value);
       // }
     });
-    print(needs);
+    needs.sort((a, b) => a.dateFrom.compareTo(b.dateFrom));
+    print(needs.last.dateFrom);
   }
 
   // Future<void> saveHeartRate (HeartRate user) async {
@@ -114,6 +118,11 @@ class HeartRateController extends GetxController {
   @override
   void onInit() {
     loadHeartData();
+    zoomPanBehavior = ZoomPanBehavior(
+      enablePinching: true,
+      zoomMode: ZoomMode.x,
+      enablePanning: true,
+    );
     super.onInit();
   }
 

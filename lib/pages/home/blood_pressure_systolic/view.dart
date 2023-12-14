@@ -44,10 +44,10 @@ class BloodPressureSystolicPage extends GetView<BloodPressureSystolicController>
                           primaryXAxis: CategoryAxis(),
                           title: ChartTitle(text: 'Blood Pressure Systolic Chart'),
                           series: <ChartSeries<BloodPressureSystolic, String>>[
-                            LineSeries<BloodPressureSystolic, String>(
+                            ColumnSeries<BloodPressureSystolic, String>(
                               dataSource: controller.needs,
                               xValueMapper: (BloodPressureSystolic rate, _) =>
-                                  rate.dateFrom.toString().dateFormatOfyyyyMMdd,
+                                  rate.dateFrom.toString().dateFormatOfMMdd,
                               yValueMapper: (BloodPressureSystolic rate, _) =>
                                   rate.value,
                             )

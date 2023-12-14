@@ -23,11 +23,12 @@ class HeartRatePage extends GetView<HeartRateController> {
         builder: (_) {
           return Scaffold(
             appBar: AppBar(
-                backgroundColor: Colors.transparent,
-                elevation: 0,
-                title: TextWidget.textxl(
-              LocaleKeys.ghomeFuncCardHeartRate.tr,
-            ),),
+              backgroundColor: Colors.transparent,
+              elevation: 0,
+              title: TextWidget.textxl(
+                LocaleKeys.ghomeFuncCardHeartRate.tr,
+              ),
+            ),
             floatingActionButton: FloatingActionButton(
               onPressed: (() => controller.getData()),
               child: const Icon(Icons.refresh),
@@ -61,15 +62,15 @@ class HeartRatePage extends GetView<HeartRateController> {
                     builder: (context, snapshot) {
                       if (snapshot.hasData) {
                         return SfCartesianChart(
+                            // enableSideBySideSeriesPlacement: false,
+                            zoomPanBehavior: controller.zoomPanBehavior,
                             primaryXAxis: CategoryAxis(),
                             title: ChartTitle(text: 'Heart Rate Chart'),
                             series: <ChartSeries<HeartRate, String>>[
-                              LineSeries<HeartRate, String>(
+                              ColumnSeries<HeartRate, String>(
                                 dataSource: controller.needs,
-                                xValueMapper: (HeartRate rate, _) => rate
-                                    .dateFrom
-                                    .toString()
-                                    .dateFormatOfyyyyMMdd,
+                                xValueMapper: (HeartRate rate, _) =>
+                                    rate.dateFrom.toString().dateFormatOfMMdd,
                                 yValueMapper: (HeartRate rate, _) => rate.value,
                               )
                             ]);
@@ -79,6 +80,29 @@ class HeartRatePage extends GetView<HeartRateController> {
                         return const Center(child: CircularProgressIndicator());
                       }
                     }),
+                // child: FutureBuilder(
+                //     future: controller.getHeartRateData(),
+                //     builder: (context, snapshot) {
+                //       if (snapshot.hasData) {
+                //         return SfCartesianChart(
+                //             enableSideBySideSeriesPlacement: false,
+                //             title: ChartTitle(text: 'Heart Rate Chart'),
+                //             series: <ChartSeries<HeartRate, String>>[
+                //               ColumnSeries<HeartRate, String>(
+                //                 dataSource: controller.needs,
+                //                 xValueMapper: (HeartRate rate, _) => rate
+                //                     .dateFrom
+                //                     .toString()
+                //                     .dateFormatOfyyyyMMdd,
+                //                 yValueMapper: (HeartRate rate, _) => rate.value,
+                //               )
+                //             ]);
+                //       } else if (snapshot.data == null) {
+                //         return const Center(child: Text("No Data"));
+                //       } else {
+                //         return const Center(child: CircularProgressIndicator());
+                //       }
+                //     }),
               ),
             ).paddingBottom(100),
             // body: SafeArea(
@@ -89,8 +113,8 @@ class HeartRatePage extends GetView<HeartRateController> {
   }
 }
 
-class ChartData {
-  ChartData(this.x, this.y);
-  final String x;
-  final double? y;
-}
+// class ChartData {
+//   ChartData(this.x, this.y);
+//   final String x;
+//   final double? y;
+// }

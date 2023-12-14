@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-/// 扩展 String
+/// 擴充 String
 extension ExString on String {
   /// 生成 Color
   Color get toColor {
@@ -31,7 +31,7 @@ extension ExString on String {
     return MaterialColor(color.value, swatch);
   }
 
-  /// 清除 html 标签
+  /// 清除 html 標籤
   String get clearHtml {
     return replaceAll(RegExp(r'<[^>]*>'), '');
   }
@@ -40,5 +40,10 @@ extension ExString on String {
   String get dateFormatOfyyyyMMdd {
     var date = DateTime.parse(this);
     return DateFormat('yyyy-MM-dd').format(date);
+  }
+
+  String get dateFormatOfMMdd {
+    var date = DateTime.parse(this);
+    return DateFormat('MM/dd').format(date);
   }
 }
